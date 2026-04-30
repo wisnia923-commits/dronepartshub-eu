@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog 2168 części DJI Agras | Drone Parts Hub</title>
+  <meta name="description" content="Pełen katalog 2168 części zamiennych do dronów rolniczych DJI Agras T25, T10, T70P, D6000I. Filtry po modelu i kategorii.">
+  <meta name="author" content="Drone Parts Hub">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dronepartshub.eu/catalog.html">
+  <meta property="og:title" content="Katalog 2168 części DJI Agras | Drone Parts Hub">
+  <meta property="og:description" content="Pełen katalog 2168 części zamiennych do dronów rolniczych DJI Agras T25, T10, T70P, D6000I. Filtry po modelu i kategorii.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dronepartshub.eu/catalog.html">
+  <meta property="og:locale" content="pl_PL">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">DRONE<span>PARTS</span> HUB</a>
+    <ul class="nav__menu">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="catalog.html" class="active">Części</a></li>
+      <li><a href="rental.html">Wynajem</a></li>
+      <li><a href="hurt.html">Hurt</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">O nas</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="nav__lang" onclick="toggleLang()">PL</button>
+      <a class="nav__cart" onclick="openCart()">🛒 Koszyk <span class="nav__cart-count">0</span></a>
+      <a href="https://t.me/dji_agras_parts_bot" target="_blank" class="nav__telegram">✈️ Telegram</a>
+    </div>
+  </div>
+</nav>
+
+<div class="catalog-page">
+  <div class="catalog-header">
+    <div class="catalog-header__inner">
+      <h1>Katalog części</h1>
+      <p class="catalog-header__sub">2168 części do dronów rolniczych T25, T10, T70P, D6000I</p>
+    </div>
+  </div>
+
+  <div class="catalog-layout">
+    <aside class="filters"><div style="text-align:center;color:var(--color-text-muted);">⏳ Ładowanie filtrów...</div></aside>
+
+    <main>
+      <div class="results-bar">
+        <div class="results-count">⏳ Ładowanie 2168 części...</div>
+        <select class="sort-select" onchange="STATE.filters.sort=this.value;applyFilters()">
+          <option value="name">Po nazwie</option>
+          <option value="price_asc">Cena rosnąco</option>
+          <option value="price_desc">Cena malejąco</option>
+        </select>
+      </div>
+
+      <div class="products-grid"></div>
+      <div class="pagination"></div>
+    </main>
+  </div>
+</div>
+
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const modelParam = urlParams.get('model');
+if (modelParam) {
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      STATE.filters.model = modelParam;
+      applyFilters();
+      const radio = document.querySelector(`input[name="model"][value="${modelParam}"]`);
+      if (radio) radio.checked = true;
+    }, 300);
+  });
+}
+</script>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__bottom">
+      <span>© 2026 Drone Parts Hub. Wszelkie prawa zastrzeżone.</span>
+      <span><a href="regulamin.html" style="color:var(--color-text-muted);margin-right:12px;">Regulamin</a> <a href="polityka-prywatnosci.html" style="color:var(--color-text-muted);margin-right:12px;">Prywatność</a> <a href="zwroty-reklamacje.html" style="color:var(--color-text-muted);">Zwroty</a></span>
+    </div>
+    <div class="footer__disclaimer">
+      <p>Drone Parts Hub jest niezależnym sklepem z częściami zamiennymi do dronów rolniczych. Nazwy modeli T25, T10, T70P, D6000I są używane wyłącznie w celu identyfikacji kompatybilności produktów. Drone Parts Hub nie jest powiązany, sponsorowany ani autoryzowany przez producentów wymienionych dronów. Wszystkie znaki towarowe pozostają własnością ich prawowitych właścicieli.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-drawer__overlay" onclick="closeCart()"></div>
+<div class="cart-drawer">
+  <div class="cart-drawer__header">
+    <div class="cart-drawer__title">Koszyk</div>
+    <button class="cart-drawer__close" onclick="closeCart()">×</button>
+  </div>
+  <div class="cart-drawer__body"></div>
+  <div class="cart-drawer__footer" style="display:none;">
+    <div class="cart-totals"></div>
+    <button class="cart-checkout" onclick="window.location.href='checkout.html'">Przejdź do kasy →</button>
+  </div>
+</div>
+
+<div id="orderModal" class="modal">
+  <div class="modal__inner">
+    <h3 class="modal__title">Złóż zamówienie</h3>
+    <form onsubmit="event.preventDefault();submitOrder(this);">
+      <div class="form-group"><label>Imię i nazwisko</label><input type="text" name="name" required></div>
+      <div class="form-group"><label>Telefon</label><input type="tel" name="phone" required></div>
+      <div class="form-group"><label>Email</label><input type="email" name="email" required></div>
+      <div class="form-group"><label>Adres dostawy</label><textarea name="address" required></textarea></div>
+      <div class="form-group"><label>Uwagi</label><textarea name="notes"></textarea></div>
+      <div class="form-actions">
+        <button type="button" class="btn btn--ghost" onclick="closeOrderModal()">Anuluj</button>
+        <button type="submit" class="btn btn--primary">Wyślij przez Telegram →</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

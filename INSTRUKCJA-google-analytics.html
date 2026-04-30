@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instrukcja Google Analytics - Drone Parts Hub</title>
+  <meta name="description" content="Jak dodać Google Analytics 4 do strony - krok po kroku.">
+  <meta name="author" content="Drone Parts Hub">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dronepartshub.eu/INSTRUKCJA-google-analytics.html">
+  <meta property="og:title" content="Instrukcja Google Analytics - Drone Parts Hub">
+  <meta property="og:description" content="Jak dodać Google Analytics 4 do strony - krok po kroku.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dronepartshub.eu/INSTRUKCJA-google-analytics.html">
+  <meta property="og:locale" content="pl_PL">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">DRONE<span>PARTS</span> HUB</a>
+    <ul class="nav__menu">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="catalog.html">Części</a></li>
+      <li><a href="rental.html">Wynajem</a></li>
+      <li><a href="hurt.html">Hurt</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">O nas</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="nav__lang" onclick="toggleLang()">PL</button>
+      <a class="nav__cart" onclick="openCart()">🛒 Koszyk <span class="nav__cart-count">0</span></a>
+      <a href="https://t.me/dji_agras_parts_bot" target="_blank" class="nav__telegram">✈️ Telegram</a>
+    </div>
+  </div>
+</nav>
+
+<section class="section" style="padding-top:140px;">
+  <div class="section__inner" style="max-width:900px;">
+    <div class="section__header">
+      <div class="section__label">Tutorial</div>
+      <h2 class="section__title">Google Analytics</h2>
+      <p class="section__sub">Jak dodać GA4 do strony - krok po kroku</p>
+    </div>
+    
+    <div style="background:rgba(255,255,255,0.03);border:1px solid var(--color-line);border-radius:12px;padding:48px;line-height:1.8;color:var(--color-text-muted);">
+      <h3 style="color:var(--color-accent);font-family:var(--font-display);font-size:24px;margin-bottom:16px;">Krok 1: Załóż konto</h3>
+      <ol style="padding-left:24px;">
+        <li>Wejdź na <a href="https://analytics.google.com" target="_blank" style="color:var(--color-accent);">analytics.google.com</a></li>
+        <li>Zaloguj się kontem Google</li>
+        <li>Klik "Zacznij pomiar"</li>
+        <li>Nazwa konta: Drone Parts Hub</li>
+        <li>Kategoria: E-commerce / Sklep</li>
+      </ol>
+      
+      <h3 style="color:var(--color-accent);font-family:var(--font-display);font-size:24px;margin:30px 0 16px;">Krok 2: Pobierz Measurement ID</h3>
+      <p>Po założeniu konta dostaniesz ID typu <strong style="color:white;font-family:var(--font-mono);">G-XXXXXXXXXX</strong></p>
+      
+      <h3 style="color:var(--color-accent);font-family:var(--font-display);font-size:24px;margin:30px 0 16px;">Krok 3: Wklej kod do strony</h3>
+      <p>W każdym pliku HTML, tuż przed <code style="color:white;background:rgba(0,0,0,0.5);padding:2px 6px;border-radius:3px;">&lt;/head&gt;</code>, wklej:</p>
+      
+      <pre style="background:#000;border:1px solid var(--color-line);padding:16px;border-radius:6px;font-family:var(--font-mono);font-size:13px;color:#80ff80;overflow-x:auto;margin:12px 0;">&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+&lt;/script&gt;</pre>
+      
+      <p style="background:rgba(239,68,68,0.1);border-left:4px solid #ef4444;padding:16px;border-radius:4px;margin:20px 0;">
+        <strong style="color:white;">⚠️ WAŻNE:</strong> Zamień G-XXXXXXXXXX (2 razy!) na Twój ID.
+      </p>
+      
+      <h3 style="color:var(--color-accent);font-family:var(--font-display);font-size:24px;margin:30px 0 16px;">Krok 4: Sprawdź</h3>
+      <ol style="padding-left:24px;">
+        <li>Wejdź na swoją stronę</li>
+        <li>Wróć do GA → Raporty na żywo</li>
+        <li>Powinieneś zobaczyć "1 użytkownik aktywny" - to Ty!</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__bottom">
+      <span>© 2026 Drone Parts Hub. Wszelkie prawa zastrzeżone.</span>
+      <span><a href="regulamin.html" style="color:var(--color-text-muted);margin-right:12px;">Regulamin</a> <a href="polityka-prywatnosci.html" style="color:var(--color-text-muted);margin-right:12px;">Prywatność</a> <a href="zwroty-reklamacje.html" style="color:var(--color-text-muted);">Zwroty</a></span>
+    </div>
+    <div class="footer__disclaimer">
+      <p>Drone Parts Hub jest niezależnym sklepem z częściami zamiennymi do dronów rolniczych. Nazwy modeli T25, T10, T70P, D6000I są używane wyłącznie w celu identyfikacji kompatybilności produktów. Drone Parts Hub nie jest powiązany, sponsorowany ani autoryzowany przez producentów wymienionych dronów. Wszystkie znaki towarowe pozostają własnością ich prawowitych właścicieli.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-drawer__overlay" onclick="closeCart()"></div>
+<div class="cart-drawer">
+  <div class="cart-drawer__header">
+    <div class="cart-drawer__title">Koszyk</div>
+    <button class="cart-drawer__close" onclick="closeCart()">×</button>
+  </div>
+  <div class="cart-drawer__body"></div>
+  <div class="cart-drawer__footer" style="display:none;">
+    <div class="cart-totals"></div>
+    <button class="cart-checkout" onclick="window.location.href='checkout.html'">Przejdź do kasy →</button>
+  </div>
+</div>
+
+<div id="orderModal" class="modal">
+  <div class="modal__inner">
+    <h3 class="modal__title">Złóż zamówienie</h3>
+    <form onsubmit="event.preventDefault();submitOrder(this);">
+      <div class="form-group"><label>Imię i nazwisko</label><input type="text" name="name" required></div>
+      <div class="form-group"><label>Telefon</label><input type="tel" name="phone" required></div>
+      <div class="form-group"><label>Email</label><input type="email" name="email" required></div>
+      <div class="form-group"><label>Adres dostawy</label><textarea name="address" required></textarea></div>
+      <div class="form-group"><label>Uwagi</label><textarea name="notes"></textarea></div>
+      <div class="form-actions">
+        <button type="button" class="btn btn--ghost" onclick="closeOrderModal()">Anuluj</button>
+        <button type="submit" class="btn btn--primary">Wyślij przez Telegram →</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
