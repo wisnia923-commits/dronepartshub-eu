@@ -3,20 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Regulamin - Drone Parts Hub</title>
-  <meta name="description" content="Regulamin sklepu internetowego Drone Parts Hub - warunki sprzedaży, dostawa, płatności.">
+  <meta name="description" content="Regulamin sklepu internetowego Drone Parts Hub. Warunki sprzedaży części do dronów.">
+  <meta name="keywords" content="regulamin sklep, warunki sprzedaży">
   <meta name="author" content="Drone Parts Hub">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://dronepartshub.eu/regulamin.html">
-  <meta property="og:title" content="Regulamin - Drone Parts Hub">
-  <meta property="og:description" content="Regulamin sklepu internetowego Drone Parts Hub - warunki sprzedaży, dostawa, płatności.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dronepartshub.eu/regulamin.html">
+  <meta property="og:title" content="Regulamin sklepu | Drone Parts Hub">
+  <meta property="og:description" content="Regulamin sklepu internetowego Drone Parts Hub. Warunki sprzedaży części do dronów.">
+  <meta property="og:image" content="https://dronepartshub.eu/images/hero-drones.jpg">
   <meta property="og:locale" content="pl_PL">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Regulamin sklepu | Drone Parts Hub">
+  <meta name="twitter:description" content="Regulamin sklepu internetowego Drone Parts Hub. Warunki sprzedaży części do dronów.">
+  <meta name="twitter:image" content="https://dronepartshub.eu/images/hero-drones.jpg">
+  
+  <link rel="canonical" href="https://dronepartshub.eu/regulamin.html">
+  <title>Regulamin sklepu — Drone Parts Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .legal-page {
+      padding-top: 120px;
+      padding-bottom: 80px;
+      background: #f8f8f8;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+    .legal-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .legal-header {
+      margin-bottom: 60px;
+      padding-bottom: 40px;
+      border-bottom: 2px solid #1a1a1a;
+    }
+    .legal-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+    .legal-meta {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      color: #666;
+      flex-wrap: wrap;
+    }
+    .legal-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .legal-content {
+      background: white;
+      padding: 60px;
+      border-radius: 8px;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+    }
+    .legal-content h2 {
+      font-family: var(--font-display);
+      font-size: 32px;
+      letter-spacing: 0.02em;
+      color: #1a1a1a;
+      margin-top: 48px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .legal-content h2:first-child { margin-top: 0; }
+    .legal-content h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .legal-content p, .legal-content li {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 12px;
+    }
+    .legal-content ul, .legal-content ol {
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+    .legal-content li { margin-bottom: 8px; }
+    .legal-toc {
+      background: #f5f5f5;
+      padding: 30px 40px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      border-left: 4px solid var(--color-accent);
+    }
+    .legal-toc h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+    .legal-toc ol {
+      columns: 2;
+      column-gap: 40px;
+      list-style-position: inside;
+      padding: 0;
+    }
+    .legal-toc a {
+      color: #1a1a1a;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 2;
+    }
+    .legal-toc a:hover { color: var(--color-accent); }
+    .legal-warning {
+      background: #fff3cd;
+      border: 2px solid #ffc107;
+      padding: 20px 24px;
+      border-radius: 8px;
+      margin: 24px 0;
+    }
+    .legal-warning p { margin: 0; color: #856404; }
+    .placeholder {
+      background: #ffeb3b;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      color: #c62828;
+      font-family: var(--font-mono);
+      font-size: 13px;
+    }
+    @media (max-width: 768px) {
+      .legal-content { padding: 30px 24px; }
+      .legal-toc ol { columns: 1; }
+      .legal-container { padding: 0 20px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -24,105 +156,349 @@
   <div class="nav__inner">
     <a href="index.html" class="nav__logo">DRONE<span>PARTS</span> HUB</a>
     <ul class="nav__menu">
-      <li><a href="index.html">Start</a></li>
-      <li><a href="catalog.html">Części</a></li>
-      <li><a href="rental.html">Wynajem</a></li>
-      <li><a href="hurt.html">Hurt</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="about.html">O nas</a></li>
-      <li><a href="contact.html">Kontakt</a></li>
+      <li><a href="index.html" data-i18n="nav_home">Start</a></li>
+      <li><a href="catalog.html" data-i18n="nav_parts">Części</a></li>
+      <li><a href="rental.html"><span style="margin-right:4px;">🚁</span><span data-i18n="nav_rental">Wynajem</span></a></li>
+      <li><a href="index.html#drones" data-i18n="nav_drones">Drony</a></li>
+      <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
     </ul>
     <div class="nav__actions">
       <button class="nav__lang" onclick="toggleLang()">PL</button>
-      <a class="nav__cart" onclick="openCart()">🛒 Koszyk <span class="nav__cart-count">0</span></a>
-      <a href="https://t.me/dji_agras_parts_bot" target="_blank" class="nav__telegram">✈️ Telegram</a>
+      <a class="nav__cart" onclick="openCart()">
+        🛒 <span data-i18n="cart">Koszyk</span>
+        <span class="nav__cart-count">0</span>
+      </a>
+      <a href="https://t.me/dji_agras_parts_bot" target="_blank" class="nav__telegram">
+        ✈️ Telegram
+      </a>
     </div>
   </div>
 </nav>
 
-<section class="section" style="padding-top:140px;">
-  <div class="section__inner" style="max-width:900px;">
-    <div class="section__header">
-      <div class="section__label">Dokumenty</div>
-      <h2 class="section__title">Regulamin sklepu</h2>
+<section class="legal-page">
+  <div class="legal-container">
+    
+    <div class="legal-header">
+      <h1>Regulamin Sklepu</h1>
+      <div class="legal-meta">
+        <span>📅 Obowiązuje od: 26.04.2026</span>
+        <span>🔄 Ostatnia aktualizacja: 26.04.2026</span>
+        <span>📋 Wersja: 1.0</span>
+      </div>
     </div>
-    <div style="background:rgba(255,255,255,0.03);border:1px solid var(--color-line);border-radius:12px;padding:48px;line-height:1.8;color:var(--color-text-muted);">
-      <h3 style="color:var(--color-accent);font-family:var(--font-display);font-size:24px;margin-bottom:16px;">§1 Postanowienia ogólne</h3>
-      <p>1.1. Sklep internetowy Drone Parts Hub dostępny pod adresem https://dronepartshub.eu jest prowadzony przez firmę [DANE FIRMY], NIP: [TWÓJ NIP], REGON: [TWÓJ REGON].</p>
-      <p>1.2. Niniejszy regulamin określa zasady korzystania ze sklepu internetowego oraz warunki sprzedaży.</p>
-      
-      <h3 style="color:var(--color-accent);font-family:var(--font-display);font-size:24px;margin:30px 0 16px;">§2 Definicje</h3>
-      <p><strong style="color:white;">Sprzedawca</strong> - Drone Parts Hub<br>
-      <strong style="color:white;">Klient</strong> - osoba fizyczna lub prawna składająca zamówienie<br>
-      <strong style="color:white;">Towar</strong> - części zamienne do dronów rolniczych DJI Agras<br>
-      <strong style="color:white;">Zamówienie</strong> - oświadczenie woli Klienta, prowadzące do zawarcia umowy</p>
-      
-      <h3 style="color:var(--color-accent);font-family:var(--font-display);font-size:24px;margin:30px 0 16px;">§3 Składanie zamówień</h3>
-      <p>3.1. Zamówienia można składać poprzez stronę internetową lub bota Telegram (@dji_agras_parts_bot).</p>
-      <p>3.2. Realizacja zamówienia rozpoczyna się po potwierdzeniu przez Sprzedawcę.</p>
-      <p>3.3. Ceny podane na stronie są cenami brutto (zawierają VAT 23%) - dla klientów polskich.</p>
-      
-      <h3 style="color:var(--color-accent);font-family:var(--font-display);font-size:24px;margin:30px 0 16px;">§4 Płatności</h3>
-      <p>Akceptujemy: przelew tradycyjny, BLIK, Przelewy24, PayPal, Stripe (karty międzynarodowe).</p>
-      
-      <h3 style="color:var(--color-accent);font-family:var(--font-display);font-size:24px;margin:30px 0 16px;">§5 Dostawa</h3>
-      <p>5.1. Polska: 24-48h (InPost / DPD)<br>
-      5.2. Unia Europejska: 3-5 dni roboczych<br>
-      5.3. Ukraina: 5-7 dni (Nova Poshta)</p>
-      
-      <h3 style="color:var(--color-accent);font-family:var(--font-display);font-size:24px;margin:30px 0 16px;">§6 Zwroty i reklamacje</h3>
-      <p>Szczegóły w <a href="zwroty-reklamacje.html" style="color:var(--color-accent);">polityce zwrotów</a>.</p>
-      
-      <h3 style="color:var(--color-accent);font-family:var(--font-display);font-size:24px;margin:30px 0 16px;">§7 Postanowienia końcowe</h3>
-      <p>W sprawach nieuregulowanych zastosowanie mają przepisy Kodeksu cywilnego oraz ustawy o prawach konsumenta.</p>
-      
-      <p style="margin-top:30px;font-size:13px;color:var(--color-text-dim);">Regulamin wchodzi w życie 30 kwietnia 2026.</p>
+
+    <div class="legal-warning">
+      <p><strong>⚠️ WAŻNE:</strong> Ten regulamin jest szablonem zgodnym z aktualnym prawem polskim (Ustawa o prawach konsumenta, RODO, Dyrektywa Omnibus, DSA). Pola oznaczone <span class="placeholder">[TWOJE DANE]</span> wymagają uzupełnienia. Zalecamy audyt prawnika e-commerce przed publikacją.</p>
+    </div>
+
+    <div class="legal-content">
+
+      <div class="legal-toc">
+        <h3>Spis treści</h3>
+        <ol>
+          <li><a href="#sec1">Postanowienia ogólne</a></li>
+          <li><a href="#sec2">Definicje</a></li>
+          <li><a href="#sec3">Sprzedawca</a></li>
+          <li><a href="#sec4">Składanie zamówień</a></li>
+          <li><a href="#sec5">Ceny i płatności</a></li>
+          <li><a href="#sec6">Dostawa</a></li>
+          <li><a href="#sec7">Prawo odstąpienia</a></li>
+          <li><a href="#sec8">Reklamacje i rękojmia</a></li>
+          <li><a href="#sec9">Ochrona danych (RODO)</a></li>
+          <li><a href="#sec10">Pliki cookies</a></li>
+          <li><a href="#sec11">Pozasądowe rozstrzyganie sporów</a></li>
+          <li><a href="#sec12">Postanowienia końcowe</a></li>
+        </ol>
+      </div>
+
+      <h2 id="sec1">§ 1. Postanowienia ogólne</h2>
+      <p>1. Niniejszy regulamin określa zasady korzystania ze sklepu internetowego dostępnego pod adresem <span class="placeholder">[https://twoja-domena.pl]</span> (dalej: "Sklep"), w szczególności zasady składania zamówień, dostawy, płatności, reklamacji oraz odstąpienia od umowy.</p>
+      <p>2. Sklep prowadzony jest przez:</p>
+      <ul>
+        <li><strong>Nazwa firmy:</strong> <span class="placeholder">[NAZWA FIRMY]</span></li>
+        <li><strong>Adres:</strong> <span class="placeholder">[ULICA, KOD POCZTOWY, MIASTO]</span></li>
+        <li><strong>NIP:</strong> <span class="placeholder">[NIP]</span></li>
+        <li><strong>REGON:</strong> <span class="placeholder">[REGON]</span></li>
+        <li><strong>Email:</strong> <span class="placeholder">[EMAIL]</span></li>
+        <li><strong>Telefon:</strong> <span class="placeholder">[TELEFON]</span></li>
+      </ul>
+      <p>3. Kontakt ze Sklepem możliwy jest poprzez:</p>
+      <ul>
+        <li>email: <span class="placeholder">[EMAIL]</span></li>
+        <li>formularz kontaktowy na stronie</li>
+        <li>bot Telegram: @dji_agras_parts_bot</li>
+        <li>telefon: <span class="placeholder">[TELEFON]</span></li>
+      </ul>
+      <p>4. Niniejszy regulamin jest dostępny nieodpłatnie na stronie Sklepu w sposób umożliwiający jego pozyskanie, odtwarzanie i utrwalanie.</p>
+
+      <h2 id="sec2">§ 2. Definicje</h2>
+      <p>Użyte w regulaminie pojęcia oznaczają:</p>
+      <ul>
+        <li><strong>Sprzedawca</strong> – podmiot prowadzący Sklep, wskazany w § 1 pkt 2</li>
+        <li><strong>Klient</strong> – osoba fizyczna posiadająca pełną zdolność do czynności prawnych, osoba prawna lub jednostka organizacyjna, która zawiera ze Sprzedawcą umowę sprzedaży</li>
+        <li><strong>Konsument</strong> – osoba fizyczna dokonująca czynności prawnej niezwiązanej bezpośrednio z jej działalnością gospodarczą lub zawodową</li>
+        <li><strong>Przedsiębiorca</strong> – Klient prowadzący działalność gospodarczą</li>
+        <li><strong>Towar</strong> – produkt prezentowany w Sklepie, w szczególności części zamienne do dronów rolniczych</li>
+        <li><strong>Zamówienie</strong> – oświadczenie woli Klienta zmierzające bezpośrednio do zawarcia umowy sprzedaży</li>
+        <li><strong>Umowa</strong> – umowa sprzedaży zawierana na odległość</li>
+        <li><strong>Koszyk</strong> – funkcjonalność Sklepu umożliwiająca tymczasowe zapamiętywanie wybranych Towarów</li>
+        <li><strong>RODO</strong> – Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 z 27 kwietnia 2016 r.</li>
+      </ul>
+
+      <h2 id="sec3">§ 3. Sprzedawca i przedmiot działalności</h2>
+      <p>1. Sprzedawca prowadzi działalność polegającą na sprzedaży detalicznej części zamiennych kompatybilnych z dronami rolniczymi, w szczególności modeli T25, T50, T70P, T100.</p>
+      <p>2. Sprzedawca oferuje również usługę wynajmu drona rolniczego T50 wraz z osprzętem (szczegółowy regulamin wynajmu dostępny w odrębnym dokumencie).</p>
+      <p>3. <strong>Sprzedawca jest niezależnym dostawcą i nie jest powiązany, sponsorowany ani autoryzowany przez producentów wymienionych dronów.</strong> Wszystkie znaki towarowe pozostają własnością ich prawowitych właścicieli.</p>
+
+      <h2 id="sec4">§ 4. Składanie zamówień</h2>
+      <p>1. Zamówienia w Sklepie można składać:</p>
+      <ul>
+        <li>poprzez formularz na stronie internetowej (24/7)</li>
+        <li>poprzez bota Telegram @dji_agras_parts_bot</li>
+        <li>drogą mailową: <span class="placeholder">[EMAIL]</span></li>
+      </ul>
+      <p>2. Aby złożyć zamówienie poprzez formularz, należy:</p>
+      <ol>
+        <li>Wybrać Towar i dodać go do Koszyka</li>
+        <li>Przejść do podsumowania zamówienia</li>
+        <li>Podać dane do dostawy (imię, nazwisko, adres, telefon, email)</li>
+        <li>Wybrać sposób dostawy i płatności</li>
+        <li>Zaakceptować Regulamin i Politykę Prywatności</li>
+        <li>Potwierdzić zamówienie przyciskiem "Zamawiam z obowiązkiem zapłaty"</li>
+      </ol>
+      <p>3. Po złożeniu zamówienia Klient otrzymuje na podany adres email potwierdzenie zawierające szczegóły zamówienia.</p>
+      <p>4. Zawarcie umowy sprzedaży następuje z chwilą potwierdzenia przyjęcia zamówienia do realizacji przez Sprzedawcę.</p>
+      <p>5. Sprzedawca zastrzega prawo odmowy realizacji zamówienia w przypadku:</p>
+      <ul>
+        <li>braku dostępności Towaru</li>
+        <li>podania nieprawdziwych danych</li>
+        <li>niemożności weryfikacji danych Klienta</li>
+      </ul>
+
+      <h2 id="sec5">§ 5. Ceny i płatności</h2>
+      <p>1. Ceny Towarów podane są w złotych polskich (PLN) i zawierają podatek VAT.</p>
+      <p>2. Sklep podaje również ceny orientacyjne w EUR i USD - są one przeliczane wg aktualnego kursu NBP powiększonego o bufor 5%.</p>
+      <p>3. <strong>Zgodnie z dyrektywą Omnibus,</strong> przy ogłaszaniu obniżki ceny Sklep informuje również o najniższej cenie Towaru z 30 dni poprzedzających obniżkę.</p>
+      <p>4. Cena wiążąca dla Klienta to cena widoczna w momencie składania zamówienia.</p>
+      <p>5. Akceptowane formy płatności:</p>
+      <ul>
+        <li>przelew bankowy tradycyjny</li>
+        <li>BLIK</li>
+        <li>karta płatnicza (Visa, Mastercard) - <span class="placeholder">[jeśli oferujesz]</span></li>
+        <li>płatność elektroniczna (PayU, Przelewy24) - <span class="placeholder">[jeśli oferujesz]</span></li>
+        <li>za pobraniem (przy odbiorze)</li>
+      </ul>
+      <p>6. Termin płatności: <strong>7 dni roboczych</strong> od potwierdzenia zamówienia. Brak płatności w tym terminie skutkuje anulowaniem zamówienia.</p>
+      <p>7. Sprzedawca wystawia paragon fiskalny lub fakturę VAT na życzenie Klienta.</p>
+
+      <h2 id="sec6">§ 6. Dostawa</h2>
+      <p>1. Sprzedawca realizuje dostawy:</p>
+      <ul>
+        <li>na terenie Polski</li>
+        <li>do krajów Unii Europejskiej</li>
+        <li>do Ukrainy</li>
+      </ul>
+      <p>2. Dostępne sposoby dostawy:</p>
+      <ul>
+        <li>InPost Paczkomaty - od <span class="placeholder">[CENA]</span> zł</li>
+        <li>Kurier DPD/DHL/UPS - od <span class="placeholder">[CENA]</span> zł</li>
+        <li>Odbiór osobisty (po wcześniejszym uzgodnieniu)</li>
+        <li>Dostawa międzynarodowa - wycena indywidualna</li>
+      </ul>
+      <p>3. Czas realizacji zamówienia: <strong>1-3 dni roboczych</strong> od zaksięgowania płatności.</p>
+      <p>4. Czas dostawy zależy od wybranego sposobu wysyłki:</p>
+      <ul>
+        <li>Polska: 1-3 dni robocze</li>
+        <li>UE: 3-7 dni roboczych</li>
+        <li>Ukraina: 5-10 dni roboczych</li>
+      </ul>
+      <p>5. Klient otrzymuje numer śledzenia przesyłki na adres email i poprzez Telegram (jeśli powiązany).</p>
+
+      <h2 id="sec7">§ 7. Prawo odstąpienia od umowy (dla Konsumentów)</h2>
+      <p>1. Konsument ma prawo odstąpić od Umowy zawartej na odległość w terminie <strong>14 dni</strong> bez podania przyczyny.</p>
+      <p>2. Termin biegnie od dnia objęcia Towaru w posiadanie przez Konsumenta.</p>
+      <p>3. Aby skorzystać z prawa odstąpienia, Konsument powinien:</p>
+      <ul>
+        <li>złożyć oświadczenie o odstąpieniu (formularz dostępny w załączniku)</li>
+        <li>wysłać oświadczenie na adres: <span class="placeholder">[ADRES]</span> lub <span class="placeholder">[EMAIL]</span></li>
+        <li>odesłać Towar w stanie nienaruszonym w ciągu 14 dni od złożenia oświadczenia</li>
+      </ul>
+      <p>4. Zwrot pieniędzy: w ciągu <strong>14 dni</strong> od otrzymania oświadczenia, przy użyciu tej samej metody płatności.</p>
+      <p>5. Konsument ponosi bezpośrednie koszty zwrotu Towaru.</p>
+      <p>6. <strong>Prawo odstąpienia NIE przysługuje</strong> w przypadku:</p>
+      <ul>
+        <li>Towaru wykonanego według specyfikacji Konsumenta lub do jego osobistych potrzeb</li>
+        <li>Towaru, który po dostarczeniu, ze względu na swój charakter, zostaje nierozłącznie połączony z innymi rzeczami</li>
+        <li>Towarów wymagających specjalnego transportu (np. duże komponenty drona)</li>
+      </ul>
+
+      <h2 id="sec8">§ 8. Reklamacje i rękojmia</h2>
+      <p>1. Sprzedawca odpowiada za zgodność Towaru z umową na zasadach określonych w ustawie z 30 maja 2014 r. o prawach konsumenta (rękojmia konsumencka).</p>
+      <p>2. Termin rękojmi: <strong>2 lata</strong> od dostarczenia Towaru.</p>
+      <p>3. Reklamację można złożyć:</p>
+      <ul>
+        <li>email: <span class="placeholder">[EMAIL]</span></li>
+        <li>poczta: <span class="placeholder">[ADRES]</span></li>
+        <li>formularz reklamacyjny (dostępny na stronie)</li>
+      </ul>
+      <p>4. Reklamacja powinna zawierać:</p>
+      <ul>
+        <li>imię, nazwisko, adres email i telefon</li>
+        <li>numer zamówienia</li>
+        <li>opis wady i okoliczności jej powstania</li>
+        <li>żądanie Klienta (naprawa, wymiana, obniżenie ceny, odstąpienie)</li>
+      </ul>
+      <p>5. Sprzedawca rozpatruje reklamację w terminie <strong>14 dni</strong>. Brak odpowiedzi w tym terminie oznacza uznanie reklamacji za uzasadnioną.</p>
+
+      <h2 id="sec9">§ 9. Ochrona danych osobowych (RODO)</h2>
+      <p>1. Administratorem danych osobowych Klientów jest Sprzedawca (dane w § 1 pkt 2).</p>
+      <p>2. Szczegółowe zasady przetwarzania danych osobowych określa <a href="polityka-prywatnosci.html" style="color: var(--color-accent); text-decoration: underline;">Polityka Prywatności</a>.</p>
+      <p>3. Klient ma prawo do:</p>
+      <ul>
+        <li>dostępu do swoich danych</li>
+        <li>sprostowania danych</li>
+        <li>usunięcia danych ("prawo do bycia zapomnianym")</li>
+        <li>ograniczenia przetwarzania</li>
+        <li>przenoszenia danych</li>
+        <li>wniesienia sprzeciwu</li>
+        <li>wniesienia skargi do Prezesa UODO</li>
+      </ul>
+
+      <h2 id="sec10">§ 10. Pliki cookies</h2>
+      <p>1. Sklep wykorzystuje pliki cookies (ciasteczka) - małe pliki tekstowe zapisywane na urządzeniu Klienta.</p>
+      <p>2. Cookies używane są w celu:</p>
+      <ul>
+        <li>zapewnienia prawidłowego działania Sklepu (cookies niezbędne)</li>
+        <li>analizy ruchu i zachowań użytkowników (cookies analityczne - za zgodą)</li>
+        <li>personalizacji reklam (cookies marketingowe - za zgodą)</li>
+      </ul>
+      <p>3. Klient może w każdej chwili zmienić ustawienia cookies w swojej przeglądarce.</p>
+      <p>4. Szczegóły w <a href="polityka-cookies.html" style="color: var(--color-accent); text-decoration: underline;">Polityce Cookies</a>.</p>
+
+      <h2 id="sec11">§ 11. Pozasądowe rozstrzyganie sporów</h2>
+      <p>1. Konsument ma możliwość skorzystania z pozasądowych sposobów rozpatrywania reklamacji i dochodzenia roszczeń:</p>
+      <ul>
+        <li><strong>Mediacja</strong> przy Wojewódzkich Inspektoratach Inspekcji Handlowej</li>
+        <li><strong>Stałe polubowne sądy konsumenckie</strong> przy WIIH</li>
+        <li><strong>Rzecznicy konsumentów</strong> w urzędach miast/powiatów</li>
+        <li><strong>Platforma ODR</strong> (Online Dispute Resolution): <a href="https://ec.europa.eu/consumers/odr/" target="_blank" style="color: var(--color-accent); text-decoration: underline;">https://ec.europa.eu/consumers/odr/</a></li>
+      </ul>
+      <p>2. Skorzystanie z pozasądowych sposobów ma charakter dobrowolny.</p>
+
+      <h2 id="sec12">§ 12. Postanowienia końcowe</h2>
+      <p>1. W sprawach nieuregulowanych regulaminem zastosowanie mają przepisy prawa polskiego, w szczególności:</p>
+      <ul>
+        <li>Kodeks cywilny</li>
+        <li>Ustawa o prawach konsumenta z 30 maja 2014 r.</li>
+        <li>Ustawa o świadczeniu usług drogą elektroniczną z 18 lipca 2002 r.</li>
+        <li>RODO</li>
+        <li>Dyrektywa Omnibus</li>
+        <li>Akt o usługach cyfrowych (DSA)</li>
+      </ul>
+      <p>2. Sprzedawca zastrzega prawo do zmian regulaminu. Zmiany wchodzą w życie po 14 dniach od ich opublikowania.</p>
+      <p>3. Zmiany nie naruszają praw nabytych Klientów - zamówienia złożone przed zmianą regulaminu realizowane są na zasadach dotychczasowych.</p>
+      <p>4. W razie nieważności któregokolwiek z postanowień regulaminu, pozostałe postanowienia pozostają w mocy.</p>
+      <p>5. Wszelkie spory rozstrzygane są przez sąd właściwy dla siedziby Sprzedawcy (dla Klientów niebędących Konsumentami).</p>
+
+      <hr style="margin: 60px 0; border: none; border-top: 2px solid #1a1a1a;">
+
+      <h2>📎 ZAŁĄCZNIKI</h2>
+      <h3>Załącznik nr 1: Wzór formularza odstąpienia od umowy</h3>
+      <div style="background: #f5f5f5; padding: 30px; border-radius: 8px; margin: 20px 0; font-family: var(--font-mono); font-size: 14px;">
+        <p>Adresat: <span class="placeholder">[NAZWA FIRMY], ADRES, EMAIL]</span></p>
+        <br>
+        <p>Ja/My niżej podpisany/i .................................................<br>
+        niniejszym informuję/informujemy o moim/naszym odstąpieniu od umowy sprzedaży następujących rzeczy:</p>
+        <p>...................................................................................</p>
+        <p>Data zawarcia umowy / odbioru: ........................................</p>
+        <p>Imię i nazwisko Konsumenta: ............................................</p>
+        <p>Adres Konsumenta: ........................................................</p>
+        <p>Numer rachunku do zwrotu: ...............................................</p>
+        <p>Podpis (tylko jeśli formularz przesyłany w wersji papierowej): ........</p>
+        <p>Data: ...........................................................</p>
+      </div>
+
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer__inner">
     <div class="footer__bottom">
-      <span>© 2026 Drone Parts Hub. Wszelkie prawa zastrzeżone.</span>
-      <span><a href="regulamin.html" style="color:var(--color-text-muted);margin-right:12px;">Regulamin</a> <a href="polityka-prywatnosci.html" style="color:var(--color-text-muted);margin-right:12px;">Prywatność</a> <a href="zwroty-reklamacje.html" style="color:var(--color-text-muted);">Zwroty</a></span>
+      <span>© 2026 Drone Parts Hub. All Rights Reserved.</span>
+      <span>Made with 🛸 for agricultural professionals</span>
     </div>
     <div class="footer__disclaimer">
-      <p>Drone Parts Hub jest niezależnym sklepem z częściami zamiennymi do dronów rolniczych. Nazwy modeli T25, T10, T70P, D6000I są używane wyłącznie w celu identyfikacji kompatybilności produktów. Drone Parts Hub nie jest powiązany, sponsorowany ani autoryzowany przez producentów wymienionych dronów. Wszystkie znaki towarowe pozostają własnością ich prawowitych właścicieli.</p>
+      <p>Drone Parts Hub jest niezależnym sklepem z częściami zamiennymi do dronów rolniczych. Nazwy modeli T25, T50, T100 są używane wyłącznie w celu identyfikacji kompatybilności produktów. Drone Parts Hub nie jest powiązany, sponsorowany ani autoryzowany przez producentów wymienionych dronów. Wszystkie znaki towarowe pozostają własnością ich prawowitych właścicieli.</p>
     </div>
   </div>
 </footer>
 
+<!-- KOSZYK -->
 <div class="cart-drawer__overlay" onclick="closeCart()"></div>
 <div class="cart-drawer">
   <div class="cart-drawer__header">
-    <div class="cart-drawer__title">Koszyk</div>
-    <button class="cart-drawer__close" onclick="closeCart()">×</button>
+    <div class="cart-drawer__title" data-i18n="cart">Koszyk</div>
+    <div class="cart-drawer__close" onclick="closeCart()">×</div>
   </div>
   <div class="cart-drawer__body"></div>
   <div class="cart-drawer__footer" style="display:none;">
     <div class="cart-totals"></div>
-    <button class="cart-checkout" onclick="window.location.href='checkout.html'">Przejdź do kasy →</button>
-  </div>
-</div>
-
-<div id="orderModal" class="modal">
-  <div class="modal__inner">
-    <h3 class="modal__title">Złóż zamówienie</h3>
-    <form onsubmit="event.preventDefault();submitOrder(this);">
-      <div class="form-group"><label>Imię i nazwisko</label><input type="text" name="name" required></div>
-      <div class="form-group"><label>Telefon</label><input type="tel" name="phone" required></div>
-      <div class="form-group"><label>Email</label><input type="email" name="email" required></div>
-      <div class="form-group"><label>Adres dostawy</label><textarea name="address" required></textarea></div>
-      <div class="form-group"><label>Uwagi</label><textarea name="notes"></textarea></div>
-      <div class="form-actions">
-        <button type="button" class="btn btn--ghost" onclick="closeOrderModal()">Anuluj</button>
-        <button type="submit" class="btn btn--primary">Wyślij przez Telegram →</button>
-      </div>
-    </form>
+    <button class="cart-checkout" onclick="openOrderModal()" data-i18n="checkout">Złóż zamówienie</button>
   </div>
 </div>
 
 <script src="app.js"></script>
+
+<!-- Live Chat Widget -->
+<div id="liveChat" style="position:fixed;bottom:24px;right:24px;z-index:9000;">
+  <button onclick="openChatPopup()" style="
+    width:64px;height:64px;border-radius:50%;
+    background:linear-gradient(135deg,#0088cc,#006699);
+    border:3px solid white;
+    box-shadow:0 8px 30px rgba(0,136,204,0.5);
+    cursor:pointer;display:flex;align-items:center;justify-content:center;
+    font-size:30px;transition:all 0.3s;animation:pulseChat 2s infinite;
+  " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    💬
+  </button>
+</div>
+<div id="chatPopup" style="display:none;position:fixed;bottom:100px;right:24px;width:320px;background:#0a0a0a;border:1px solid var(--color-accent);border-radius:12px;padding:24px;z-index:9001;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+  <button onclick="document.getElementById('chatPopup').style.display='none'" style="position:absolute;top:8px;right:12px;background:transparent;border:none;color:white;font-size:24px;cursor:pointer;">×</button>
+  <div style="font-family:var(--font-display);font-size:24px;color:var(--color-accent);letter-spacing:0.05em;margin-bottom:8px;">💬 PISZ DO NAS</div>
+  <p style="color:rgba(255,255,255,0.85);font-size:14px;margin-bottom:20px;">Najszybciej odpowiemy na Telegramie!</p>
+  <a href="https://t.me/dji_agras_parts_bot" target="_blank" style="display:block;background:linear-gradient(135deg,#0088cc,#006699);color:white;text-align:center;padding:14px;border-radius:6px;text-decoration:none;font-weight:700;letter-spacing:0.05em;margin-bottom:8px;">✈️ Otwórz bota Telegram</a>
+  <a href="contact.html" style="display:block;text-align:center;color:var(--color-text-muted);font-size:13px;text-decoration:none;padding:8px;">Inne sposoby kontaktu →</a>
+</div>
+<style>
+@keyframes pulseChat { 0%,100%{box-shadow:0 8px 30px rgba(0,136,204,0.5);} 50%{box-shadow:0 8px 40px rgba(0,136,204,0.8);} }
+</style>
+<script>
+function openChatPopup(){var p=document.getElementById('chatPopup');p.style.display=p.style.display==='none'?'block':'none';}
+</script>
+<!-- /Live Chat -->
+
+<!-- Loading Spinner -->
+<div id="pageLoader" style="position:fixed;inset:0;background:#0a0a0a;z-index:99999;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s;">
+  <div style="text-align:center;">
+    <div style="width:60px;height:60px;border:4px solid rgba(200,160,50,0.2);border-top-color:#c8a032;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 20px;"></div>
+    <div style="font-family:'Bebas Neue',sans-serif;color:#c8a032;font-size:18px;letter-spacing:0.3em;">DRONE PARTS HUB</div>
+  </div>
+</div>
+<style>@keyframes spin{to{transform:rotate(360deg);}}</style>
+<script>
+function hidePageLoader(){
+  var loader=document.getElementById('pageLoader');
+  if(loader){loader.style.opacity='0';setTimeout(function(){loader.style.display='none';},500);}
+}
+// Multiple events to ensure loader hides
+document.addEventListener('DOMContentLoaded',function(){setTimeout(hidePageLoader,500);});
+window.addEventListener('load',hidePageLoader);
+// BACKUP - max 2 sekundy potem ZAWSZE schowaj loader (nawet jak coś zawiesi)
+setTimeout(hidePageLoader,2000);
+</script>
+<!-- /Loading -->
+
 </body>
 </html>

@@ -1,144 +1,102 @@
-# 🛸 Drone Parts Hub - Sklep części DJI Agras
+# Drone Parts Hub — dronepartshub.eu
 
-Sklep online z częściami zamiennymi do dronów rolniczych DJI Agras, zintegrowany z botem Telegram.
+Sklep z częściami zamiennymi do dronów rolniczych DJI Agras T25, T50, T100.
 
-🌐 **Strona:** [dronepartshub.eu](https://dronepartshub.eu)  
-🤖 **Bot Telegram:** [@dji_agras_parts_bot](https://t.me/dji_agras_parts_bot)
+## Stack
 
-## 📊 Baza części
+- **Hosting:** GitHub Pages (darmowy)
+- **Domena:** dronepartshub.eu
+- **Frontend:** czysty HTML/CSS/JS (bez frameworków)
+- **Baza:** `parts.json` — 758 części
+- **Multi-language:** PL / EN
+- **Multi-currency:** PLN / EUR / USD
+- **Bot Telegram:** @dji_agras_parts_bot (kanał zamówień)
 
-✅ **2 168 unikalnych części** w bazie  
-✅ Aktualizowana z bota Telegram (Twojego źródła)  
-✅ Multi-language: PL / UA / EN / IT  
-✅ Multi-currency: USD / PLN / EUR
-
-### 📦 Podział na modele:
-
-| Model | Liczba części |
-|-------|--------------:|
-| T25 | 1 034 |
-| T10 | 867 |
-| T70P | 155 |
-| D6000I | 112 |
-| **RAZEM** | **2 168** |
-
-## 📁 Struktura plików
-
-| Plik | Opis |
-|------|------|
-| `index.html` | Strona główna (landing) |
-| `catalog.html` | Katalog 2168 części z filtrami |
-| `product.html` | Szczegóły pojedynczego produktu |
-| `checkout.html` | Finalizacja zamówienia |
-| `cart.html` | Koszyk |
-| `contact.html` | Kontakt z firmą |
-| `about.html` | O firmie |
-| `hurt.html` | Oferta hurtowa B2B |
-| `rental.html` | Wynajem dronów |
-| `faq.html` | Najczęstsze pytania |
-| `blog.html` | Blog (3 artykuły SEO) |
-| `regulamin.html` | Regulamin sklepu |
-| `polityka-prywatnosci.html` | RODO |
-| `zwroty-reklamacje.html` | Polityka zwrotów |
-| `style.css` | Style (czarno-złoty motyw premium) |
-| `app.js` | Logika sklepu (koszyk, kursy, języki, filtry) |
-| `parts.json` | Baza 2168 części (eksport z bota Telegram) |
-| `sitemap.xml` | Sitemap dla Google |
-| `robots.txt` | Reguły dla crawlerów |
-
-## 🌟 Funkcjonalności
-
-✅ **Responsive** - desktop, tablet, mobile  
-✅ **Multi-language PL/UA/EN/IT** (jak w bocie)  
-✅ **Multi-currency USD/PLN/EUR** (kursy NBP +5% bufor)  
-✅ **Koszyk localStorage** (zostaje po zamknięciu)  
-✅ **Filtry** - po modelu, kategorii, wyszukiwarka SKU  
-✅ **Zamawianie** - przekierowanie do bota Telegram  
-✅ **Paginacja** - 24 części na stronie  
-✅ **Blog SEO** - 3 artykuły o tematyce dronów  
-✅ **Wynajem dronów** - osobna sekcja  
-✅ **B2B Hurt** - oferta dla operatorów  
-✅ **Live chat** - przycisk w prawym dolnym rogu
-
-## 🚀 Wdrożenie - GitHub Pages
-
-### Krok 1: Repo gotowe
-✅ Username: `wisnia923-commits`  
-✅ Repo: `dronepartshub-eu`
-
-### Krok 2: Wgraj wszystkie pliki
-Add file → Upload files → drag & drop → Commit
-
-### Krok 3: Włącz GitHub Pages
-Settings → Pages → Source: main / root → Save
-
-### Krok 4: Test pod adresem
-```
-https://wisnia923-commits.github.io/dronepartshub-eu/
-```
-
-### Krok 5: Custom domain (po DNS)
-Settings → Pages → Custom domain → `dronepartshub.eu`
-
-## 🌍 Konfiguracja DNS dla dronepartshub.eu
-
-W panelu AfterMarket.pl ustaw rekordy:
+## Struktura plików
 
 ```
-A     @       185.199.108.153
-A     @       185.199.109.153
-A     @       185.199.110.153
-A     @       185.199.111.153
-CNAME www     wisnia923-commits.github.io.
+/
+├── index.html              # Strona główna
+├── catalog.html            # Katalog z filtrami
+├── product.html            # Szczegóły części (?sku=XXX)
+├── checkout.html           # Finalizacja zamówienia
+├── contact.html            # Kontakt
+├── about.html              # O firmie
+├── hurt.html               # Hurt B2B
+├── rental.html             # Wynajem T50
+├── faq.html                # FAQ
+├── blog.html               # Blog
+├── blog-jak-wybrac-baterie.html
+├── blog-przepisy-2026.html
+├── blog-kupic-czy-wynajac.html
+├── regulamin.html
+├── polityka-prywatnosci.html
+├── zwroty-reklamacje.html
+├── INSTRUKCJA-google-analytics.html
+│
+├── style.css               # Style (czarno-złoty, #c8a032)
+├── app.js                  # Logika (koszyk, filtry, multi-lang, kursy)
+├── parts.json              # 758 części (PL/UA/EN nazwy + ceny USD)
+│
+├── sitemap.xml             # SEO
+├── robots.txt              # SEO
+├── CNAME                   # GitHub Pages custom domain
+└── README.md               # Ten plik
 ```
 
-⚠️ **PAMIĘTAJ:** Kropka na końcu CNAME jest wymagana w AfterMarket!
+## Deploy na GitHub Pages
 
-## 🔄 Aktualizacja produktów (regularne)
+1. Wgraj wszystkie pliki do repo `wisnia923-commits/dronepartshub-eu` (główny katalog)
+2. Settings → Pages → Source: `Deploy from a branch` / Branch: `main` / Folder: `/ (root)` → Save
+3. Settings → Pages → Custom domain: `dronepartshub.eu` → Save
+4. ✅ Plik `CNAME` w repo już zawiera tę domenę
+5. W AfterMarket.pl ustaw rekordy DNS:
+   ```
+   A     @     185.199.108.153
+   A     @     185.199.109.153
+   A     @     185.199.110.153
+   A     @     185.199.111.153
+   CNAME www   wisnia923-commits.github.io.
+   ```
+6. Czekaj 30 min – 24h na propagację DNS
+7. W Settings → Pages zaznacz „Enforce HTTPS"
 
-Gdy dodasz nowe części przez bota:
+## Aktualizacja bazy części
 
-1. W bocie: 📥 Export to JSON (lub CSV)
-2. Pobierz świeży `parts.json`
-3. W repo GitHub: edytuj `parts.json` → Commit
-4. Strona automatycznie się aktualizuje (~30 sek)
+Edytuj `parts.json` w GitHub (Edit → wklej nowe → Commit) — strona automatycznie się odświeży po ~1 min.
 
-## 🛒 Flow zamówienia
-
+Struktura rekordu:
+```json
+{
+  "id": 1,
+  "model": "T100",
+  "kategoria_pl": "Przyciski i pokrętła",
+  "kategoria_en": "Buttons & Dials",
+  "kategoria_ua": "Кнопки",
+  "nazwa_pl": "Przycisk migawki",
+  "nazwa_en": "Shutter Button",
+  "nazwa_ua": "Кнопка затвору",
+  "numer_katalogowy": "YC.JG.ZS001730",
+  "cena_usd": 1.07,
+  "stan_magazynowy": 0,
+  "opis_pl": "...",
+  "opis_en": "...",
+  "opis_ua": "...",
+  "zdjecie_url": "https://..."
+}
 ```
-Klient → strona → koszyk → "Złóż zamówienie"
-   ↓
-formularz (imię, adres, kontakt)
-   ↓
-"Wyślij przez Telegram" → bot otwiera się
-   ↓
-zamówienie kopiowane do schowka klienta
-   ↓
-klient wkleja w czacie z botem
-   ↓
-TY widzisz w panelu admina bota
-```
 
-## ⚙️ Konfiguracja przed wdrożeniem
+## Co jeszcze do zrobienia
 
-### W `app.js` linia 13:
-```js
-TELEGRAM_BOT: 'https://t.me/dji_agras_parts_bot',
-```
+- [ ] Dodać zdjęcia hero (folder `/images/`): `kv.jpg`, `Two_Drone_KV_PC.jpg`, `T100_Lychee.jpg`
+- [ ] Uzupełnić dane firmy w `regulamin.html` ([DANE FIRMY], [TWÓJ NIP])
+- [ ] Uzupełnić numer telefonu w `contact.html`
+- [ ] Wkleić ID Google Analytics 4 (instrukcja w `INSTRUKCJA-google-analytics.html`)
+- [ ] Zgłosić sitemap.xml w Google Search Console
 
-### W `index.html`, `catalog.html`, `contact.html`:
-- Email: `contact@dronepartshub.eu`
-- Telefon: `+48 ___ ___ ___` → Twój numer
-- Dane firmy: NIP, adres (w `regulamin.html`)
+## Bot Telegram
 
-## 📊 Google Analytics
-
-Patrz: `INSTRUKCJA-google-analytics.html` - krok po kroku.
-
-## 📞 Wsparcie
-
-Bot Telegram: [@dji_agras_parts_bot](https://t.me/dji_agras_parts_bot)
+`@dji_agras_parts_bot` — checkout strony kopiuje zamówienie do schowka i otwiera bota, klient wkleja → Ty potwierdzasz cenę i wysyłkę.
 
 ---
-
-**© 2026 Drone Parts Hub** · Sklep części DJI Agras · PL · EU · UA
+**Stack: lekki, szybki, ~50 zł/rok (sama domena). Hosting i SSL gratis na GitHub Pages.**

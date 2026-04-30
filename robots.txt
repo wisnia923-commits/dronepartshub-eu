@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /checkout.html
-Disallow: /product.html
-Disallow: /*.json$
 
 Sitemap: https://dronepartshub.eu/sitemap.xml
