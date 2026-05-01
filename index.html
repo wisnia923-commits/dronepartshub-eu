@@ -4,25 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drone Parts Hub — Spare Parts compatible with Agras T25 / T50 / T100</title>
-  <meta name="description" content="Sklep z częściami zamiennymi do dronów rolniczych Agras T25, T50, T100. 758 części w katalogu, dostawa w UE.">
+  <meta name="description" content="Sklep z częściami zamiennymi do dronów rolniczych Agras T25, T50, T100. 1537 części w katalogu, dostawa w UE.">
   <meta name="keywords" content="części dji agras, t100, t50, t25, drony rolnicze, baterie dron, wynajem drona, oprysk">
   <meta name="author" content="Drone Parts Hub">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dronepartshub.eu/index.html">
+  <meta property="og:url" content="https://droneparts.pl/index.html">
   <meta property="og:title" content="Drone Parts Hub - Części do dronów rolniczych T25, T50, T100">
-  <meta property="og:description" content="Sklep z 758 częściami zamiennymi do dronów rolniczych DJI Agras T25, T50, T100. Bot Telegram, wsparcie PL/UA/EN, wynajem T50.">
-  <meta property="og:image" content="https://dronepartshub.eu/images/hero-drones.jpg">
+  <meta property="og:description" content="Sklep z 1537 częściami zamiennymi do dronów rolniczych DJI Agras T25, T50, T100. Bot Telegram, wsparcie PL/UA/EN, wynajem T50.">
+  <meta property="og:image" content="https://droneparts.pl/images/hero-drones.jpg">
   <meta property="og:locale" content="pl_PL">
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Drone Parts Hub - Części do dronów rolniczych T25, T50, T100">
-  <meta name="twitter:description" content="Sklep z 758 częściami zamiennymi do dronów rolniczych DJI Agras T25, T50, T100. Bot Telegram, wsparcie PL/UA/EN, wynajem T50.">
-  <meta name="twitter:image" content="https://dronepartshub.eu/images/hero-drones.jpg">
+  <meta name="twitter:description" content="Sklep z 1537 częściami zamiennymi do dronów rolniczych DJI Agras T25, T50, T100. Bot Telegram, wsparcie PL/UA/EN, wynajem T50.">
+  <meta name="twitter:image" content="https://droneparts.pl/images/hero-drones.jpg">
   
-  <link rel="canonical" href="https://dronepartshub.eu/index.html">
+  <link rel="canonical" href="https://droneparts.pl/index.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -70,7 +70,7 @@
       </h1>
       <p class="hero__sub">
         Części zamienne pasujące do dronów rolniczych T25, T50 i T100. Pełen katalog z numerami referencyjnymi.
-        Pełen katalog 758 pozycji z dostawą w całej UE.
+        Pełen katalog 1537 pozycji z dostawą w całej UE.
       </p>
       <div class="hero__actions">
         <a href="catalog.html" class="btn btn--primary">
@@ -82,7 +82,7 @@
       </div>
       <div class="hero__stats">
         <div class="hero__stat">
-          <div class="hero__stat-num">758</div>
+          <div class="hero__stat-num">1537</div>
           <div class="hero__stat-label">Części w magazynie</div>
         </div>
         <div class="hero__stat">
@@ -180,14 +180,37 @@
     </div>
     
     <div style="text-align:center;margin-top:48px;">
-      <a href="catalog.html" class="btn btn--ghost">📦 Zobacz cały katalog (758 części) →</a>
+      <a href="catalog.html" class="btn btn--ghost">📦 Zobacz cały katalog (1537 części) →</a>
     </div>
   </div>
 </section>
 
 <script>
+// ─── KURS WALUTOWY (NBP) ──────────────────────────────────────────────
+// Domyślnie: aktualny kurs NBP USD/PLN tabela A
+// Próbujemy załadować rates.json (świeższy kurs) - fallback na hardcoded
+let USD_TO_PLN = 3.6460;  // NBP tabela 083/A/NBP/2026 z dnia 2026-04-30
+let RATES_DATE = '2026-04-30';
+
+async function loadRates() {
+  try {
+    const res = await fetch('rates.json?t=' + Date.now());
+    if (res.ok) {
+      const r = await res.json();
+      if (r.usd_pln && r.usd_pln > 1.0) {
+        USD_TO_PLN = r.usd_pln;
+        RATES_DATE = r.date || RATES_DATE;
+        console.log('✅ Kurs NBP załadowany:', r);
+      }
+    }
+  } catch (e) {
+    console.warn('⚠️ rates.json niedostępny, używam fallback:', USD_TO_PLN);
+  }
+}
+
 async function loadBestsellers() {
   console.log('🔥 Ładowanie bestsellerów...');
+  await loadRates();  // pobierz świeży kurs PRZED renderowaniem cen
   try {
     const res = await fetch('parts.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -205,7 +228,7 @@ async function loadBestsellers() {
     const html = bestsellers.map((p, i) => {
       const name = p[`nazwa_${lang}`] || p.nazwa_en;
       const cat = p[`kategoria_${lang}`] || p.kategoria_en;
-      const price_pln = (p.cena_usd * 4.20 * 1.05).toFixed(2);
+      const price_pln = (p.cena_usd * USD_TO_PLN).toFixed(2);
       
       return `
         <div class="product-card" onclick="window.location.href='product.html?id=${p.id}'" style="position:relative;">
@@ -514,7 +537,7 @@ document.addEventListener('DOMContentLoaded', () => {
           Od lat dostarczamy części zamienne dla rolników i operatorów dronów rolniczych w całej Europie.
         </p>
         <p style="font-size:18px;line-height:1.7;color:rgba(255,255,255,0.7);margin-bottom:32px;">
-          Specjalizujemy się w modelach T25, T50 i T100 - 758 części dostępnych od ręki, z numerami referencyjnymi ułatwiającymi identyfikację.
+          Specjalizujemy się w modelach T25, T50 i T100 - 1537 części dostępnych od ręki, z numerami referencyjnymi ułatwiającymi identyfikację.
         </p>
         <a href="contact.html" class="btn btn--primary">
           Kontakt
