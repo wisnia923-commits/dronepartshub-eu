@@ -11,18 +11,18 @@
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dronepartshub.eu/rental.html">
+  <meta property="og:url" content="https://droneparts.pl/rental.html">
   <meta property="og:title" content="Wynajem DJI Agras T50 - 500 EUR/dobę z mikserem | Drone Parts Hub">
   <meta property="og:description" content="Wynajem drona rolniczego DJI Agras T50 od 500 EUR/dobę. 3 miksery (200L/300L/500L). Pełen serwis i ubezpieczenie.">
-  <meta property="og:image" content="https://dronepartshub.eu/images/rental-hero.jpg">
+  <meta property="og:image" content="https://droneparts.pl/images/rental-hero.jpg">
   <meta property="og:locale" content="pl_PL">
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Wynajem DJI Agras T50 - 500 EUR/dobę z mikserem | Drone Parts Hub">
   <meta name="twitter:description" content="Wynajem drona rolniczego DJI Agras T50 od 500 EUR/dobę. 3 miksery (200L/300L/500L). Pełen serwis i ubezpieczenie.">
-  <meta name="twitter:image" content="https://dronepartshub.eu/images/rental-hero.jpg">
+  <meta name="twitter:image" content="https://droneparts.pl/images/rental-hero.jpg">
   
-  <link rel="canonical" href="https://dronepartshub.eu/rental.html">
+  <link rel="canonical" href="https://droneparts.pl/rental.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -121,6 +121,47 @@
       font-size: 14px;
       color: var(--color-text-muted);
       line-height: 1.6;
+    }
+
+    /* Zdjęcie miksera (placeholder + img) */
+    .mixer-photo {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      margin-bottom: 16px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #0a0a0a;
+      border: 1px solid var(--color-line);
+      position: relative;
+    }
+    .mixer-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .mixer-photo__placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+      color: var(--color-accent);
+    }
+    .mixer-photo__placeholder span {
+      font-family: var(--font-display);
+      font-size: 64px;
+      letter-spacing: 0.05em;
+      line-height: 1;
+    }
+    .mixer-photo__placeholder small {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--color-text-muted);
+      letter-spacing: 0.05em;
     }
 
     /* Cennik */
@@ -461,22 +502,44 @@
       </div>
 
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+
+        <!-- ============ MIKSER 200 L ============ -->
         <div class="kit-card" style="text-align:center;">
-          <div style="font-size:48px;margin-bottom:16px;">🪣</div>
+          <div class="mixer-photo">
+            <img src="images/mixer-200l.jpg" alt="Mikser do oprysków 200 litrów" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="mixer-photo__placeholder" style="display:none;">
+              <span>200L</span>
+              <small>wgraj: images/mixer-200l.jpg</small>
+            </div>
+          </div>
           <h3 class="kit-card__title">Mikser 200 L</h3>
           <p class="kit-card__desc" style="margin-bottom:16px;">Mały - idealny dla mniejszych areałów lub krótkich zabiegów.</p>
           <div style="font-family:var(--font-display);font-size:36px;color:var(--color-accent);">100 EUR<span style="font-size:14px;color:var(--color-text-muted);"> / dzień</span></div>
         </div>
 
+        <!-- ============ MIKSER 300 L ============ -->
         <div class="kit-card" style="text-align:center;border-color:var(--color-accent);background:linear-gradient(180deg,rgba(200,160,50,0.08) 0%,#0a0a0a 100%);">
-          <div style="font-size:48px;margin-bottom:16px;">🪣</div>
+          <div class="mixer-photo">
+            <img src="images/mixer-300l.jpg" alt="Mikser do oprysków 300 litrów" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="mixer-photo__placeholder" style="display:none;">
+              <span>300L</span>
+              <small>wgraj: images/mixer-300l.jpg</small>
+            </div>
+          </div>
           <h3 class="kit-card__title">Mikser 300 L</h3>
           <p class="kit-card__desc" style="margin-bottom:16px;"><strong style="color:var(--color-accent);">Najpopularniejszy wybór</strong> - złoty środek dla większości operacji.</p>
           <div style="font-family:var(--font-display);font-size:36px;color:var(--color-accent);">150 EUR<span style="font-size:14px;color:var(--color-text-muted);"> / dzień</span></div>
         </div>
 
+        <!-- ============ MIKSER 500 L ============ -->
         <div class="kit-card" style="text-align:center;">
-          <div style="font-size:48px;margin-bottom:16px;">🪣</div>
+          <div class="mixer-photo">
+            <img src="images/mixer-500l.jpg" alt="Mikser do oprysków 500 litrów" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="mixer-photo__placeholder" style="display:none;">
+              <span>500L</span>
+              <small>wgraj: images/mixer-500l.jpg</small>
+            </div>
+          </div>
           <h3 class="kit-card__title">Mikser 500 L</h3>
           <p class="kit-card__desc" style="margin-bottom:16px;">Duży - dla intensywnych prac na dużych areałach bez przerw.</p>
           <div style="font-family:var(--font-display);font-size:36px;color:var(--color-accent);">250 EUR<span style="font-size:14px;color:var(--color-text-muted);"> / dzień</span></div>
