@@ -1095,8 +1095,8 @@ function showLangNotice() {
     notice.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:#c8a032;color:black;padding:10px 20px;border-radius:6px;z-index:8000;box-shadow:0 4px 20px rgba(0,0,0,0.3);font-size:13px;font-weight:600;display:flex;align-items:center;gap:12px;max-width:90%;';
     
     const msg = STATE.lang === 'ua' 
-      ? '⚠️ Текст цієї сторінки доступний лише польською. Зв\\'яжіться з нами через Telegram для допомоги.'
-      : '⚠️ Full content of this page available only in Polish. Contact us via Telegram for assistance.';
+      ? "⚠️ Текст цієї сторінки доступний лише польською. Зв'яжіться з нами через Telegram для допомоги."
+      : "⚠️ Full content of this page available only in Polish. Contact us via Telegram for assistance.";
     
     notice.innerHTML = `
       <span>${msg}</span>
