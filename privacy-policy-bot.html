@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- Google Consent Mode v2 - MUSI BYĆ PRZED GTM                    -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'granted',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+      'wait_for_update': 500,
+      'region': ['PL', 'EU', 'UA']
+    });
+    try {
+      var savedConsent = localStorage.getItem('cookie_consent');
+      if (savedConsent === 'accepted_all') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted',
+          'personalization_storage': 'granted'
+        });
+      } else if (savedConsent === 'essential_only') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
+    } catch(e) {}
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T4DPZ6SZ');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+
+  <title>Polityka prywatności bota Telegram — DronePartsHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .legal-page { padding-top: 120px; padding-bottom: 80px; background: #f8f8f8; color: #1a1a1a; min-height: 100vh; }
+    .legal-container { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+    .legal-header { text-align: center; margin-bottom: 60px; }
+    .legal-header h1 { font-family: var(--font-display); font-size: clamp(40px, 5vw, 64px); margin-bottom: 16px; color: #1a1a1a; }
+    .legal-header p { color: #666; font-size: 16px; }
+    .legal-content { background: white; padding: 60px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .legal-content h2 { font-family: var(--font-display); font-size: 28px; margin: 40px 0 16px; color: #1a1a1a; letter-spacing: 0.02em; }
+    .legal-content h2:first-child { margin-top: 0; }
+    .legal-content h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; color: #1a1a1a; }
+    .legal-content p, .legal-content li { font-size: 15px; line-height: 1.8; color: #333; margin-bottom: 12px; }
+    .legal-content ul, .legal-content ol { padding-left: 24px; margin-bottom: 16px; }
+    .legal-content strong { color: #1a1a1a; font-weight: 600; }
+    .legal-content a { color: #c8a032; text-decoration: none; }
+    .legal-content a:hover { text-decoration: underline; }
+    .info-box { background: #fef9e7; border-left: 4px solid #f4c842; padding: 20px 24px; margin: 24px 0; border-radius: 4px; }
+    .info-box strong { color: #1a1a1a; }
+    .toc { background: #f0f0f0; padding: 24px 32px; border-radius: 8px; margin-bottom: 40px; }
+    .toc h3 { margin-top: 0; }
+    .toc ol { margin-bottom: 0; }
+    .toc a { color: #c8a032; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
+    .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .data-table th, .data-table td { padding: 10px 12px; text-align: left; border: 1px solid #e0e0e0; }
+    .data-table th { background: #f4c842; color: #1a1a1a; font-weight: 600; }
+  </style>
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- SEO META TAGS — DronePartsHub.eu                                -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <meta name="description" content="Polityka prywatności bota Telegram @agras_spare_parts_bot. RODO, dane, integracja Gemini AI.">
+  <meta name="keywords" content="DJI Agras T25P, DJI Agras T50, DJI Agras T100, części DJI Agras, akumulator DB800, DB1560, DB2160, silnik agras, dysza XR110, części zamienne dron rolniczy, drone parts hub">
+  <meta name="author" content="Drone Parts Hub">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <meta name="theme-color" content="#c8a032">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Geo / Language -->
+  <meta name="geo.region" content="EU">
+  <meta name="language" content="pl">
+  <meta http-equiv="content-language" content="pl-PL">
+
+  <!-- Hreflang (4 języki) -->
+  <link rel="alternate" hreflang="pl" href="https://dronepartshub.eu/privacy-policy-bot.html?lang=pl">
+  <link rel="alternate" hreflang="en" href="https://dronepartshub.eu/privacy-policy-bot.html?lang=en">
+  <link rel="alternate" hreflang="uk" href="https://dronepartshub.eu/privacy-policy-bot.html?lang=ua">
+  <link rel="alternate" hreflang="zh" href="https://dronepartshub.eu/privacy-policy-bot.html?lang=cn">
+  <link rel="alternate" hreflang="x-default" href="https://dronepartshub.eu/privacy-policy-bot.html">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://dronepartshub.eu/privacy-policy-bot.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Drone Parts Hub">
+  <meta property="og:title" content="Polityka prywatności bota Telegram — DronePartsHub">
+  <meta property="og:description" content="Polityka prywatności bota Telegram @agras_spare_parts_bot. RODO, dane, integracja Gemini AI.">
+  <meta property="og:url" content="https://dronepartshub.eu/privacy-policy-bot.html">
+  <meta property="og:image" content="https://dronepartshub.eu/images/hero-drones.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Drone Parts Hub - części DJI Agras">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="uk_UA">
+  <meta property="og:locale:alternate" content="zh_CN">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Polityka prywatności bota Telegram — DronePartsHub">
+  <meta name="twitter:description" content="Polityka prywatności bota Telegram @agras_spare_parts_bot. RODO, dane, integracja Gemini AI.">
+  <meta name="twitter:image" content="https://dronepartshub.eu/images/hero-drones.jpg">
+
+  <!-- Performance -->
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+
+  <!-- Search Console verification (PODMIEŃ po założeniu konta) -->
+  <meta name="google-site-verification" content="WSTAW-TU-KOD-Z-SEARCH-CONSOLE">
+
+  <!-- JSON-LD: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://dronepartshub.eu/#website",
+    "url": "https://dronepartshub.eu",
+    "name": "Drone Parts Hub",
+    "description": "Sklep części DJI Agras T25P/T50/T100",
+    "inLanguage": ["pl-PL", "en-US", "uk-UA", "zh-CN"],
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://dronepartshub.eu/catalog.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Strona główna",
+        "item": "https://dronepartshub.eu/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Polityka bota",
+        "item": "https://dronepartshub.eu/privacy-policy-bot.html"
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4DPZ6SZ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">DRONE<span>PARTS</span> HUB</a>
+    <ul class="nav__menu">
+      <li><a href="index.html" data-i18n="nav_home">Start</a></li>
+      <li><a href="catalog.html" data-i18n="nav_parts">Części</a></li>
+      <li><a href="rental.html"><span style="margin-right:4px;">🚁</span><span data-i18n="nav_rental">Wynajem</span></a></li>
+      <li><a href="index.html#drones" data-i18n="nav_drones">Drony</a></li>
+      <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="nav__lang" onclick="toggleLang()">PL</button>
+      <a class="nav__cart" onclick="openCart()">
+        🛒 <span data-i18n="cart">Koszyk</span>
+        <span class="nav__cart-count">0</span>
+      </a>
+      <a href="https://t.me/agras_spare_parts_bot" target="_blank" class="nav__telegram">
+        ✈️ Telegram
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="legal-page">
+  <div class="legal-container">
+    <div class="legal-header">
+      <h1 data-bot-i18n="title">Polityka prywatności bota Telegram</h1>
+      <p data-bot-i18n="subtitle">@agras_spare_parts_bot • Aktualizacja: 01.05.2026</p>
+    </div>
+
+    <div class="legal-content">
+
+      <!-- ─── PL ─── -->
+      <div class="lang-section active" data-bot-lang="pl">
+
+        <div class="toc">
+          <h3>📑 Spis treści</h3>
+          <ol>
+            <li><a href="#admin">Kto jest administratorem</a></li>
+            <li><a href="#dane">Jakie dane zbiera bot</a></li>
+            <li><a href="#cele">Cele przetwarzania</a></li>
+            <li><a href="#gemini">Google Gemini AI</a></li>
+            <li><a href="#przechowywanie">Jak długo przechowujemy dane</a></li>
+            <li><a href="#prawa">Twoje prawa (RODO)</a></li>
+            <li><a href="#wyrejestrowanie">Jak przestać używać bota</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ol>
+        </div>
+
+        <h2 id="admin">1. Kto jest administratorem danych</h2>
+        <p>Administratorem danych przetwarzanych przez bota Telegram <strong>@agras_spare_parts_bot</strong> jest <strong>Drone Parts Hub</strong> — sklep internetowy z częściami zamiennymi do dronów rolniczych DJI Agras.</p>
+        <p><strong>Strona:</strong> <a href="https://dronepartshub.eu">dronepartshub.eu</a><br>
+           <strong>E-mail kontaktowy:</strong> <a href="mailto:dronepartshub@gmail.com">dronepartshub@gmail.com</a></p>
+
+        <h2 id="dane">2. Jakie dane zbiera bot</h2>
+        <p>Bot Telegram <strong>@agras_spare_parts_bot</strong> przetwarza minimalny zakres danych potrzebny do świadczenia usługi wyszukiwania części:</p>
+
+        <table class="data-table">
+          <thead>
+            <tr><th>Rodzaj danych</th><th>Cel</th><th>Czy przechowujemy?</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>ID użytkownika Telegrama</td><td>Identyfikacja sesji, wybór języka</td><td>Tylko w pamięci procesu (znika po restarcie)</td></tr>
+            <tr><td>Username (jeśli ustawiony)</td><td>Logowanie zdarzeń (debug)</td><td>Tylko w logach serwera (max 30 dni)</td></tr>
+            <tr><td>Kod języka (np. „pl", „uk")</td><td>Auto-wybór języka odpowiedzi</td><td>W pamięci procesu</td></tr>
+            <tr><td>Treść wiadomości</td><td>Wyszukanie części lub zapytanie do AI</td><td>Nie zapisujemy. Przetwarzane natychmiast.</td></tr>
+            <tr><td>Treść wiadomości → Gemini</td><td>Generowanie odpowiedzi AI</td><td>Patrz <a href="#gemini">sekcja 4</a></td></tr>
+          </tbody>
+        </table>
+
+        <div class="info-box">
+          <strong>📌 Ważne:</strong> Bot <strong>nie zbiera</strong> Twojego numeru telefonu, e-maila ani zdjęcia profilowego. Nie wymagamy logowania ani rejestracji. Nie używamy plików cookies (bot nie ma stron WWW).
+        </div>
+
+        <h2 id="cele">3. Cele przetwarzania</h2>
+        <p>Twoje dane przetwarzamy wyłącznie w celu:</p>
+        <ul>
+          <li>Wyszukiwania części w bazie sklepu</li>
+          <li>Tłumaczenia komunikatów na Twój język</li>
+          <li>Odpowiadania na pytania przez AI doradcę (Gemini)</li>
+          <li>Zapewnienia stabilności usługi (logi diagnostyczne)</li>
+        </ul>
+        <p><strong>Podstawa prawna:</strong> art. 6 ust. 1 lit. f RODO — uzasadniony interes administratora (świadczenie zamówionej usługi).</p>
+
+        <h2 id="gemini">4. Google Gemini AI</h2>
+        <p>Gdy zadajesz bocie pytanie wymagające odpowiedzi AI (np. „mój dron T50 spadł, co kupić?"), treść Twojej wiadomości wraz z fragmentem katalogu części jest wysyłana do <strong>Google Gemini API</strong> w celu wygenerowania odpowiedzi.</p>
+        <p>Google jako odrębny administrator może przetwarzać te dane zgodnie ze swoją polityką prywatności:</p>
+        <ul>
+          <li><a href="https://ai.google.dev/gemini-api/terms" target="_blank">Gemini API Terms of Service</a></li>
+          <li><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+        </ul>
+        <p><strong>Nie wysyłamy do Gemini:</strong> Twojego ID Telegrama, username ani innych danych umożliwiających Cię zidentyfikować. Wysyłamy <em>tylko</em> treść Twojej wiadomości.</p>
+
+        <h2 id="przechowywanie">5. Jak długo przechowujemy dane</h2>
+        <ul>
+          <li><strong>ID i język</strong> — w pamięci RAM bota. Znika po restarcie serwera (kilka razy w miesiącu).</li>
+          <li><strong>Treść wiadomości</strong> — nie zapisujemy. Po wygenerowaniu odpowiedzi dane są kasowane z pamięci.</li>
+          <li><strong>Logi serwera</strong> — automatycznie kasowane po max 30 dniach (dostawca hostingu Railway).</li>
+        </ul>
+
+        <h2 id="prawa">6. Twoje prawa (RODO)</h2>
+        <p>Zgodnie z RODO przysługuje Ci prawo do:</p>
+        <ul>
+          <li><strong>Dostępu</strong> do swoich danych</li>
+          <li><strong>Sprostowania</strong> nieprawidłowych danych</li>
+          <li><strong>Usunięcia</strong> danych („prawo do bycia zapomnianym")</li>
+          <li><strong>Ograniczenia</strong> przetwarzania</li>
+          <li><strong>Sprzeciwu</strong> wobec przetwarzania</li>
+          <li><strong>Wniesienia skargi</strong> do Prezesa UODO</li>
+        </ul>
+        <p>Aby zrealizować swoje prawa — napisz do nas na <a href="mailto:dronepartshub@gmail.com">dronepartshub@gmail.com</a>.</p>
+
+        <h2 id="wyrejestrowanie">7. Jak przestać używać bota</h2>
+        <p>W każdej chwili możesz przestać używać bota:</p>
+        <ol>
+          <li>Otwórz czat z <strong>@agras_spare_parts_bot</strong> w Telegramie</li>
+          <li>Kliknij menu (☰ lub ⋮) → <strong>Block bot</strong> / <strong>Zablokuj bota</strong></li>
+          <li>Bot przestanie odpowiadać, a Twoje dane sesji zostaną automatycznie usunięte</li>
+        </ol>
+        <p>Możesz też wysłać komendę <code>/stop</code> — bot ją obsłuży w przyszłej wersji.</p>
+
+        <h2 id="kontakt">8. Kontakt</h2>
+        <p>W sprawach związanych z prywatnością bota:</p>
+        <ul>
+          <li>📧 E-mail: <a href="mailto:dronepartshub@gmail.com">dronepartshub@gmail.com</a></li>
+          <li>🌐 Strona: <a href="https://dronepartshub.eu">dronepartshub.eu</a></li>
+          <li>✈️ Telegram: <a href="https://t.me/agras_spare_parts_bot">@agras_spare_parts_bot</a></li>
+        </ul>
+
+        <p style="margin-top:40px;color:#666;font-size:13px;">Niniejsza polityka dotyczy wyłącznie bota Telegram. Polityka prywatności sklepu dronepartshub.eu znajduje się na <a href="polityka-prywatnosci.html">osobnej stronie</a>.</p>
+
+      </div>
+
+      <!-- ─── EN ─── -->
+      <div class="lang-section" data-bot-lang="en">
+
+        <div class="toc">
+          <h3>📑 Table of contents</h3>
+          <ol>
+            <li><a href="#admin-en">Data administrator</a></li>
+            <li><a href="#data-en">What data the bot collects</a></li>
+            <li><a href="#purposes-en">Processing purposes</a></li>
+            <li><a href="#gemini-en">Google Gemini AI</a></li>
+            <li><a href="#retention-en">Data retention</a></li>
+            <li><a href="#rights-en">Your rights (GDPR)</a></li>
+            <li><a href="#optout-en">How to stop using the bot</a></li>
+            <li><a href="#contact-en">Contact</a></li>
+          </ol>
+        </div>
+
+        <h2 id="admin-en">1. Data administrator</h2>
+        <p>The administrator of data processed by the Telegram bot <strong>@agras_spare_parts_bot</strong> is <strong>Drone Parts Hub</strong> — an online shop selling spare parts for DJI Agras agricultural drones.</p>
+        <p><strong>Website:</strong> <a href="https://dronepartshub.eu">dronepartshub.eu</a><br>
+           <strong>Contact e-mail:</strong> <a href="mailto:dronepartshub@gmail.com">dronepartshub@gmail.com</a></p>
+
+        <h2 id="data-en">2. What data the bot collects</h2>
+        <p>The Telegram bot <strong>@agras_spare_parts_bot</strong> processes the minimum data needed to provide parts search service:</p>
+
+        <table class="data-table">
+          <thead>
+            <tr><th>Data type</th><th>Purpose</th><th>Stored?</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Telegram user ID</td><td>Session identification, language preference</td><td>In-memory only (lost on restart)</td></tr>
+            <tr><td>Username (if set)</td><td>Event logging (debug)</td><td>Server logs only (max 30 days)</td></tr>
+            <tr><td>Language code (e.g. "en", "pl")</td><td>Auto-select reply language</td><td>In-memory</td></tr>
+            <tr><td>Message content</td><td>Search parts or AI query</td><td>Not stored. Processed instantly.</td></tr>
+            <tr><td>Message → Gemini</td><td>AI response generation</td><td>See <a href="#gemini-en">section 4</a></td></tr>
+          </tbody>
+        </table>
+
+        <div class="info-box">
+          <strong>📌 Important:</strong> The bot <strong>does not collect</strong> your phone number, email, or profile picture. No login or registration required. We don't use cookies (bot has no website).
+        </div>
+
+        <h2 id="purposes-en">3. Processing purposes</h2>
+        <p>We process your data solely for:</p>
+        <ul>
+          <li>Searching parts in the shop database</li>
+          <li>Translating messages to your language</li>
+          <li>Answering questions via AI advisor (Gemini)</li>
+          <li>Service stability (diagnostic logs)</li>
+        </ul>
+        <p><strong>Legal basis:</strong> GDPR Art. 6(1)(f) — legitimate interest of the administrator (providing the requested service).</p>
+
+        <h2 id="gemini-en">4. Google Gemini AI</h2>
+        <p>When you ask the bot a question requiring an AI response (e.g. "my T50 crashed, what to buy?"), your message along with a parts catalog excerpt is sent to <strong>Google Gemini API</strong> for response generation.</p>
+        <p>Google as a separate administrator may process this data according to its privacy policy:</p>
+        <ul>
+          <li><a href="https://ai.google.dev/gemini-api/terms" target="_blank">Gemini API Terms of Service</a></li>
+          <li><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+        </ul>
+        <p><strong>We do NOT send to Gemini:</strong> your Telegram ID, username, or any data identifying you. We send <em>only</em> your message content.</p>
+
+        <h2 id="retention-en">5. Data retention</h2>
+        <ul>
+          <li><strong>ID and language</strong> — in bot's RAM. Lost on server restart (a few times per month).</li>
+          <li><strong>Message content</strong> — not stored. Cleared from memory after response.</li>
+          <li><strong>Server logs</strong> — auto-deleted after max 30 days (Railway hosting provider).</li>
+        </ul>
+
+        <h2 id="rights-en">6. Your rights (GDPR)</h2>
+        <p>Under GDPR you have the right to:</p>
+        <ul>
+          <li><strong>Access</strong> your data</li>
+          <li><strong>Rectify</strong> incorrect data</li>
+          <li><strong>Erase</strong> data ("right to be forgotten")</li>
+          <li><strong>Restrict</strong> processing</li>
+          <li><strong>Object</strong> to processing</li>
+          <li><strong>File a complaint</strong> with the supervisory authority</li>
+        </ul>
+        <p>To exercise your rights — contact us at <a href="mailto:dronepartshub@gmail.com">dronepartshub@gmail.com</a>.</p>
+
+        <h2 id="optout-en">7. How to stop using the bot</h2>
+        <p>You can stop using the bot at any time:</p>
+        <ol>
+          <li>Open chat with <strong>@agras_spare_parts_bot</strong> in Telegram</li>
+          <li>Click menu (☰ or ⋮) → <strong>Block bot</strong></li>
+          <li>The bot will stop responding, and your session data will be auto-deleted</li>
+        </ol>
+
+        <h2 id="contact-en">8. Contact</h2>
+        <p>For privacy-related matters:</p>
+        <ul>
+          <li>📧 E-mail: <a href="mailto:dronepartshub@gmail.com">dronepartshub@gmail.com</a></li>
+          <li>🌐 Website: <a href="https://dronepartshub.eu">dronepartshub.eu</a></li>
+          <li>✈️ Telegram: <a href="https://t.me/agras_spare_parts_bot">@agras_spare_parts_bot</a></li>
+        </ul>
+
+        <p style="margin-top:40px;color:#666;font-size:13px;">This policy concerns the Telegram bot only. The shop's privacy policy is on a <a href="polityka-prywatnosci.html">separate page</a>.</p>
+
+      </div>
+
+      <!-- ─── UA ─── -->
+      <div class="lang-section" data-bot-lang="ua">
+
+        <div class="toc">
+          <h3>📑 Зміст</h3>
+          <ol>
+            <li><a href="#admin-ua">Адміністратор даних</a></li>
+            <li><a href="#data-ua">Які дані збирає бот</a></li>
+            <li><a href="#purposes-ua">Цілі обробки</a></li>
+            <li><a href="#gemini-ua">Google Gemini AI</a></li>
+            <li><a href="#retention-ua">Зберігання даних</a></li>
+            <li><a href="#rights-ua">Ваші права (GDPR)</a></li>
+            <li><a href="#optout-ua">Як перестати користуватись ботом</a></li>
+            <li><a href="#contact-ua">Контакти</a></li>
+          </ol>
+        </div>
+
+        <h2 id="admin-ua">1. Адміністратор даних</h2>
+        <p>Адміністратором даних, що обробляються Telegram-ботом <strong>@agras_spare_parts_bot</strong>, є <strong>Drone Parts Hub</strong> — інтернет-магазин запчастин для сільськогосподарських дронів DJI Agras.</p>
+        <p><strong>Сайт:</strong> <a href="https://dronepartshub.eu">dronepartshub.eu</a><br>
+           <strong>E-mail для контакту:</strong> <a href="mailto:dronepartshub@gmail.com">dronepartshub@gmail.com</a></p>
+
+        <h2 id="data-ua">2. Які дані збирає бот</h2>
+        <p>Telegram-бот <strong>@agras_spare_parts_bot</strong> обробляє мінімум даних, необхідних для надання послуги пошуку запчастин:</p>
+
+        <table class="data-table">
+          <thead>
+            <tr><th>Тип даних</th><th>Мета</th><th>Зберігається?</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>ID користувача Telegram</td><td>Ідентифікація сесії, мова</td><td>Тільки в пам'яті (зникає після перезапуску)</td></tr>
+            <tr><td>Username (якщо встановлено)</td><td>Логування подій (налагодження)</td><td>Лише в логах сервера (макс. 30 днів)</td></tr>
+            <tr><td>Код мови</td><td>Авто-вибір мови відповіді</td><td>В пам'яті</td></tr>
+            <tr><td>Текст повідомлення</td><td>Пошук запчастин або AI запит</td><td>Не зберігається. Обробляється миттєво.</td></tr>
+            <tr><td>Повідомлення → Gemini</td><td>Генерація AI відповіді</td><td>Див. <a href="#gemini-ua">розділ 4</a></td></tr>
+          </tbody>
+        </table>
+
+        <div class="info-box">
+          <strong>📌 Важливо:</strong> Бот <strong>не збирає</strong> ваш номер телефону, email чи фото профілю. Не потребує реєстрації. Не використовує cookies.
+        </div>
+
+        <h2 id="purposes-ua">3. Цілі обробки</h2>
+        <p>Ваші дані обробляємо виключно для:</p>
+        <ul>
+          <li>Пошуку запчастин у базі магазину</li>
+          <li>Перекладу повідомлень на вашу мову</li>
+          <li>Відповідей на питання через AI (Gemini)</li>
+          <li>Стабільності сервісу (діагностичні логи)</li>
+        </ul>
+
+        <h2 id="gemini-ua">4. Google Gemini AI</h2>
+        <p>Коли ви задаєте боту питання, що потребує відповіді AI (напр. „мій T50 впав, що купити?"), текст вашого повідомлення разом із фрагментом каталогу відправляється до <strong>Google Gemini API</strong>.</p>
+        <p>Google як окремий адміністратор може обробляти ці дані згідно зі своєю політикою:</p>
+        <ul>
+          <li><a href="https://ai.google.dev/gemini-api/terms" target="_blank">Gemini API Terms of Service</a></li>
+          <li><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+        </ul>
+        <p><strong>Ми НЕ надсилаємо до Gemini:</strong> ваш Telegram ID, username чи інші ідентифікаційні дані. Лише <em>текст</em> повідомлення.</p>
+
+        <h2 id="retention-ua">5. Зберігання даних</h2>
+        <ul>
+          <li><strong>ID та мова</strong> — в RAM бота. Зникає після перезапуску сервера.</li>
+          <li><strong>Текст повідомлення</strong> — не зберігається.</li>
+          <li><strong>Логи сервера</strong> — авто-видалення через макс. 30 днів.</li>
+        </ul>
+
+        <h2 id="rights-ua">6. Ваші права (GDPR)</h2>
+        <p>Згідно з GDPR ви маєте право на:</p>
+        <ul>
+          <li><strong>Доступ</strong> до даних</li>
+          <li><strong>Виправлення</strong> неправильних даних</li>
+          <li><strong>Видалення</strong> даних</li>
+          <li><strong>Обмеження</strong> обробки</li>
+          <li><strong>Заперечення</strong> проти обробки</li>
+          <li><strong>Скаргу</strong> до наглядового органу</li>
+        </ul>
+        <p>Для реалізації прав — пишіть на <a href="mailto:dronepartshub@gmail.com">dronepartshub@gmail.com</a>.</p>
+
+        <h2 id="optout-ua">7. Як перестати користуватись ботом</h2>
+        <ol>
+          <li>Відкрийте чат з <strong>@agras_spare_parts_bot</strong></li>
+          <li>Меню (☰ або ⋮) → <strong>Заблокувати бота</strong></li>
+          <li>Бот перестане відповідати, дані сесії автоматично видаляться</li>
+        </ol>
+
+        <h2 id="contact-ua">8. Контакти</h2>
+        <ul>
+          <li>📧 E-mail: <a href="mailto:dronepartshub@gmail.com">dronepartshub@gmail.com</a></li>
+          <li>🌐 Сайт: <a href="https://dronepartshub.eu">dronepartshub.eu</a></li>
+          <li>✈️ Telegram: <a href="https://t.me/agras_spare_parts_bot">@agras_spare_parts_bot</a></li>
+        </ul>
+
+      </div>
+
+      <!-- ─── CN ─── -->
+      <div class="lang-section" data-bot-lang="cn">
+
+        <div class="toc">
+          <h3>📑 目录</h3>
+          <ol>
+            <li><a href="#admin-cn">数据管理员</a></li>
+            <li><a href="#data-cn">机器人收集的数据</a></li>
+            <li><a href="#purposes-cn">处理目的</a></li>
+            <li><a href="#gemini-cn">Google Gemini AI</a></li>
+            <li><a href="#retention-cn">数据保留</a></li>
+            <li><a href="#rights-cn">您的权利 (GDPR)</a></li>
+            <li><a href="#optout-cn">如何停止使用</a></li>
+            <li><a href="#contact-cn">联系方式</a></li>
+          </ol>
+        </div>
+
+        <h2 id="admin-cn">1. 数据管理员</h2>
+        <p>Telegram 机器人 <strong>@agras_spare_parts_bot</strong> 处理的数据管理员是 <strong>Drone Parts Hub</strong> — DJI Agras 农业无人机零件在线商店。</p>
+        <p><strong>网站：</strong> <a href="https://dronepartshub.eu">dronepartshub.eu</a><br>
+           <strong>邮箱：</strong> <a href="mailto:dronepartshub@gmail.com">dronepartshub@gmail.com</a></p>
+
+        <h2 id="data-cn">2. 机器人收集的数据</h2>
+        <p>Telegram 机器人 <strong>@agras_spare_parts_bot</strong> 仅处理提供零件搜索服务所需的最少数据。</p>
+
+        <div class="info-box">
+          <strong>📌 重要：</strong> 机器人 <strong>不收集</strong> 您的电话号码、电子邮件或个人资料图片。无需登录或注册。不使用 cookies。
+        </div>
+
+        <h2 id="purposes-cn">3. 处理目的</h2>
+        <ul>
+          <li>在商店数据库中搜索零件</li>
+          <li>将信息翻译成您的语言</li>
+          <li>通过 AI (Gemini) 回答问题</li>
+          <li>服务稳定性（诊断日志）</li>
+        </ul>
+
+        <h2 id="gemini-cn">4. Google Gemini AI</h2>
+        <p>当您向机器人提问需要 AI 回复时，您的消息内容连同零件目录摘录会发送到 <strong>Google Gemini API</strong>。</p>
+        <p>请参阅：</p>
+        <ul>
+          <li><a href="https://ai.google.dev/gemini-api/terms" target="_blank">Gemini API Terms</a></li>
+          <li><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+        </ul>
+        <p><strong>我们不会向 Gemini 发送：</strong> 您的 Telegram ID、用户名或任何识别信息。仅发送消息内容。</p>
+
+        <h2 id="retention-cn">5. 数据保留</h2>
+        <ul>
+          <li><strong>ID 和语言</strong> — 机器人 RAM 中。服务器重启后丢失。</li>
+          <li><strong>消息内容</strong> — 不存储。</li>
+          <li><strong>服务器日志</strong> — 最多 30 天后自动删除。</li>
+        </ul>
+
+        <h2 id="rights-cn">6. 您的权利 (GDPR)</h2>
+        <p>您有权：访问、纠正、删除、限制、反对处理数据。请联系 <a href="mailto:dronepartshub@gmail.com">dronepartshub@gmail.com</a>。</p>
+
+        <h2 id="optout-cn">7. 如何停止使用</h2>
+        <ol>
+          <li>打开与 <strong>@agras_spare_parts_bot</strong> 的聊天</li>
+          <li>菜单 → <strong>屏蔽机器人</strong></li>
+          <li>机器人停止响应，会话数据自动删除</li>
+        </ol>
+
+        <h2 id="contact-cn">8. 联系方式</h2>
+        <ul>
+          <li>📧 邮箱: <a href="mailto:dronepartshub@gmail.com">dronepartshub@gmail.com</a></li>
+          <li>🌐 网站: <a href="https://dronepartshub.eu">dronepartshub.eu</a></li>
+          <li>✈️ Telegram: <a href="https://t.me/agras_spare_parts_bot">@agras_spare_parts_bot</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__bottom">
+      <span>© 2026 Drone Parts Hub. All Rights Reserved.</span>
+      <a href="index.html">← Strona główna</a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+
+<!-- Lokalna logika przełączania języka tej strony -->
+<script>
+(function() {
+  // Tytuły dla 4 języków
+  var TITLES = {
+    pl: { title: 'Polityka prywatności bota Telegram', subtitle: '@agras_spare_parts_bot • Aktualizacja: 01.05.2026' },
+    en: { title: 'Telegram Bot Privacy Policy', subtitle: '@agras_spare_parts_bot • Updated: 01.05.2026' },
+    ua: { title: 'Політика конфіденційності бота', subtitle: '@agras_spare_parts_bot • Оновлено: 01.05.2026' },
+    cn: { title: '机器人隐私政策', subtitle: '@agras_spare_parts_bot • 更新于: 01.05.2026' }
+  };
+
+  function detectLang() {
+    try {
+      var stored = localStorage.getItem('lang') || localStorage.getItem('language');
+      if (stored && ['pl','en','ua','cn'].indexOf(stored) >= 0) return stored;
+    } catch(e) {}
+    var htmlLang = (document.documentElement.lang || '').toLowerCase();
+    if (htmlLang.indexOf('uk') === 0 || htmlLang.indexOf('ua') === 0) return 'ua';
+    if (htmlLang.indexOf('en') === 0) return 'en';
+    if (htmlLang.indexOf('zh') === 0) return 'cn';
+    return 'pl';
+  }
+
+  function applyLang() {
+    var lang = detectLang();
+
+    // Pokaż właściwą sekcję
+    document.querySelectorAll('[data-bot-lang]').forEach(function(s) {
+      s.classList.toggle('active', s.dataset.botLang === lang);
+    });
+
+    // Tytuły
+    var t = TITLES[lang] || TITLES.pl;
+    var titleEl = document.querySelector('[data-bot-i18n="title"]');
+    var subEl = document.querySelector('[data-bot-i18n="subtitle"]');
+    if (titleEl) titleEl.textContent = t.title;
+    if (subEl) subEl.textContent = t.subtitle;
+  }
+
+  // Init
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyLang);
+  } else {
+    applyLang();
+  }
+
+  // Reaguj na zmianę języka
+  new MutationObserver(applyLang).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  window.addEventListener('storage', function(e) {
+    if (e.key === 'lang' || e.key === 'language') applyLang();
+  });
+  setInterval(applyLang, 1000);
+})();
+</script>
+
+
+<!-- Consent Mode integration z bannerem cookies -->
+<script>
+(function() {
+  window.acceptAllCookies = function() {
+    try { localStorage.setItem('cookie_consent', 'accepted_all'); } catch(e) {}
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted',
+        'personalization_storage': 'granted'
+      });
+    }
+    var banner = document.querySelector('.cookie-banner, #cookie-banner, [class*="cookie"]');
+    if (banner) banner.style.display = 'none';
+  };
+  window.acceptEssentialOnly = function() {
+    try { localStorage.setItem('cookie_consent', 'essential_only'); } catch(e) {}
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+    var banner = document.querySelector('.cookie-banner, #cookie-banner, [class*="cookie"]');
+    if (banner) banner.style.display = 'none';
+  };
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('button, a').forEach(function(btn) {
+      var txt = (btn.textContent || '').trim().toLowerCase();
+      if (txt.includes('akceptuję wszystkie') || txt.includes('accept all') ||
+          txt.includes('прийняти всі') || txt.includes('全部接受')) {
+        btn.addEventListener('click', window.acceptAllCookies);
+      } else if (txt.includes('tylko niezbędne') || txt.includes('essential only') ||
+                 txt.includes('тільки необхідні') || txt.includes('仅必要')) {
+        btn.addEventListener('click', window.acceptEssentialOnly);
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

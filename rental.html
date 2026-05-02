@@ -2,27 +2,53 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- Google Consent Mode v2 - MUSI BYĆ PRZED GTM                    -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'granted',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+      'wait_for_update': 500,
+      'region': ['PL', 'EU', 'UA']
+    });
+    try {
+      var savedConsent = localStorage.getItem('cookie_consent');
+      if (savedConsent === 'accepted_all') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted',
+          'personalization_storage': 'granted'
+        });
+      } else if (savedConsent === 'essential_only') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
+    } catch(e) {}
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T4DPZ6SZ');</script>
+  <!-- End Google Tag Manager -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wynajem dronów rolniczych DJI Agras T25P / T50 / T100 — Drone Parts Hub</title>
-  <meta name="description" content="Wynajem dronów rolniczych DJI Agras T25P, T50 i T100 w PL/CZ/SK. Komplet: dron + 3 baterie + ładowarka + generator + mikser. Już od 490 €/dzień.">
-  <meta name="keywords" content="wynajem drona rolniczego, dji agras t25p wynajem, dji agras t50 wynajem, dji agras t100 wynajem, oprysk wynajem">
-  <meta name="author" content="Drone Parts Hub">
-  <meta name="robots" content="index, follow">
+  <title>Wynajem drona DJI Agras T50 — DronePartsHub</title>
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dronepartshub.eu/rental.html">
-  <meta property="og:title" content="Wynajem DJI Agras T25P / T50 / T100 — od 490 €/dzień | Drone Parts Hub">
-  <meta property="og:description" content="Wynajem dronów rolniczych DJI Agras w PL/CZ/SK. Trzy modele: T25P (490 €), T50 (690 €), T100 (850 €). Komplet ze szkoleniem i mikserem.">
-  <meta property="og:image" content="https://dronepartshub.eu/images/rental-hero.jpg">
-  <meta property="og:locale" content="pl_PL">
   
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Wynajem DJI Agras T25P / T50 / T100 — od 490 €/dzień | Drone Parts Hub">
-  <meta name="twitter:description" content="Wynajem dronów rolniczych DJI Agras w PL/CZ/SK. Trzy modele: T25P, T50, T100. Komplet ze szkoleniem i mikserem.">
-  <meta name="twitter:image" content="https://dronepartshub.eu/images/rental-hero.jpg">
   
-  <link rel="canonical" href="https://dronepartshub.eu/rental.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -37,20 +63,6 @@
       background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
       overflow: hidden;
       padding-top: 100px;
-    }
-    .hero__bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
-    .hero__bg-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.4) 100%);
-      z-index: 1;
     }
     .rental-hero::before {
       content: '';
@@ -135,381 +147,6 @@
       font-size: 14px;
       color: var(--color-text-muted);
       line-height: 1.6;
-    }
-
-    /* Zdjęcie miksera (placeholder + img) */
-    .mixer-photo {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      margin-bottom: 16px;
-      border-radius: 6px;
-      overflow: hidden;
-      background: #0a0a0a;
-      border: 1px solid var(--color-line);
-      position: relative;
-    }
-    .mixer-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .mixer-photo__placeholder {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-      color: var(--color-accent);
-    }
-    .mixer-photo__placeholder span {
-      font-family: var(--font-display);
-      font-size: 64px;
-      letter-spacing: 0.05em;
-      line-height: 1;
-    }
-    .mixer-photo__placeholder small {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      color: var(--color-text-muted);
-      letter-spacing: 0.05em;
-    }
-
-    /* === KARTY MODELI (T25P / T50 / T100) === */
-    .models-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 40px;
-    }
-    .model-card {
-      background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
-      border: 1px solid var(--color-line);
-      border-radius: 12px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      transition: var(--transition);
-    }
-    .model-card:hover {
-      border-color: var(--color-accent);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-    }
-    .model-card--featured {
-      border-color: var(--color-accent);
-      background: linear-gradient(180deg, rgba(200,160,50,0.08) 0%, #0a0a0a 60%);
-      box-shadow: 0 10px 40px rgba(200,160,50,0.15);
-    }
-    .model-card--featured:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 60px rgba(200,160,50,0.25);
-    }
-    .model-card__badge {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      z-index: 5;
-      background: var(--color-accent);
-      color: #0a0a0a;
-      font-family: var(--font-display);
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      padding: 6px 12px;
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(200,160,50,0.4);
-    }
-    .model-card__photo {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      background: #0a0a0a;
-      border-bottom: 1px solid var(--color-line);
-      position: relative;
-      overflow: hidden;
-    }
-    .model-card__photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      display: block;
-      padding: 12px;
-    }
-    .model-card__placeholder {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-      color: var(--color-accent);
-    }
-    .model-card__placeholder span {
-      font-family: var(--font-display);
-      font-size: 72px;
-      letter-spacing: 0.05em;
-      line-height: 1;
-    }
-    .model-card__placeholder small {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      color: var(--color-text-muted);
-      letter-spacing: 0.05em;
-    }
-    .model-card__body {
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    .model-card__tag {
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--color-text-muted);
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-    .model-card__title {
-      font-family: var(--font-display);
-      font-size: 32px;
-      letter-spacing: 0.02em;
-      color: white;
-      margin-bottom: 12px;
-      line-height: 1;
-    }
-    .model-card__sub {
-      font-size: 14px;
-      color: var(--color-text-muted);
-      line-height: 1.6;
-      margin-bottom: 20px;
-      min-height: 70px;
-    }
-    .model-card__list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 24px 0;
-      border-top: 1px solid var(--color-line);
-      padding-top: 20px;
-    }
-    .model-card__list li {
-      padding: 8px 0;
-      font-size: 14px;
-      color: rgba(255,255,255,0.85);
-      position: relative;
-      padding-left: 24px;
-    }
-    .model-card__list li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--color-accent);
-      font-weight: 700;
-    }
-    .model-card__pricing {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--color-line);
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-    .model-card--featured .model-card__pricing {
-      background: rgba(200,160,50,0.08);
-      border-color: var(--color-accent);
-    }
-    .model-card__price {
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-      margin-bottom: 14px;
-    }
-    .model-card__price-num {
-      font-family: var(--font-display);
-      font-size: 56px;
-      color: var(--color-accent);
-      line-height: 1;
-      font-weight: 700;
-    }
-    .model-card__price-cur {
-      font-family: var(--font-display);
-      font-size: 28px;
-      color: var(--color-accent);
-    }
-    .model-card__price-day {
-      font-size: 14px;
-      color: var(--color-text-muted);
-      margin-left: 6px;
-    }
-    .model-card__limits {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.8);
-    }
-    .model-card__limits strong {
-      color: white;
-    }
-    .model-card__cta {
-      margin-top: auto;
-      width: 100%;
-      text-align: center;
-      padding: 14px;
-      font-size: 13px;
-    }
-
-    /* Pasek warunków */
-    .conditions-bar {
-      margin-top: 60px;
-      padding: 28px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--color-line);
-      border-radius: 8px;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
-    }
-    .conditions-bar__item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-    .conditions-bar__icon {
-      font-size: 24px;
-      flex-shrink: 0;
-      line-height: 1;
-    }
-    .conditions-bar__item strong {
-      display: block;
-      color: white;
-      font-size: 13px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 2px;
-    }
-    .conditions-bar__item small {
-      color: var(--color-text-muted);
-      font-size: 12px;
-      line-height: 1.4;
-    }
-
-    /* === Sekcja "Akcja" - parallax z dronem T100 === */
-    .action-shot {
-      position: relative;
-      min-height: 70vh;
-      background-image: linear-gradient(135deg, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.3) 50%, rgba(10,10,10,0.85) 100%), url('images/dron-t100-akcja.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 80px 40px;
-    }
-    .action-shot__overlay {
-      max-width: var(--container);
-      width: 100%;
-    }
-    .action-shot__content {
-      max-width: 600px;
-    }
-    .action-shot__title {
-      font-family: var(--font-display);
-      font-size: clamp(36px, 5vw, 64px);
-      letter-spacing: 0.02em;
-      color: white;
-      line-height: 1.05;
-      margin: 16px 0 20px;
-      text-shadow: 0 4px 30px rgba(0,0,0,0.5);
-    }
-    .action-shot__sub {
-      font-size: 18px;
-      color: rgba(255,255,255,0.9);
-      line-height: 1.6;
-      margin-bottom: 32px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
-    @media (max-width: 768px) {
-      .action-shot {
-        min-height: 50vh;
-        background-attachment: scroll;
-        padding: 60px 24px;
-      }
-    }
-
-    /* === Co dokładnie dostajesz w zestawie === */
-    .kit-items-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-top: 40px;
-    }
-    .kit-item {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 24px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--color-line);
-      border-radius: 8px;
-      padding: 24px;
-      transition: var(--transition);
-      align-items: center;
-    }
-    .kit-item:hover {
-      border-color: var(--color-accent);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    }
-    .kit-item__photo {
-      width: 180px;
-      height: 180px;
-      background: #0a0a0a;
-      border-radius: 6px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .kit-item__photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-    .kit-item__body {
-      flex: 1;
-    }
-    .kit-item__num {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      color: var(--color-accent);
-      letter-spacing: 0.2em;
-      margin-bottom: 8px;
-    }
-    .kit-item__title {
-      font-family: var(--font-display);
-      font-size: 24px;
-      letter-spacing: 0.02em;
-      color: white;
-      margin-bottom: 10px;
-      line-height: 1.1;
-    }
-    .kit-item__desc {
-      font-size: 14px;
-      color: var(--color-text-muted);
-      line-height: 1.6;
-    }
-    @media (max-width: 768px) {
-      .kit-items-grid { grid-template-columns: 1fr; }
-      .kit-item { grid-template-columns: 120px 1fr; gap: 16px; padding: 16px; }
-      .kit-item__photo { width: 120px; height: 120px; }
-      .kit-item__title { font-size: 20px; }
     }
 
     /* Cennik */
@@ -727,20 +364,114 @@
       .rental-hero__visual { height: 250px; }
       .rental-hero__icon { font-size: 140px; }
       .kit-grid { grid-template-columns: 1fr; }
-      .models-grid { grid-template-columns: 1fr; gap: 32px; }
-      .conditions-bar { grid-template-columns: 1fr 1fr; padding: 20px; gap: 16px; }
       .pricing-row { grid-template-columns: 1fr; gap: 8px; padding: 20px; }
       .pricing-row.header { display: none; }
       .requirements-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .rental-form { padding: 24px; }
     }
-    @media (max-width: 480px) {
-      .conditions-bar { grid-template-columns: 1fr; }
-    }
   </style>
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- SEO META TAGS — DronePartsHub.eu                                -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <meta name="description" content="Wynajmij drona rolniczego DJI Agras T50 z pilotem. Polska, dostawa, krótki/długi termin. Pełny serwis i ubezpieczenie.">
+  <meta name="keywords" content="DJI Agras T25P, DJI Agras T50, DJI Agras T100, części DJI Agras, akumulator DB800, DB1560, DB2160, silnik agras, dysza XR110, części zamienne dron rolniczy, drone parts hub">
+  <meta name="author" content="Drone Parts Hub">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <meta name="theme-color" content="#c8a032">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Geo / Language -->
+  <meta name="geo.region" content="EU">
+  <meta name="language" content="pl">
+  <meta http-equiv="content-language" content="pl-PL">
+
+  <!-- Hreflang (4 języki) -->
+  <link rel="alternate" hreflang="pl" href="https://dronepartshub.eu/rental.html?lang=pl">
+  <link rel="alternate" hreflang="en" href="https://dronepartshub.eu/rental.html?lang=en">
+  <link rel="alternate" hreflang="uk" href="https://dronepartshub.eu/rental.html?lang=ua">
+  <link rel="alternate" hreflang="zh" href="https://dronepartshub.eu/rental.html?lang=cn">
+  <link rel="alternate" hreflang="x-default" href="https://dronepartshub.eu/rental.html">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://dronepartshub.eu/rental.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Drone Parts Hub">
+  <meta property="og:title" content="Wynajem drona DJI Agras T50 — DronePartsHub">
+  <meta property="og:description" content="Wynajmij drona rolniczego DJI Agras T50 z pilotem. Polska, dostawa, krótki/długi termin. Pełny serwis i ubezpieczenie.">
+  <meta property="og:url" content="https://dronepartshub.eu/rental.html">
+  <meta property="og:image" content="https://dronepartshub.eu/images/hero-drones.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Drone Parts Hub - części DJI Agras">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="uk_UA">
+  <meta property="og:locale:alternate" content="zh_CN">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wynajem drona DJI Agras T50 — DronePartsHub">
+  <meta name="twitter:description" content="Wynajmij drona rolniczego DJI Agras T50 z pilotem. Polska, dostawa, krótki/długi termin. Pełny serwis i ubezpieczenie.">
+  <meta name="twitter:image" content="https://dronepartshub.eu/images/hero-drones.jpg">
+
+  <!-- Performance -->
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+
+  <!-- Search Console verification (PODMIEŃ po założeniu konta) -->
+  <meta name="google-site-verification" content="WSTAW-TU-KOD-Z-SEARCH-CONSOLE">
+
+  <!-- JSON-LD: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://dronepartshub.eu/#website",
+    "url": "https://dronepartshub.eu",
+    "name": "Drone Parts Hub",
+    "description": "Sklep części DJI Agras T25P/T50/T100",
+    "inLanguage": ["pl-PL", "en-US", "uk-UA", "zh-CN"],
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://dronepartshub.eu/catalog.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Strona główna",
+        "item": "https://dronepartshub.eu/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Wynajem T50",
+        "item": "https://dronepartshub.eu/rental.html"
+      }
+    ]
+  }
+  </script>
+
 </head>
 <body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4DPZ6SZ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
 <!-- NAV -->
 <nav class="nav">
@@ -759,7 +490,7 @@
         🛒 <span data-i18n="cart">Koszyk</span>
         <span class="nav__cart-count">0</span>
       </a>
-      <a href="https://t.me/dji_agras_parts_bot" target="_blank" class="nav__telegram">
+      <a href="https://t.me/agras_spare_parts_bot" target="_blank" class="nav__telegram">
         ✈️ Telegram
       </a>
     </div>
@@ -769,41 +500,43 @@
 <!-- ==========================================================================
      SEKCJA 1: HERO
      ========================================================================== -->
-<section class="rental-hero">
-  <img class="hero__bg" src="images/rental-hero.jpg" alt="DJI Agras drone spraying" loading="eager">
-  <div class="hero__bg-overlay"></div>
+<section class="rental-hero rental-hero--video">
+  <video class="hero__video" autoplay muted loop playsinline poster="images/rental-hero.jpg">
+    <source src="videos/lifting.mp4" type="video/mp4">
+  </video>
+  <div class="hero__video-overlay"></div>
   <div class="rental-hero__inner">
     <div>
-      <span class="rental-badge">🚁 Wynajem profesjonalny • PL / CZ / SK</span>
+      <span class="rental-badge">🚁 Wynajem profesjonalny</span>
       <h1 class="hero__title">
-        Wynajem Dronów<br>
-        Rolniczych <span style="color:var(--color-accent);">DJI Agras</span><br>
-        T25P • T50 • T100
+        Profesjonalny<br>
+        <span style="color:var(--color-accent);">Wynajem Drona</span><br>
+        Rolniczego T50
       </h1>
       <p class="hero__sub">
-        Kompletny zestaw gotowy do pracy: <strong style="color:white;">Dron + 3 Baterie + Ładowarka + Generator + Mikser</strong>.
-        Trzy modele dopasowane do skali Twojej operacji - od małych gospodarstw po firmy usługowe.
+        Kompletny zestaw gotowy do pracy: <strong style="color:white;">Dron + 3 Baterie + Generator</strong>.
+        Zwiększ wydajność swojego gospodarstwa bez inwestowania 100 tys. zł w sprzęt.
       </p>
       <div class="hero__actions">
-        <a href="#models" class="btn btn--primary">
-          🚁 Wybierz model
-        </a>
-        <a href="#form" class="btn btn--ghost">
+        <a href="#form" class="btn btn--primary">
           📅 Rezerwuj termin
+        </a>
+        <a href="#pricing" class="btn btn--ghost">
+          💰 Sprawdź cennik
         </a>
       </div>
       <div class="hero__stats">
         <div class="hero__stat">
-          <div class="hero__stat-num">3</div>
-          <div class="hero__stat-label">Modele do wyboru</div>
+          <div class="hero__stat-num">40<span style="font-size:20px;">kg</span></div>
+          <div class="hero__stat-label">Udźwig oprysku</div>
         </div>
         <div class="hero__stat">
-          <div class="hero__stat-num">160<span style="font-size:20px;">ha</span></div>
+          <div class="hero__stat-num">100<span style="font-size:20px;">ha</span></div>
           <div class="hero__stat-label">Wydajność / doba</div>
         </div>
         <div class="hero__stat">
-          <div class="hero__stat-num">490<span style="font-size:20px;">€</span></div>
-          <div class="hero__stat-label">Już od / dzień</div>
+          <div class="hero__stat-num">500<span style="font-size:20px;">€</span></div>
+          <div class="hero__stat-label">Stawka dobowa</div>
         </div>
       </div>
     </div>
@@ -812,376 +545,146 @@
 </section>
 
 <!-- ==========================================================================
-     SEKCJA 2: WYBÓR MODELU - 3 OPCJE (T25P / T50 / T100)
-     ========================================================================== -->
-<section class="section section--dark" id="models">
-  <div class="section__inner">
-    <div class="section__header">
-      <div class="section__label">Trzy modele - jedna oferta</div>
-      <h2 class="section__title">Wybierz drona<br>dopasowanego do skali</h2>
-      <p class="section__sub">Każdy zestaw zawiera komplet: dron, 3 baterie, ładowarkę, generator i mikser. Tylko wsiadasz w pickup i ruszasz w pole.</p>
-    </div>
-
-    <div class="models-grid">
-
-      <!-- ========== T25P ========== -->
-      <div class="model-card">
-        <div class="model-card__photo">
-          <img src="images/dron-t25p-zestaw.jpg" alt="DJI Agras T25P - zestaw wynajmowy" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="model-card__placeholder" style="display:none;">
-            <span>T25P</span>
-            <small>wgraj: images/dron-t25p-zestaw.jpg</small>
-          </div>
-        </div>
-        <div class="model-card__body">
-          <div class="model-card__tag">Wejście / małe gospodarstwa</div>
-          <h3 class="model-card__title">DJI Agras T25P</h3>
-          <p class="model-card__sub">Idealny start - kompaktowy, niskoemisyjny, dla mniejszych areałów do 110 ha dziennie.</p>
-
-          <ul class="model-card__list">
-            <li><strong>Dron Agras T25P</strong> (20 kg udźwigu)</li>
-            <li><strong>3× akumulator</strong> (system ciągłej pracy)</li>
-            <li><strong>Ładowarka</strong> + zasilacz</li>
-            <li><strong>Generator prądu</strong> niezależny</li>
-            <li><strong>Mikser PIT STOP 200 L</strong> w cenie</li>
-            <li>Szkolenie operacyjne (pierwszy wynajem)</li>
-          </ul>
-
-          <div class="model-card__pricing">
-            <div class="model-card__price">
-              <span class="model-card__price-num">490</span>
-              <span class="model-card__price-cur">€</span>
-              <span class="model-card__price-day">/ dzień</span>
-            </div>
-            <div class="model-card__limits">
-              <div>📊 do <strong>110 ha</strong> / dzień</div>
-              <div>📈 powyżej: <strong>5 €/ha</strong></div>
-              <div>🔒 kaucja: <strong>2 000 €</strong></div>
-            </div>
-          </div>
-
-          <a href="#form" class="btn btn--ghost model-card__cta" data-model="T25P">
-            Rezerwuj T25P →
-          </a>
-        </div>
-      </div>
-
-      <!-- ========== T50 (TOP / NAJPOPULARNIEJSZY) ========== -->
-      <div class="model-card model-card--featured">
-        <div class="model-card__badge">🏆 NAJPOPULARNIEJSZY WYBÓR</div>
-        <div class="model-card__photo">
-          <img src="images/dron-t50-zestaw.jpg" alt="DJI Agras T50 - zestaw wynajmowy" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="model-card__placeholder" style="display:none;">
-            <span>T50</span>
-            <small>wgraj: images/dron-t50-zestaw.jpg</small>
-          </div>
-        </div>
-        <div class="model-card__body">
-          <div class="model-card__tag" style="color:var(--color-accent);">Najlepszy stosunek cena / wydajność</div>
-          <h3 class="model-card__title">DJI Agras T50</h3>
-          <p class="model-card__sub">Realne <strong style="color:white;">120-160 ha dziennie</strong>. Niższy próg wejścia niż T100, idealny dla usługodawców i średnich gospodarstw.</p>
-
-          <ul class="model-card__list">
-            <li><strong>Dron Agras T50</strong> (40 kg udźwigu)</li>
-            <li><strong>3× akumulator</strong> (system ciągłej pracy)</li>
-            <li><strong>Ładowarka</strong> / zasilacz</li>
-            <li><strong>Generator prądu</strong> niezależny</li>
-            <li><strong>Mikser PIT STOP 200 lub 450 L</strong> do wyboru</li>
-            <li>Szkolenie operacyjne (pierwszy wynajem)</li>
-          </ul>
-
-          <div class="model-card__pricing">
-            <div class="model-card__price">
-              <span class="model-card__price-num">690</span>
-              <span class="model-card__price-cur">€</span>
-              <span class="model-card__price-day">/ dzień</span>
-            </div>
-            <div class="model-card__limits">
-              <div>📊 do <strong>140 ha</strong> / dzień</div>
-              <div>📈 powyżej: <strong>5 €/ha</strong></div>
-              <div>🔒 kaucja: <strong>2 500 €</strong></div>
-            </div>
-          </div>
-
-          <a href="#form" class="btn btn--primary model-card__cta" data-model="T50">
-            Rezerwuj T50 →
-          </a>
-        </div>
-      </div>
-
-      <!-- ========== T100 ========== -->
-      <div class="model-card">
-        <div class="model-card__photo">
-          <img src="images/dron-t100-zestaw.jpg" alt="DJI Agras T100 - zestaw wynajmowy" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="model-card__placeholder" style="display:none;">
-            <span>T100</span>
-            <small>wgraj: images/dron-t100-zestaw.jpg</small>
-          </div>
-        </div>
-        <div class="model-card__body">
-          <div class="model-card__tag">Duże areały / firmy usługowe</div>
-          <h3 class="model-card__title">DJI Agras T100</h3>
-          <p class="model-card__sub">Maksymalna wydajność. Dla profesjonalnych usługodawców obsługujących setki hektarów dziennie.</p>
-
-          <ul class="model-card__list">
-            <li><strong>Dron Agras T100</strong> (75 kg udźwigu)</li>
-            <li><strong>3× akumulator DB2160</strong> (wysoka pojemność)</li>
-            <li><strong>Zasilacz C12000</strong> szybkiego ładowania</li>
-            <li><strong>Generator prądu</strong> niezależny</li>
-            <li><strong>Mikser PIT STOP 450 L</strong> w cenie</li>
-            <li>Szkolenie operacyjne (pierwszy wynajem)</li>
-          </ul>
-
-          <div class="model-card__pricing">
-            <div class="model-card__price">
-              <span class="model-card__price-num">850</span>
-              <span class="model-card__price-cur">€</span>
-              <span class="model-card__price-day">/ dzień</span>
-            </div>
-            <div class="model-card__limits">
-              <div>📊 do <strong>160 ha</strong> / dzień</div>
-              <div>📈 powyżej: <strong>4,5 €/ha</strong></div>
-              <div>🔒 kaucja: <strong>3 000 €</strong></div>
-            </div>
-          </div>
-
-          <a href="#form" class="btn btn--ghost model-card__cta" data-model="T100">
-            Rezerwuj T100 →
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Warunki ogólne -->
-    <div class="conditions-bar">
-      <div class="conditions-bar__item">
-        <div class="conditions-bar__icon">💶</div>
-        <div>
-          <strong>Ceny netto</strong>
-          <small>Doliczamy VAT zgodnie z przepisami</small>
-        </div>
-      </div>
-      <div class="conditions-bar__item">
-        <div class="conditions-bar__icon">🚚</div>
-        <div>
-          <strong>Transport</strong>
-          <small>Wyceniany indywidualnie</small>
-        </div>
-      </div>
-      <div class="conditions-bar__item">
-        <div class="conditions-bar__icon">👨‍✈️</div>
-        <div>
-          <strong>Operator</strong>
-          <small>Opcjonalnie - na zamówienie</small>
-        </div>
-      </div>
-      <div class="conditions-bar__item">
-        <div class="conditions-bar__icon">⛽</div>
-        <div>
-          <strong>Paliwo + ŚOR</strong>
-          <small>Po stronie klienta</small>
-        </div>
-      </div>
-      <div class="conditions-bar__item">
-        <div class="conditions-bar__icon">🎓</div>
-        <div>
-          <strong>Szkolenie</strong>
-          <small>W cenie (pierwszy wynajem)</small>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==========================================================================
-     SEKCJA 2.3: PEŁNOEKRANOWY SHOT - DRON W AKCJI
-     ========================================================================== -->
-<section class="action-shot">
-  <div class="action-shot__overlay">
-    <div class="action-shot__content">
-      <div class="section__label" style="color:var(--color-accent);">Dron, który robi robotę</div>
-      <h2 class="action-shot__title">120-160 ha dziennie.<br>Bez przerw, bez kompromisów.</h2>
-      <p class="action-shot__sub">Realna wydajność na realnym polu. Zamów zestaw, dostarczamy, szkolimy, ruszasz w pole.</p>
-      <a href="#form" class="btn btn--primary">📅 Zarezerwuj termin →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ==========================================================================
-     SEKCJA 2.4: CO DOKŁADNIE DOSTAJESZ W ZESTAWIE
+     SEKCJA 2: O ZESTAWIE
      ========================================================================== -->
 <section class="section section--dark">
   <div class="section__inner">
     <div class="section__header">
-      <div class="section__label">Pełen pakiet w cenie</div>
-      <h2 class="section__title">Co dokładnie<br>dostajesz w zestawie</h2>
-      <p class="section__sub">Każdy wynajem to nie tylko dron. Otrzymujesz kompletną stację roboczą - wszystko czego potrzebujesz, żeby ruszyć w pole tego samego dnia.</p>
+      <div class="section__label">Co wynajmujesz</div>
+      <h2 class="section__title">Autonomiczny system<br>oprysku w Twoich rękach</h2>
+      <p class="section__sub">Pełen, gotowy do pracy zestaw - zabierasz, wsadzasz na pickup i ruszasz w pole.</p>
     </div>
 
-    <div class="kit-items-grid">
-
-      <div class="kit-item">
-        <div class="kit-item__photo">
-          <img src="images/akcesoria-baterie.jpg" alt="Inteligentne baterie DJI Agras DB1580 i DB2160" loading="lazy">
-        </div>
-        <div class="kit-item__body">
-          <div class="kit-item__num">01</div>
-          <h3 class="kit-item__title">3× Inteligentna bateria</h3>
-          <p class="kit-item__desc">DB1580 (T25P/T50) lub DB2160 (T100). System ciągłej pracy - jedna w locie, druga się chłodzi, trzecia ładuje. Zero przestojów.</p>
-        </div>
+    <div class="kit-grid">
+      <div class="kit-card">
+        <div class="kit-card__icon">🚁</div>
+        <h3 class="kit-card__title">Dron Agras T50</h3>
+        <p class="kit-card__desc">Najpotężniejszy model na rynku, udźwig <strong style="color:white;">40 kg oprysku</strong> lub <strong style="color:white;">50 kg do rozsiewu</strong> nawozu.</p>
       </div>
-
-      <div class="kit-item">
-        <div class="kit-item__photo">
-          <img src="images/akcesoria-stacja-ladujaca.jpg" alt="Stacja ładująca z radiatorem DJI" loading="lazy">
-        </div>
-        <div class="kit-item__body">
-          <div class="kit-item__num">02</div>
-          <h3 class="kit-item__title">Stacja ładująca</h3>
-          <p class="kit-item__desc">Szybkie ładowanie z aktywnym chłodzeniem radiatora. Bateria gotowa zanim druga się rozładuje. Pełen cykl ~7-9 minut.</p>
-        </div>
+      <div class="kit-card">
+        <div class="kit-card__icon">🔋</div>
+        <h3 class="kit-card__title">3 Inteligentne Baterie</h3>
+        <p class="kit-card__desc">System ciągłej pracy: <strong style="color:white;">jedna w locie</strong>, druga się chłodzi, trzecia się ładuje.</p>
       </div>
-
-      <div class="kit-item">
-        <div class="kit-item__photo">
-          <img src="images/akcesoria-generator.jpg" alt="Generator prądu DJI D14000iE" loading="lazy">
-        </div>
-        <div class="kit-item__body">
-          <div class="kit-item__num">03</div>
-          <h3 class="kit-item__title">Generator D14000iE</h3>
-          <p class="kit-item__desc">Wielofunkcyjny generator inwerterowy. Pełna niezależność energetyczna - pracujesz w polu nawet bez gniazdka.</p>
-        </div>
+      <div class="kit-card">
+        <div class="kit-card__icon">⚡</div>
+        <h3 class="kit-card__title">Generator Spalinowy</h3>
+        <p class="kit-card__desc">Pełna niezależność w szczerym polu. <strong style="color:white;">Nie potrzebujesz</strong> dostępu do sieci energetycznej.</p>
       </div>
-
-      <div class="kit-item">
-        <div class="kit-item__photo">
-          <img src="images/akcesoria-kontroler.jpg" alt="Kontroler RC Plus 2 z RTK" loading="lazy">
-        </div>
-        <div class="kit-item__body">
-          <div class="kit-item__num">04</div>
-          <h3 class="kit-item__title">Kontroler RC Plus 2 + RTK</h3>
-          <p class="kit-item__desc">Sterowanie z dotykowym wyświetlaczem 7" i pozycjonowaniem RTK z dokładnością do centymetra. Tryby autonomiczne, planowanie misji.</p>
-        </div>
+      <div class="kit-card">
+        <div class="kit-card__icon">🎓</div>
+        <h3 class="kit-card__title">Wsparcie techniczne</h3>
+        <p class="kit-card__desc">Krótkie <strong style="color:white;">przeszkolenie operacyjne</strong> przy wydaniu sprzętu i wsparcie 24/7 przez Telegram.</p>
       </div>
-
     </div>
-  </div>
-</section>
-
-<!-- ==========================================================================
-     SEKCJA 2.5: DODATKI - DODATKOWE MIKSERY
-     ========================================================================== -->
-<section class="section section--dark" style="background:linear-gradient(180deg,#0a0a0a 0%, #141414 100%);">
-  <div class="section__inner">
-    <div class="section__header">
-      <div class="section__label">Mikser w cenie zestawu</div>
-      <h2 class="section__title">Każdy zestaw<br>z mikserem PIT STOP</h2>
-      <p class="section__sub">Dwie pojemności do wyboru - dobrane do skali Twojej operacji. Mikser zawsze w cenie zestawu, bez dopłat.</p>
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:32px;max-width:900px;margin:40px auto 0;">
-
-      <!-- ============ MIKSER PIT STOP 200 L ============ -->
-      <div class="kit-card" style="text-align:center;">
-        <div class="mixer-photo">
-          <img src="images/mixer-200l.jpg" alt="Mikser PIT STOP 200L AGRODRONE" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="mixer-photo__placeholder" style="display:none;">
-            <span>200L</span>
-            <small>wgraj: images/mixer-200l.jpg</small>
-          </div>
-        </div>
-        <h3 class="kit-card__title">PIT STOP 200 L</h3>
-        <p class="kit-card__desc" style="margin-bottom:16px;">Cylindryczny zbiornik z mieszadłem. <strong style="color:white;">W cenie</strong> zestawu T25P. Opcja w T50.</p>
-        <div style="font-family:var(--font-display);font-size:24px;color:var(--color-accent);">W ZESTAWIE</div>
+    <!-- Sekcja: Dodatki opcjonalne -->
+    <div style="margin-top:60px;padding-top:60px;border-top:1px solid var(--color-line);">
+      <div style="text-align:center;margin-bottom:40px;">
+        <div class="section__label">Opcjonalne dodatki</div>
+        <h3 style="font-family:var(--font-display);font-size:36px;letter-spacing:0.02em;color:white;margin-bottom:12px;">🪣 Miksery do środków ochrony roślin</h3>
+        <p style="color:var(--color-text-muted);font-size:15px;">Wybierz pojemność dopasowaną do skali Twojej operacji</p>
       </div>
 
-      <!-- ============ MIKSER PIT STOP 450 L ============ -->
-      <div class="kit-card" style="text-align:center;border-color:var(--color-accent);background:linear-gradient(180deg,rgba(200,160,50,0.08) 0%,#0a0a0a 100%);">
-        <div class="mixer-photo">
-          <img src="images/mixer-450l.jpg" alt="Mikser PIT STOP 450L AGRODRONE" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="mixer-photo__placeholder" style="display:none;">
-            <span>450L</span>
-            <small>wgraj: images/mixer-450l.jpg</small>
-          </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <div class="kit-card" style="text-align:center;">
+          <div style="font-size:48px;margin-bottom:16px;">🪣</div>
+          <h3 class="kit-card__title">Mikser 200 L</h3>
+          <p class="kit-card__desc" style="margin-bottom:16px;">Mały - idealny dla mniejszych areałów lub krótkich zabiegów.</p>
+          <div style="font-family:var(--font-display);font-size:36px;color:var(--color-accent);">100 EUR<span style="font-size:14px;color:var(--color-text-muted);"> / dzień</span></div>
         </div>
-        <h3 class="kit-card__title">PIT STOP 450 L</h3>
-        <p class="kit-card__desc" style="margin-bottom:16px;">Stożkowy zbiornik wysokiej pojemności z drabinką. <strong style="color:var(--color-accent);">W cenie</strong> zestawu T100. Opcja w T50.</p>
-        <div style="font-family:var(--font-display);font-size:24px;color:var(--color-accent);">W ZESTAWIE</div>
-      </div>
 
+        <div class="kit-card" style="text-align:center;border-color:var(--color-accent);background:linear-gradient(180deg,rgba(200,160,50,0.08) 0%,#0a0a0a 100%);">
+          <div style="font-size:48px;margin-bottom:16px;">🪣</div>
+          <h3 class="kit-card__title">Mikser 300 L</h3>
+          <p class="kit-card__desc" style="margin-bottom:16px;"><strong style="color:var(--color-accent);">Najpopularniejszy wybór</strong> - złoty środek dla większości operacji.</p>
+          <div style="font-family:var(--font-display);font-size:36px;color:var(--color-accent);">150 EUR<span style="font-size:14px;color:var(--color-text-muted);"> / dzień</span></div>
+        </div>
+
+        <div class="kit-card" style="text-align:center;">
+          <div style="font-size:48px;margin-bottom:16px;">🪣</div>
+          <h3 class="kit-card__title">Mikser 500 L</h3>
+          <p class="kit-card__desc" style="margin-bottom:16px;">Duży - dla intensywnych prac na dużych areałach bez przerw.</p>
+          <div style="font-family:var(--font-display);font-size:36px;color:var(--color-accent);">250 EUR<span style="font-size:14px;color:var(--color-text-muted);"> / dzień</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 
 <!-- ==========================================================================
-     SEKCJA 3: CENNIK PORÓWNAWCZY
+     SEKCJA 3: CENNIK
      ========================================================================== -->
 <section class="section section--dark" id="pricing" style="background:linear-gradient(180deg,#0a0a0a 0%, #141414 100%);">
   <div class="section__inner">
     <div class="section__header">
-      <div class="section__label">Cennik porównawczy</div>
+      <div class="section__label">Cennik</div>
       <h2 class="section__title">Przejrzyste zasady<br>żadnych ukrytych kosztów</h2>
-      <p class="section__sub">Ceny netto. Mikser, ładowarka, generator i szkolenie zawsze w cenie zestawu.</p>
     </div>
 
     <div class="pricing-table">
-      <div class="pricing-row header" style="grid-template-columns:1.5fr 1fr 1fr 1fr;">
-        <div>Pozycja</div>
-        <div>T25P</div>
-        <div style="color:var(--color-accent);">T50 ★</div>
-        <div>T100</div>
+      <div class="pricing-row header">
+        <div>Usługa</div>
+        <div>Stawka</div>
+        <div>Uwagi</div>
       </div>
-      <div class="pricing-row featured" style="grid-template-columns:1.5fr 1fr 1fr 1fr;">
+      <div class="pricing-row featured">
         <div class="pricing-service">
-          📅 Stawka dobowa
-          <div style="font-size:12px;color:var(--color-text-muted);margin-top:4px;font-weight:400;">Pełen zestaw + mikser w cenie</div>
+          📅 Doba wynajmu (Podstawa)
+          <div style="font-size:12px;color:var(--color-text-muted);margin-top:4px;font-weight:400;">Główna stawka rozliczeniowa</div>
         </div>
-        <div class="pricing-price" style="font-size:22px;">490 €</div>
-        <div class="pricing-price" style="font-size:24px;">690 €</div>
-        <div class="pricing-price" style="font-size:22px;">850 €</div>
+        <div class="pricing-price">500 EUR</div>
+        <div class="pricing-note">Limit do <strong style="color:white;">100 ha / doba</strong></div>
       </div>
-      <div class="pricing-row" style="grid-template-columns:1.5fr 1fr 1fr 1fr;">
+      <div class="pricing-row">
         <div class="pricing-service">
-          📊 Limit areału
-          <div style="font-size:12px;color:var(--color-text-muted);margin-top:4px;font-weight:400;">Bez dopłat w stawce dobowej</div>
+          📈 Powyżej 100 ha
+          <div style="font-size:12px;color:var(--color-text-muted);margin-top:4px;font-weight:400;">Doliczone w przypadku przekroczenia limitu</div>
         </div>
-        <div style="color:white;font-weight:600;">do 110 ha</div>
-        <div style="color:white;font-weight:600;">do 140 ha</div>
-        <div style="color:white;font-weight:600;">do 160 ha</div>
+        <div class="pricing-price">+30%</div>
+        <div class="pricing-note">Od średniej stawki rynkowej <strong style="color:white;">110 zł/ha</strong> = ok. <strong style="color:var(--color-accent);">33 zł/ha</strong> dopłaty</div>
       </div>
-      <div class="pricing-row" style="grid-template-columns:1.5fr 1fr 1fr 1fr;">
+      <div class="pricing-row" style="background:rgba(200,160,50,0.08);border-top:2px solid var(--color-accent);">
+        <div class="pricing-service" style="grid-column:1/-1;color:var(--color-accent);font-family:var(--font-display);font-size:18px;letter-spacing:0.05em;">
+          ⚙️ DODATKI - MIKSER (do mieszania środków ochrony roślin)
+        </div>
+      </div>
+      <div class="pricing-row">
         <div class="pricing-service">
-          📈 Powyżej limitu
-          <div style="font-size:12px;color:var(--color-text-muted);margin-top:4px;font-weight:400;">Dopłata za każdy hektar</div>
+          🪣 Mikser 200 L
+          <div style="font-size:12px;color:var(--color-text-muted);margin-top:4px;font-weight:400;">Mały - dla mniejszych areałów</div>
         </div>
-        <div style="color:var(--color-accent);font-weight:600;">5 €/ha</div>
-        <div style="color:var(--color-accent);font-weight:600;">5 €/ha</div>
-        <div style="color:var(--color-accent);font-weight:600;">4,5 €/ha</div>
+        <div class="pricing-price">100 EUR</div>
+        <div class="pricing-note">Stawka <strong style="color:white;">za dzień</strong> wynajmu</div>
       </div>
-      <div class="pricing-row" style="grid-template-columns:1.5fr 1fr 1fr 1fr;">
+      <div class="pricing-row">
         <div class="pricing-service">
-          🪣 Mikser PIT STOP w cenie
-          <div style="font-size:12px;color:var(--color-text-muted);margin-top:4px;font-weight:400;">Bez dodatkowych opłat</div>
+          🪣 Mikser 300 L
+          <div style="font-size:12px;color:var(--color-text-muted);margin-top:4px;font-weight:400;">Średni - najpopularniejszy wybór</div>
         </div>
-        <div style="color:white;font-weight:600;">200 L</div>
-        <div style="color:white;font-weight:600;">200 / 450 L</div>
-        <div style="color:white;font-weight:600;">450 L</div>
+        <div class="pricing-price">150 EUR</div>
+        <div class="pricing-note">Stawka <strong style="color:white;">za dzień</strong> wynajmu</div>
       </div>
-      <div class="pricing-row" style="grid-template-columns:1.5fr 1fr 1fr 1fr;">
+      <div class="pricing-row">
+        <div class="pricing-service">
+          🪣 Mikser 500 L
+          <div style="font-size:12px;color:var(--color-text-muted);margin-top:4px;font-weight:400;">Duży - dla intensywnych prac</div>
+        </div>
+        <div class="pricing-price">250 EUR</div>
+        <div class="pricing-note">Stawka <strong style="color:white;">za dzień</strong> wynajmu</div>
+      </div>
+      <div class="pricing-row">
         <div class="pricing-service">
           🔒 Kaucja zwrotna
-          <div style="font-size:12px;color:var(--color-text-muted);margin-top:4px;font-weight:400;">Zwrot natychmiast po przeglądzie</div>
+          <div style="font-size:12px;color:var(--color-text-muted);margin-top:4px;font-weight:400;">Zabezpieczenie przed uszkodzeniem</div>
         </div>
-        <div class="pricing-price" style="font-size:18px;">2 000 €</div>
-        <div class="pricing-price" style="font-size:18px;">2 500 €</div>
-        <div class="pricing-price" style="font-size:18px;">3 000 €</div>
+        <div class="pricing-price">1500 EUR</div>
+        <div class="pricing-note">Zwracana <strong style="color:white;">natychmiast</strong> po przeglądzie zwrotnym sprzętu</div>
       </div>
     </div>
 
     <p style="text-align:center;margin-top:40px;color:var(--color-text-muted);font-size:14px;">
-      💡 Transport, paliwo do generatora, ŚOR oraz operator (opcjonalnie) - <a href="#form" style="color:var(--color-accent);">wycena indywidualna</a>
+      💡 Pełen cennik usług dodatkowych (transport, paliwo, środki ochrony roślin) - <a href="#form" style="color:var(--color-accent);">zapytaj o ofertę</a>
     </p>
   </div>
 </section>
@@ -1254,16 +757,6 @@
     </div>
 
     <form class="rental-form" onsubmit="event.preventDefault();submitRentalForm(this);">
-
-      <div class="form-group">
-        <label>🚁 Wybierz model drona *</label>
-        <select name="model" id="modelSelect" required style="width:100%;padding:14px;background:rgba(255,255,255,0.05);border:1px solid var(--color-line);border-radius:4px;color:white;font-family:inherit;font-size:15px;">
-          <option value="T25P">T25P - 490 €/dzień (do 110 ha) - małe gospodarstwa</option>
-          <option value="T50" selected>T50 - 690 €/dzień (do 140 ha) ★ NAJPOPULARNIEJSZY</option>
-          <option value="T100">T100 - 850 €/dzień (do 160 ha) - firmy usługowe</option>
-        </select>
-      </div>
-
       <div class="form-row">
         <div class="form-group">
           <label>Imię i Nazwisko / Nazwa Firmy *</label>
@@ -1297,23 +790,24 @@
         </div>
       </div>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label>Liczba dób *</label>
-          <input type="number" name="days" required min="1" value="1">
-        </div>
-        <div class="form-group">
-          <label>👨‍✈️ Operator (opcjonalnie)</label>
-          <select name="operator" style="width:100%;padding:12px;background:rgba(255,255,255,0.05);border:1px solid var(--color-line);border-radius:4px;color:white;font-family:inherit;font-size:14px;">
-            <option value="no">Bez operatora (sam pilotuję)</option>
-            <option value="yes">Z operatorem (wycena indywidualna)</option>
-          </select>
-        </div>
+      <div class="form-group">
+        <label>Liczba dób *</label>
+        <input type="number" name="days" required min="1" value="1">
       </div>
 
       <div class="form-group">
-        <label>Dodatkowe informacje (rodzaj uprawy, środki ochrony, lokalizacja, transport...)</label>
-        <textarea name="notes" rows="4" placeholder="Np. opryski rzepaku, środek X, lokalizacja: Mazowsze, potrzebny transport..."></textarea>
+        <label>🪣 Dodatkowy mikser (opcjonalnie)</label>
+        <select name="mixer" style="width:100%;padding:12px;background:rgba(255,255,255,0.05);border:1px solid var(--color-line);border-radius:4px;color:white;font-family:inherit;font-size:14px;">
+          <option value="none">Bez miksera</option>
+          <option value="200">Mikser 200 L (+100 EUR/dzień)</option>
+          <option value="300">Mikser 300 L (+150 EUR/dzień)</option>
+          <option value="500">Mikser 500 L (+250 EUR/dzień)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Dodatkowe informacje (rodzaj uprawy, środki ochrony, lokalizacja...)</label>
+        <textarea name="notes" rows="4" placeholder="Np. opryski rzepaku, środek X, lokalizacja: Mazowsze..."></textarea>
       </div>
 
       <div style="margin: 30px 0 24px; padding-top: 24px; border-top: 1px solid var(--color-line);">
@@ -1331,7 +825,7 @@
 
         <label class="checkbox-group">
           <input type="checkbox" name="terms" required>
-          <label>Akceptuję <strong>regulamin wynajmu</strong> i zobowiązuję się do wpłaty <strong>kaucji zwrotnej</strong> przy odbiorze sprzętu (T25P: 2000 €, T50: 2500 €, T100: 3000 €).</label>
+          <label>Akceptuję <strong>regulamin wynajmu</strong> i zobowiązuję się do wpłaty <strong>kaucji zwrotnej 1500 EUR</strong> przy odbiorze sprzętu.</label>
         </label>
 
         <label class="checkbox-group">
@@ -1345,7 +839,7 @@
       </button>
 
       <p style="text-align:center;margin-top:16px;font-size:12px;color:var(--color-text-muted);">
-        Odpowiadamy w 24h • Ceny netto • Bezpłatna wycena
+        Odpowiadamy w 24h • Bez zobowiązań • Bezpłatna wycena
       </p>
     </form>
   </div>
@@ -1372,14 +866,14 @@
       <details class="faq-item">
         <summary>Co jeśli rozbiję drona lub uszkodzę sprzęt?</summary>
         <div class="faq-item__content">
-          Twoja odpowiedzialność jest <strong style="color:white;">ograniczona do wysokości szkody</strong>. Kaucja (2 000 € dla T25P, 2 500 € dla T50, 3 000 € dla T100) służy na pokrycie pierwszych kosztów naprawy. Większe szkody pokrywa Twoje OC operatora (dlatego jest obowiązkowe). Po zwrocie sprzętu przeprowadzamy przegląd techniczny - jeśli wszystko OK, kaucja wraca natychmiast.
+          Twoja odpowiedzialność jest <strong style="color:white;">ograniczona do wysokości szkody</strong>. Kaucja (1500 EUR) służy na pokrycie pierwszych kosztów naprawy. Większe szkody pokrywa Twoje OC operatora (dlatego jest obowiązkowe). Po zwrocie sprzętu przeprowadzamy przegląd techniczny - jeśli wszystko OK, kaucja wraca natychmiast.
         </div>
       </details>
 
       <details class="faq-item">
-        <summary>Jak sprawdzacie areał (limit ha/dzień)?</summary>
+        <summary>Jak sprawdzacie areał (powyżej 100 ha = +30%)?</summary>
         <div class="faq-item__content">
-          Po każdym wynajmie zgrywamy <strong style="color:white;">logi z aplikacji DJI SmartFarm</strong> - tam jest dokładnie pokazane ile hektarów dron zoperował. <strong style="color:white;">Wszystko jest czarno na białym.</strong> Każdy model ma swój limit (T25P: 110 ha, T50: 140 ha, T100: 160 ha na dzień). Jeśli przekroczyłeś - dopłacasz po stawce 4,5-5 €/ha, jeśli zrobiłeś mniej - bez dopłat.
+          Po każdym wynajmie zgrywamy <strong style="color:white;">logi z aplikacji DJI SmartFarm</strong> - tam jest dokładnie pokazane ile hektarów dron zoperował. <strong style="color:white;">Wszystko jest czarno na białym.</strong> Jeśli przekroczyłeś limit - dopłacasz, jeśli zrobiłeś mniej - rozliczamy się bez dopłat.
         </div>
       </details>
 
@@ -1419,7 +913,7 @@
   <div class="cta__inner">
     <h2 class="cta__title">Masz pytania o wynajem?</h2>
     <p class="cta__sub">Napisz do nas przez Telegram - odpowiadamy najszybciej</p>
-    <a href="https://t.me/dji_agras_parts_bot" target="_blank" class="btn btn--telegram">
+    <a href="https://t.me/agras_spare_parts_bot" target="_blank" class="btn btn--telegram">
       ✈️ Otwórz bota
     </a>
   </div>
@@ -1445,7 +939,7 @@
       <div class="footer__col">
         <h4>Kontakt</h4>
         <ul>
-          <li><a href="https://t.me/dji_agras_parts_bot" target="_blank">Telegram Bot</a></li>
+          <li><a href="https://t.me/agras_spare_parts_bot" target="_blank">Telegram Bot</a></li>
           <li><a href="contact.html">Formularz kontaktowy</a></li>
           <li><a href="mailto:contact@example.com">contact@example.com</a></li>
         </ul>
@@ -1503,43 +997,35 @@
 </div>
 
 <script>
-// === Konfiguracja modeli ===
-const MODELS = {
-  T25P: { name: 'DJI Agras T25P', daily: 490, haLimit: 110, overageRate: 5,   deposit: 2000, mixer: 'PIT STOP 200 L' },
-  T50:  { name: 'DJI Agras T50',  daily: 690, haLimit: 140, overageRate: 5,   deposit: 2500, mixer: 'PIT STOP 200 / 450 L' },
-  T100: { name: 'DJI Agras T100', daily: 850, haLimit: 160, overageRate: 4.5, deposit: 3000, mixer: 'PIT STOP 450 L' }
-};
-
-// === Auto-wybór modelu po kliknięciu CTA w karcie modelu ===
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.model-card__cta[data-model]').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-      const model = this.getAttribute('data-model');
-      const select = document.getElementById('modelSelect');
-      if (select) select.value = model;
-    });
-  });
-});
-
-// === Wysyłka formularza wynajmu ===
+// === Funkcja wysyłki formularza wynajmu ===
 function submitRentalForm(form) {
   const f = new FormData(form);
-  const modelKey = f.get('model') || 'T50';
-  const M = MODELS[modelKey];
   const days = parseInt(f.get('days')) || 1;
   const ha = parseInt(f.get('hectares')) || 0;
-  const operator = f.get('operator') === 'yes';
+  const mixer = f.get('mixer') || 'none';
+  
+  // Stawki:
+  // - Baza: 500 EUR/doba (limit 100ha/doba)
+  // - Nadwyżka: +30% stawki rynkowej 110 zł/ha = 33 zł/ha = ~7.7 EUR/ha (przyjmuję kurs 4.30)
+  // - Mikser: 100/150/250 EUR/dzień
+  
+  const PLN_TO_EUR = 1 / 4.30; // przelicznik
+  const MARKET_RATE_PLN = 110; // zł/ha
+  const SURCHARGE_PCT = 0.30;
+  const SURCHARGE_PLN_PER_HA = MARKET_RATE_PLN * SURCHARGE_PCT; // = 33 zł/ha
+  const SURCHARGE_EUR_PER_HA = SURCHARGE_PLN_PER_HA * PLN_TO_EUR; // ~7.7 EUR/ha
+  
+  const baseTotal = days * 500;
+  const extraHa = Math.max(0, ha - (100 * days));
+  const extraCost = extraHa > 0 ? Math.round(extraHa * SURCHARGE_EUR_PER_HA) : 0;
+  
+  // Mikser
+  const MIXER_PRICES = {'200': 100, '300': 150, '500': 250};
+  const mixerCostPerDay = MIXER_PRICES[mixer] || 0;
+  const mixerTotal = mixerCostPerDay * days;
+  const mixerLabel = mixer !== 'none' ? `Mikser ${mixer}L` : 'brak';
 
-  // Kalkulacja
-  const baseTotal = days * M.daily;
-  const haIncluded = M.haLimit * days;
-  const extraHa = Math.max(0, ha - haIncluded);
-  const extraCost = Math.round(extraHa * M.overageRate);
-  const grandTotal = baseTotal + extraCost;
-
-  // Wiadomość
-  let msg = `🚁 NOWE ZAPYTANIE O WYNAJEM\n\n`;
-  msg += `📦 Model: ${M.name}\n\n`;
+  let msg = `🚁 NOWE ZAPYTANIE O WYNAJEM T50\n\n`;
   msg += `👤 ${f.get('name')}\n`;
   if (f.get('nip')) msg += `🏢 NIP: ${f.get('nip')}\n`;
   msg += `📞 ${f.get('phone')}\n`;
@@ -1547,31 +1033,29 @@ function submitRentalForm(form) {
   msg += `📅 Termin: ${f.get('date')}\n`;
   msg += `⏰ Liczba dób: ${days}\n`;
   msg += `🌾 Areał: ${ha} ha\n`;
-  msg += `🪣 Mikser: ${M.mixer} (w cenie)\n`;
-  msg += `👨‍✈️ Operator: ${operator ? 'TAK (wycena indywidualna)' : 'NIE'}\n`;
+  msg += `🪣 Mikser: ${mixerLabel}\n`;
   if (f.get('notes')) msg += `📝 Uwagi: ${f.get('notes')}\n`;
 
-  msg += `\n💰 SZACUNKOWY KOSZT (netto):\n`;
-  msg += `• Stawka dobowa ${M.name}: ${days} × ${M.daily} € = ${baseTotal} €\n`;
-  msg += `• Limit areału: ${haIncluded} ha (${days} × ${M.haLimit})\n`;
+  msg += `\n💰 SZACUNKOWY KOSZT:\n`;
+  msg += `• Baza: ${days} doby × 500 EUR = ${baseTotal} EUR\n`;
   if (extraCost > 0) {
-    msg += `• Powyżej limitu: ${extraHa} ha × ${M.overageRate} €/ha = ${extraCost} €\n`;
+    msg += `• Powyżej 100ha/doba: +${extraCost} EUR (${extraHa} ha × ~${SURCHARGE_EUR_PER_HA.toFixed(2)} EUR)\n`;
   }
-  msg += `• Kaucja zwrotna: ${M.deposit} €\n`;
-  msg += `• ŁĄCZNIE: ${grandTotal} € + kaucja ${M.deposit} €\n`;
-  if (operator) {
-    msg += `• Operator: wycena indywidualna\n`;
+  if (mixerTotal > 0) {
+    msg += `• ${mixerLabel}: ${days} × ${mixerCostPerDay} EUR = ${mixerTotal} EUR\n`;
   }
-  msg += `\n(ceny netto, transport / paliwo / ŚOR rozliczane osobno)`;
+  msg += `• Kaucja zwrotna: 1500 EUR\n`;
+  const grandTotal = baseTotal + extraCost + mixerTotal;
+  msg += `• ŁĄCZNIE: ${grandTotal} EUR + kaucja\n`;
 
-  msg += `\n\n✅ OŚWIADCZENIA:\n`;
-  msg += `• Licencja STS-01 + odstępstwo ULC: ${f.get('license') ? 'TAK' : 'NIE'}\n`;
-  msg += `• OC operatora: ${f.get('insurance') ? 'TAK' : 'NIE'}\n`;
-  msg += `• Regulamin + kaucja: ${f.get('terms') ? 'TAK' : 'NIE'}\n`;
+  msg += `\n✅ OŚWIADCZENIA:\n`;
+  msg += `• Licencja: ${f.get('license') ? 'TAK' : 'NIE'}\n`;
+  msg += `• OC: ${f.get('insurance') ? 'TAK' : 'NIE'}\n`;
+  msg += `• Regulamin: ${f.get('terms') ? 'TAK' : 'NIE'}\n`;
   msg += `• Szkolenie chemizacyjne: ${f.get('chemicals') ? 'TAK' : 'NIE/Brak chemii'}\n`;
 
-  // Otwórz Telegram
-  const tgUrl = `https://t.me/dji_agras_parts_bot?start=rental_${Date.now()}`;
+  // Otwórz Telegram z gotową wiadomością
+  const tgUrl = `https://t.me/agras_spare_parts_bot?start=rental_${Date.now()}`;
   window.open(tgUrl, '_blank');
 
   // Skopiuj do schowka
@@ -1601,7 +1085,7 @@ function submitRentalForm(form) {
   <button onclick="document.getElementById('chatPopup').style.display='none'" style="position:absolute;top:8px;right:12px;background:transparent;border:none;color:white;font-size:24px;cursor:pointer;">×</button>
   <div style="font-family:var(--font-display);font-size:24px;color:var(--color-accent);letter-spacing:0.05em;margin-bottom:8px;">💬 PISZ DO NAS</div>
   <p style="color:rgba(255,255,255,0.85);font-size:14px;margin-bottom:20px;">Najszybciej odpowiemy na Telegramie!</p>
-  <a href="https://t.me/dji_agras_parts_bot" target="_blank" style="display:block;background:linear-gradient(135deg,#0088cc,#006699);color:white;text-align:center;padding:14px;border-radius:6px;text-decoration:none;font-weight:700;letter-spacing:0.05em;margin-bottom:8px;">✈️ Otwórz bota Telegram</a>
+  <a href="https://t.me/agras_spare_parts_bot" target="_blank" style="display:block;background:linear-gradient(135deg,#0088cc,#006699);color:white;text-align:center;padding:14px;border-radius:6px;text-decoration:none;font-weight:700;letter-spacing:0.05em;margin-bottom:8px;">✈️ Otwórz bota Telegram</a>
   <a href="contact.html" style="display:block;text-align:center;color:var(--color-text-muted);font-size:13px;text-decoration:none;padding:8px;">Inne sposoby kontaktu →</a>
 </div>
 <style>
@@ -1632,6 +1116,47 @@ window.addEventListener('load',hidePageLoader);
 setTimeout(hidePageLoader,2000);
 </script>
 <!-- /Loading -->
+
+
+<!-- Consent Mode integration z bannerem cookies -->
+<script>
+(function() {
+  window.acceptAllCookies = function() {
+    try { localStorage.setItem('cookie_consent', 'accepted_all'); } catch(e) {}
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted',
+        'personalization_storage': 'granted'
+      });
+    }
+    var banner = document.querySelector('.cookie-banner, #cookie-banner, [class*="cookie"]');
+    if (banner) banner.style.display = 'none';
+  };
+  window.acceptEssentialOnly = function() {
+    try { localStorage.setItem('cookie_consent', 'essential_only'); } catch(e) {}
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+    var banner = document.querySelector('.cookie-banner, #cookie-banner, [class*="cookie"]');
+    if (banner) banner.style.display = 'none';
+  };
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('button, a').forEach(function(btn) {
+      var txt = (btn.textContent || '').trim().toLowerCase();
+      if (txt.includes('akceptuję wszystkie') || txt.includes('accept all') ||
+          txt.includes('прийняти всі') || txt.includes('全部接受')) {
+        btn.addEventListener('click', window.acceptAllCookies);
+      } else if (txt.includes('tylko niezbędne') || txt.includes('essential only') ||
+                 txt.includes('тільки необхідні') || txt.includes('仅必要')) {
+        btn.addEventListener('click', window.acceptEssentialOnly);
+      }
+    });
+  });
+})();
+</script>
 
 </body>
 </html>

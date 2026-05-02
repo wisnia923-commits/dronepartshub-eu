@@ -1,87 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
+
+  <!-- ═══ STRONA GŁÓWNA ═══ -->
   <url>
     <loc>https://dronepartshub.eu/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dronepartshub.eu/?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dronepartshub.eu/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://dronepartshub.eu/?lang=ua"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dronepartshub.eu/?lang=cn"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dronepartshub.eu/"/>
+    <image:image>
+      <image:loc>https://dronepartshub.eu/images/hero-drones.jpg</image:loc>
+      <image:title>DJI Agras T25P, T50, T100 - sklep z częściami</image:title>
+    </image:image>
   </url>
+
+  <!-- ═══ KATALOG ═══ -->
   <url>
     <loc>https://dronepartshub.eu/catalog.html</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dronepartshub.eu/catalog.html?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dronepartshub.eu/catalog.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://dronepartshub.eu/catalog.html?lang=ua"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dronepartshub.eu/catalog.html?lang=cn"/>
+  </url>
+
+  <!-- ═══ KATALOG - filtry po modelu (dla SEO) ═══ -->
+  <url>
+    <loc>https://dronepartshub.eu/catalog.html?model=T25P</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dronepartshub.eu/rental.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://dronepartshub.eu/catalog.html?model=T50</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
+  <url>
+    <loc>https://dronepartshub.eu/catalog.html?model=T100</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ═══ HURT ═══ -->
   <url>
     <loc>https://dronepartshub.eu/hurt.html</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dronepartshub.eu/hurt.html?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dronepartshub.eu/hurt.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://dronepartshub.eu/hurt.html?lang=ua"/>
   </url>
+
+  <!-- ═══ WYNAJEM T50 ═══ -->
   <url>
-    <loc>https://dronepartshub.eu/about.html</loc>
-    <lastmod>2026-04-30</lastmod>
+    <loc>https://dronepartshub.eu/rental.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dronepartshub.eu/rental.html?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dronepartshub.eu/rental.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://dronepartshub.eu/rental.html?lang=ua"/>
   </url>
-  <url>
-    <loc>https://dronepartshub.eu/contact.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://dronepartshub.eu/faq.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dronepartshub.eu/blog.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://dronepartshub.eu/blog-jak-wybrac-baterie.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dronepartshub.eu/blog-przepisy-2026.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dronepartshub.eu/blog-kupic-czy-wynajac.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+
+  <!-- ═══ STRONY PRAWNE ═══ -->
   <url>
     <loc>https://dronepartshub.eu/regulamin.html</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://dronepartshub.eu/polityka-prywatnosci.html</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://dronepartshub.eu/zwroty-reklamacje.html</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://dronepartshub.eu/privacy-policy-bot.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- ═══ DODATKOWE: link do sitemapy produktów (jeśli ją wygenerujesz) ═══ -->
+  <!--
+    Wygeneruj osobny sitemap-products.xml ze wszystkimi 1537 SKU
+    Format: https://dronepartshub.eu/product.html?id=YC.JG.MT000005
+    To zwiększy indeksowanie wszystkich produktów w Google.
+    Użyj skryptu generate_products_sitemap.py (w folderze 5-instrukcje).
+  -->
+
 </urlset>

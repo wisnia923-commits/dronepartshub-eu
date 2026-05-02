@@ -2,33 +2,171 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- Google Consent Mode v2 - MUSI BYĆ PRZED GTM                    -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'granted',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+      'wait_for_update': 500,
+      'region': ['PL', 'EU', 'UA']
+    });
+    try {
+      var savedConsent = localStorage.getItem('cookie_consent');
+      if (savedConsent === 'accepted_all') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted',
+          'personalization_storage': 'granted'
+        });
+      } else if (savedConsent === 'essential_only') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
+    } catch(e) {}
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T4DPZ6SZ');</script>
+  <!-- End Google Tag Manager -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Drone Parts Hub — Spare Parts compatible with Agras T25 / T50 / T100</title>
-  <meta name="description" content="Sklep z częściami zamiennymi do dronów rolniczych Agras T25, T50, T100. 1537 części w katalogu, dostawa w UE.">
-  <meta name="keywords" content="części dji agras, t100, t50, t25, drony rolnicze, baterie dron, wynajem drona, oprysk">
-  <meta name="author" content="Drone Parts Hub">
-  <meta name="robots" content="index, follow">
+  <title>Drone Parts Hub — Części DJI Agras T25P, T50, T100</title>
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://droneparts.pl/index.html">
-  <meta property="og:title" content="Drone Parts Hub - Części do dronów rolniczych T25, T50, T100">
-  <meta property="og:description" content="Sklep z 1537 częściami zamiennymi do dronów rolniczych DJI Agras T25, T50, T100. Bot Telegram, wsparcie PL/UA/EN, wynajem T50.">
-  <meta property="og:image" content="https://droneparts.pl/images/hero-drones.jpg">
-  <meta property="og:locale" content="pl_PL">
   
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Drone Parts Hub - Części do dronów rolniczych T25, T50, T100">
-  <meta name="twitter:description" content="Sklep z 1537 częściami zamiennymi do dronów rolniczych DJI Agras T25, T50, T100. Bot Telegram, wsparcie PL/UA/EN, wynajem T50.">
-  <meta name="twitter:image" content="https://droneparts.pl/images/hero-drones.jpg">
   
-  <link rel="canonical" href="https://droneparts.pl/index.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- SEO META TAGS — DronePartsHub.eu                                -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <meta name="description" content="Sklep z 1537 częściami zamiennymi do dronów rolniczych DJI Agras. Silniki, akumulatory DB800/DB1560/DB2160, dysze, śmigła. Dostawa w UE 2-7 dni. Wsparcie PL/EN/UA/CN.">
+  <meta name="keywords" content="DJI Agras T25P, DJI Agras T50, DJI Agras T100, części DJI Agras, akumulator DB800, DB1560, DB2160, silnik agras, dysza XR110, części zamienne dron rolniczy, drone parts hub">
+  <meta name="author" content="Drone Parts Hub">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <meta name="theme-color" content="#c8a032">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Geo / Language -->
+  <meta name="geo.region" content="EU">
+  <meta name="language" content="pl">
+  <meta http-equiv="content-language" content="pl-PL">
+
+  <!-- Hreflang (4 języki) -->
+  <link rel="alternate" hreflang="pl" href="https://dronepartshub.eu/?lang=pl">
+  <link rel="alternate" hreflang="en" href="https://dronepartshub.eu/?lang=en">
+  <link rel="alternate" hreflang="uk" href="https://dronepartshub.eu/?lang=ua">
+  <link rel="alternate" hreflang="zh" href="https://dronepartshub.eu/?lang=cn">
+  <link rel="alternate" hreflang="x-default" href="https://dronepartshub.eu/">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://dronepartshub.eu/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Drone Parts Hub">
+  <meta property="og:title" content="Drone Parts Hub — Części DJI Agras T25P, T50, T100">
+  <meta property="og:description" content="Sklep z 1537 częściami zamiennymi do dronów rolniczych DJI Agras. Silniki, akumulatory DB800/DB1560/DB2160, dysze, śmigła. Dostawa w UE 2-7 dni. Wsparcie PL/EN/UA/CN.">
+  <meta property="og:url" content="https://dronepartshub.eu/">
+  <meta property="og:image" content="https://dronepartshub.eu/images/hero-drones.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Drone Parts Hub - części DJI Agras">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="uk_UA">
+  <meta property="og:locale:alternate" content="zh_CN">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Drone Parts Hub — Części DJI Agras T25P, T50, T100">
+  <meta name="twitter:description" content="Sklep z 1537 częściami zamiennymi do dronów rolniczych DJI Agras. Silniki, akumulatory DB800/DB1560/DB2160, dysze, śmigła. Dostawa w UE 2-7 dni. Wsparcie PL/EN/UA/CN.">
+  <meta name="twitter:image" content="https://dronepartshub.eu/images/hero-drones.jpg">
+
+  <!-- Performance -->
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+
+  <!-- Search Console verification (PODMIEŃ po założeniu konta) -->
+  <meta name="google-site-verification" content="WSTAW-TU-KOD-Z-SEARCH-CONSOLE">
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "OnlineStore",
+    "@id": "https://dronepartshub.eu/#organization",
+    "name": "Drone Parts Hub",
+    "alternateName": "DronePartsHub.eu",
+    "url": "https://dronepartshub.eu",
+    "logo": "https://dronepartshub.eu/images/logo.png",
+    "image": "https://dronepartshub.eu/images/hero-drones.jpg",
+    "description": "Sklep z 1537 częściami zamiennymi do dronów rolniczych DJI Agras T25P, T50, T100. Dostawa w UE. Wsparcie PL/EN/UA/CN.",
+    "email": "dronepartshub@gmail.com",
+    "areaServed": ["PL", "EU", "UA"],
+    "currenciesAccepted": "EUR, PLN, USD",
+    "paymentAccepted": "Credit Card, Bank Transfer, PayPal",
+    "priceRange": "$$-$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "PL"
+    },
+    "sameAs": [
+      "https://t.me/agras_spare_parts_bot"
+    ],
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://dronepartshub.eu/catalog.html?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://dronepartshub.eu/#website",
+    "url": "https://dronepartshub.eu",
+    "name": "Drone Parts Hub",
+    "description": "Sklep części DJI Agras T25P/T50/T100",
+    "inLanguage": ["pl-PL", "en-US", "uk-UA", "zh-CN"],
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://dronepartshub.eu/catalog.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
 </head>
 <body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4DPZ6SZ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
 <!-- NAV -->
 <nav class="nav">
@@ -48,7 +186,7 @@
         🛒 <span data-i18n="cart">Koszyk</span>
         <span class="nav__cart-count">0</span>
       </a>
-      <a href="https://t.me/dji_agras_parts_bot" target="_blank" class="nav__telegram">
+      <a href="https://t.me/agras_spare_parts_bot" target="_blank" class="nav__telegram">
         ✈️ Telegram
       </a>
     </div>
@@ -76,7 +214,7 @@
         <a href="catalog.html" class="btn btn--primary">
           📦 <span data-i18n="nav_parts">Przeglądaj części</span>
         </a>
-        <a href="https://t.me/dji_agras_parts_bot" target="_blank" class="btn btn--ghost">
+        <a href="https://t.me/agras_spare_parts_bot" target="_blank" class="btn btn--ghost">
           ✈️ Telegram Bot
         </a>
       </div>
@@ -112,13 +250,13 @@
       <a href="catalog.html?model=T25" class="model-card">
         <div class="model-card__visual">🛩️</div>
         <div class="model-card__body">
-          <div class="model-card__name">T25</div>
+          <div class="model-card__name">T25P</div>
           <div class="model-card__tagline">A little smaller. A little smarter.</div>
           <ul class="model-card__features">
-            <li>Pojemność <strong>20 kg</strong></li>
-            <li>Zasięg <strong>2 km</strong></li>
-            <li>Bateria <strong>17000 mAh</strong></li>
-            <li>Części dostępne <strong>249</strong></li>
+            <li>Pojemność <strong>20 L oprysk / 25 kg rozsiewacz</strong></li>
+            <li>Zasięg <strong>4 km (O3)</strong></li>
+            <li>Bateria <strong>DB800 — 15 500 mAh</strong></li>
+            <li>Części dostępne <strong>503</strong></li>
           </ul>
           <div class="model-card__cta">
             <span>Zobacz części</span>
@@ -133,10 +271,10 @@
           <div class="model-card__name">T50</div>
           <div class="model-card__tagline">Ready, Steady, Go.</div>
           <ul class="model-card__features">
-            <li>Pojemność <strong>40 kg</strong></li>
-            <li>Zasięg <strong>2 km</strong></li>
-            <li>Bateria <strong>30000 mAh</strong></li>
-            <li>Części dostępne <strong>19</strong></li>
+            <li>Pojemność <strong>40 L oprysk / 50 kg rozsiewacz</strong></li>
+            <li>Zasięg <strong>5 km (O3)</strong></li>
+            <li>Bateria <strong>DB1560 — 30 000 mAh</strong></li>
+            <li>Części dostępne <strong>279</strong></li>
           </ul>
           <div class="model-card__cta">
             <span>Zobacz części</span>
@@ -151,10 +289,10 @@
           <div class="model-card__name">T100</div>
           <div class="model-card__tagline">Big Drone, Big Jobs.</div>
           <ul class="model-card__features">
-            <li>Pojemność <strong>75 kg</strong></li>
-            <li>Zasięg <strong>2.5 km</strong></li>
-            <li>Bateria <strong>30000 mAh</strong></li>
-            <li>Części dostępne <strong>490</strong></li>
+            <li>Pojemność <strong>75 L oprysk / 150 L rozsiewacz</strong></li>
+            <li>Zasięg <strong>5 km (O3+)</strong></li>
+            <li>Bateria <strong>DB2160 — 41 000 mAh</strong></li>
+            <li>Części dostępne <strong>755</strong></li>
           </ul>
           <div class="model-card__cta">
             <span>Zobacz części</span>
@@ -186,31 +324,8 @@
 </section>
 
 <script>
-// ─── KURS WALUTOWY (NBP) ──────────────────────────────────────────────
-// Domyślnie: aktualny kurs NBP USD/PLN tabela A
-// Próbujemy załadować rates.json (świeższy kurs) - fallback na hardcoded
-let USD_TO_PLN = 3.6460;  // NBP tabela 083/A/NBP/2026 z dnia 2026-04-30
-let RATES_DATE = '2026-04-30';
-
-async function loadRates() {
-  try {
-    const res = await fetch('rates.json?t=' + Date.now());
-    if (res.ok) {
-      const r = await res.json();
-      if (r.usd_pln && r.usd_pln > 1.0) {
-        USD_TO_PLN = r.usd_pln;
-        RATES_DATE = r.date || RATES_DATE;
-        console.log('✅ Kurs NBP załadowany:', r);
-      }
-    }
-  } catch (e) {
-    console.warn('⚠️ rates.json niedostępny, używam fallback:', USD_TO_PLN);
-  }
-}
-
 async function loadBestsellers() {
   console.log('🔥 Ładowanie bestsellerów...');
-  await loadRates();  // pobierz świeży kurs PRZED renderowaniem cen
   try {
     const res = await fetch('parts.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -228,7 +343,7 @@ async function loadBestsellers() {
     const html = bestsellers.map((p, i) => {
       const name = p[`nazwa_${lang}`] || p.nazwa_en;
       const cat = p[`kategoria_${lang}`] || p.kategoria_en;
-      const price_pln = (p.cena_usd * USD_TO_PLN).toFixed(2);
+      const price_pln = (p.cena_usd * 4.20 * 1.05).toFixed(2);
       
       return `
         <div class="product-card" onclick="window.location.href='product.html?id=${p.id}'" style="position:relative;">
@@ -557,7 +672,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="cta__inner">
     <h2 class="cta__title" data-i18n="cta_title">Zamów przez Telegram</h2>
     <p class="cta__sub" data-i18n="cta_sub">Nasz bot Telegram pomoże Ci szybko znaleźć potrzebne części, sprawdzić dostępność i złożyć zamówienie</p>
-    <a href="https://t.me/dji_agras_parts_bot" target="_blank" class="btn btn--telegram">
+    <a href="https://t.me/agras_spare_parts_bot" target="_blank" class="btn btn--telegram">
       ✈️ <span data-i18n="cta_btn">Otwórz bota</span>
     </a>
   </div>
@@ -582,7 +697,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="footer__col">
         <h4>Kontakt</h4>
         <ul>
-          <li><a href="https://t.me/dji_agras_parts_bot" target="_blank">Telegram Bot</a></li>
+          <li><a href="https://t.me/agras_spare_parts_bot" target="_blank">Telegram Bot</a></li>
           <li><a href="contact.html">Formularz kontaktowy</a></li>
           <li><a href="mailto:contact@example.com">contact@example.com</a></li>
         </ul>
@@ -678,7 +793,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <button onclick="document.getElementById('chatPopup').style.display='none'" style="position:absolute;top:8px;right:12px;background:transparent;border:none;color:white;font-size:24px;cursor:pointer;">×</button>
   <div style="font-family:var(--font-display);font-size:24px;color:var(--color-accent);letter-spacing:0.05em;margin-bottom:8px;">💬 PISZ DO NAS</div>
   <p style="color:rgba(255,255,255,0.85);font-size:14px;margin-bottom:20px;">Najszybciej odpowiemy na Telegramie!</p>
-  <a href="https://t.me/dji_agras_parts_bot" target="_blank" style="display:block;background:linear-gradient(135deg,#0088cc,#006699);color:white;text-align:center;padding:14px;border-radius:6px;text-decoration:none;font-weight:700;letter-spacing:0.05em;margin-bottom:8px;">✈️ Otwórz bota Telegram</a>
+  <a href="https://t.me/agras_spare_parts_bot" target="_blank" style="display:block;background:linear-gradient(135deg,#0088cc,#006699);color:white;text-align:center;padding:14px;border-radius:6px;text-decoration:none;font-weight:700;letter-spacing:0.05em;margin-bottom:8px;">✈️ Otwórz bota Telegram</a>
   <a href="contact.html" style="display:block;text-align:center;color:var(--color-text-muted);font-size:13px;text-decoration:none;padding:8px;">Inne sposoby kontaktu →</a>
 </div>
 <style>
@@ -709,6 +824,47 @@ window.addEventListener('load',hidePageLoader);
 setTimeout(hidePageLoader,2000);
 </script>
 <!-- /Loading -->
+
+
+<!-- Consent Mode integration z bannerem cookies -->
+<script>
+(function() {
+  window.acceptAllCookies = function() {
+    try { localStorage.setItem('cookie_consent', 'accepted_all'); } catch(e) {}
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted',
+        'personalization_storage': 'granted'
+      });
+    }
+    var banner = document.querySelector('.cookie-banner, #cookie-banner, [class*="cookie"]');
+    if (banner) banner.style.display = 'none';
+  };
+  window.acceptEssentialOnly = function() {
+    try { localStorage.setItem('cookie_consent', 'essential_only'); } catch(e) {}
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+    var banner = document.querySelector('.cookie-banner, #cookie-banner, [class*="cookie"]');
+    if (banner) banner.style.display = 'none';
+  };
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('button, a').forEach(function(btn) {
+      var txt = (btn.textContent || '').trim().toLowerCase();
+      if (txt.includes('akceptuję wszystkie') || txt.includes('accept all') ||
+          txt.includes('прийняти всі') || txt.includes('全部接受')) {
+        btn.addEventListener('click', window.acceptAllCookies);
+      } else if (txt.includes('tylko niezbędne') || txt.includes('essential only') ||
+                 txt.includes('тільки необхідні') || txt.includes('仅必要')) {
+        btn.addEventListener('click', window.acceptEssentialOnly);
+      }
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
