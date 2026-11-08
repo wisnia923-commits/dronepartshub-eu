@@ -541,7 +541,7 @@ function submitB2B(form) {
     website: f.get('website') || '', message: msg.replace(/\*/g, ''),
   }).then(ok => {
     if (btn) btn.disabled = false;
-    if (!ok) { alert('Nie udało się wysłać wniosku. Spróbuj ponownie albo napisz na info@flyagrodrone.com.'); return; }
+    if (!ok) { alert('Nie udało się wysłać wniosku. Spróbuj ponownie albo napisz na order@dronepartshub.eu.'); return; }
     alert('✅ Dziękujemy! Wniosek B2B przyjęty. Odpowiemy w ciągu 24 h roboczych.');
     form.reset();
   });

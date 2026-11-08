@@ -534,7 +534,7 @@ function submitFullOrder(form) {
     message: msg.replace(/\*/g, ''), total_pln: +total.toFixed(2),
   }).then(ok => {
     if (btn) { btn.disabled = false; btn.textContent = btn.dataset.t; }
-    if (!ok) { alert('Nie udało się wysłać zamówienia. Spróbuj ponownie albo napisz na info@flyagrodrone.com.'); return; }
+    if (!ok) { alert('Nie udało się wysłać zamówienia. Spróbuj ponownie albo napisz na order@dronepartshub.eu.'); return; }
     alert('✅ Dziękujemy! Zamówienie przyjęte.\n\nPotwierdzimy dostępność, termin i dane do płatności e-mailem lub telefonicznie.');
     STATE.cart = [];
     saveCart();

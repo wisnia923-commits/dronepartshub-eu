@@ -106,7 +106,7 @@ const I18N = {
     notes: 'Uwagi',
     order_via_telegram: 'Wyślij zamówienie',
     order_sent: '✅ Dziękujemy! Zamówienie przyjęte. Potwierdzimy dostępność, termin i dane do płatności e-mailem lub telefonicznie.',
-    order_error: 'Nie udało się wysłać zamówienia. Spróbuj ponownie albo napisz na info@flyagrodrone.com.',
+    order_error: 'Nie udało się wysłać zamówienia. Spróbuj ponownie albo napisz na order@dronepartshub.eu.',
     cancel: 'Anuluj',
     submit: 'Wyślij',
     save: 'Zapisz',
@@ -210,7 +210,7 @@ const I18N = {
     notes: 'Примітки',
     order_via_telegram: 'Надіслати замовлення',
     order_sent: '✅ Дякуємо! Замовлення прийнято. Ми підтвердимо наявність, термін і дані для оплати електронною поштою або телефоном.',
-    order_error: 'Не вдалося надіслати замовлення. Спробуйте ще раз або напишіть на info@flyagrodrone.com.',
+    order_error: 'Не вдалося надіслати замовлення. Спробуйте ще раз або напишіть на order@dronepartshub.eu.',
     cancel: 'Скасувати',
     submit: 'Надіслати',
     save: 'Зберегти',
@@ -314,7 +314,7 @@ const I18N = {
     notes: 'Notes',
     order_via_telegram: 'Send order',
     order_sent: '✅ Thank you! Order received. We will confirm availability, delivery time and payment details by email or phone.',
-    order_error: 'The order could not be sent. Please try again or email info@flyagrodrone.com.',
+    order_error: 'The order could not be sent. Please try again or email order@dronepartshub.eu.',
     cancel: 'Cancel',
     submit: 'Submit',
     save: 'Save',
@@ -1102,8 +1102,8 @@ function showLangNotice() {
     notice.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:#c8a032;color:black;padding:10px 20px;border-radius:6px;z-index:8000;box-shadow:0 4px 20px rgba(0,0,0,0.3);font-size:13px;font-weight:600;display:flex;align-items:center;gap:12px;max-width:90%;';
     
     const msg = STATE.lang === 'ua' 
-      ? "⚠️ Текст цієї сторінки доступний лише польською. Скористайтеся чатом AI або напишіть на info@flyagrodrone.com."
-      : "⚠️ Full content of this page available only in Polish. Use the AI chat or email info@flyagrodrone.com.";
+      ? "⚠️ Текст цієї сторінки доступний лише польською. Скористайтеся чатом AI або напишіть на order@dronepartshub.eu."
+      : "⚠️ Full content of this page available only in Polish. Use the AI chat or email order@dronepartshub.eu.";
     
     notice.innerHTML = `
       <span>${msg}</span>
