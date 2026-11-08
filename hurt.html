@@ -227,7 +227,6 @@
     <div class="nav__actions">
       <button class="nav__lang" onclick="toggleLang()">PL</button>
       <a class="nav__cart" onclick="openCart()">🛒 <span data-i18n="cart">Koszyk</span> <span class="nav__cart-count">0</span></a>
-      <a href="https://t.me/agras_spare_parts_bot" target="_blank" class="nav__telegram">✈️ Telegram</a>
     </div>
   </div>
 </nav>
@@ -240,7 +239,7 @@
     <p>Dla serwisów, pilotów komercyjnych i dystrybutorów. Rabaty do 25%, indywidualne stawki, faktura VAT, kredyt kupiecki.</p>
     <div class="hurt-hero__buttons">
       <a href="#form" class="btn btn--primary">📩 Zapytaj o ofertę B2B</a>
-      <a href="https://t.me/agras_spare_parts_bot" target="_blank" class="btn btn--ghost">✈️ Telegram</a>
+      <a href="#szukaj" onclick="return DPH.openChat()" class="btn btn--ghost">🔍 Szukaj części z AI</a>
     </div>
   </div>
 </section>
@@ -264,7 +263,7 @@
           <li>Faktura VAT</li>
           <li>Płatność z odroczeniem 7 dni</li>
           <li>Priorytetowa wysyłka</li>
-          <li>Dedykowany kontakt na Telegram</li>
+          <li>Dedykowany opiekun (e-mail i telefon)</li>
         </ul>
         <a href="#form" class="tier-cta">Dołącz do Bronze</a>
       </div>
@@ -344,7 +343,7 @@
         <div class="benefit-icon">🎯</div>
         <div class="benefit-content">
           <h3>Dedykowany opiekun</h3>
-          <p>Personalny kontakt na Telegram. Odpowiedzi w ciągu 30 minut w godzinach pracy. Pomoc w identyfikacji części.</p>
+          <p>Dedykowany opiekun – e-mail i telefon. Odpowiedzi w godzinach pracy. Pomoc w identyfikacji części.</p>
         </div>
       </div>
       
@@ -536,41 +535,22 @@ function submitB2B(form) {
   if (models) msg += `Modele: ${models}\n`;
   if (f.get('notes')) msg += `\n📝 ${f.get('notes')}\n`;
   
-  navigator.clipboard?.writeText(msg).catch(() => {});
-  window.open('https://t.me/agras_spare_parts_bot?start=b2b', '_blank');
-  alert('✅ Wniosek wysłany!\n\nWiadomość skopiowana - wklej w czacie z botem.\n\nOdpowiemy w ciągu 24h roboczych.');
-  form.reset();
+  const btn = form.querySelector('[type=submit]');
+  if (btn) btn.disabled = true;
+  DPH.send('b2b', {
+    name: f.get('name'), company: f.get('company'), nip: f.get('nip'), phone: f.get('phone'), email: f.get('email'),
+    website: f.get('website') || '', message: msg.replace(/\*/g, ''),
+  }).then(ok => {
+    if (btn) btn.disabled = false;
+    if (!ok) { alert('Nie udało się wysłać wniosku. Spróbuj ponownie albo napisz na info@flyagrodrone.com.'); return; }
+    alert('✅ Dziękujemy! Wniosek B2B przyjęty. Odpowiemy w ciągu 24 h roboczych.');
+    form.reset();
+  });
 }
 </script>
 <script src="app.js"></script>
+<script src="dph.js" defer></script>
 
-<!-- Live Chat Widget -->
-<div id="liveChat" style="position:fixed;bottom:24px;right:24px;z-index:9000;">
-  <button onclick="openChatPopup()" style="
-    width:64px;height:64px;border-radius:50%;
-    background:linear-gradient(135deg,#0088cc,#006699);
-    border:3px solid white;
-    box-shadow:0 8px 30px rgba(0,136,204,0.5);
-    cursor:pointer;display:flex;align-items:center;justify-content:center;
-    font-size:30px;transition:all 0.3s;animation:pulseChat 2s infinite;
-  " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    💬
-  </button>
-</div>
-<div id="chatPopup" style="display:none;position:fixed;bottom:100px;right:24px;width:320px;background:#0a0a0a;border:1px solid var(--color-accent);border-radius:12px;padding:24px;z-index:9001;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
-  <button onclick="document.getElementById('chatPopup').style.display='none'" style="position:absolute;top:8px;right:12px;background:transparent;border:none;color:white;font-size:24px;cursor:pointer;">×</button>
-  <div style="font-family:var(--font-display);font-size:24px;color:var(--color-accent);letter-spacing:0.05em;margin-bottom:8px;">💬 PISZ DO NAS</div>
-  <p style="color:rgba(255,255,255,0.85);font-size:14px;margin-bottom:20px;">Najszybciej odpowiemy na Telegramie!</p>
-  <a href="https://t.me/agras_spare_parts_bot" target="_blank" style="display:block;background:linear-gradient(135deg,#0088cc,#006699);color:white;text-align:center;padding:14px;border-radius:6px;text-decoration:none;font-weight:700;letter-spacing:0.05em;margin-bottom:8px;">✈️ Otwórz bota Telegram</a>
-  <a href="contact.html" style="display:block;text-align:center;color:var(--color-text-muted);font-size:13px;text-decoration:none;padding:8px;">Inne sposoby kontaktu →</a>
-</div>
-<style>
-@keyframes pulseChat { 0%,100%{box-shadow:0 8px 30px rgba(0,136,204,0.5);} 50%{box-shadow:0 8px 40px rgba(0,136,204,0.8);} }
-</style>
-<script>
-function openChatPopup(){var p=document.getElementById('chatPopup');p.style.display=p.style.display==='none'?'block':'none';}
-</script>
-<!-- /Live Chat -->
 
 <!-- Loading Spinner -->
 <div id="pageLoader" style="position:fixed;inset:0;background:#0a0a0a;z-index:99999;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s;">

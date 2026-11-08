@@ -196,9 +196,6 @@
         🛒 <span data-i18n="cart">Koszyk</span>
         <span class="nav__cart-count">0</span>
       </a>
-      <a href="https://t.me/agras_spare_parts_bot" target="_blank" class="nav__telegram">
-        ✈️ Telegram
-      </a>
     </div>
   </div>
 </nav>
@@ -250,8 +247,7 @@
         <tr><td>Email</td><td>Potwierdzenie zamówienia, kontakt</td><td>Wymagane</td></tr>
         <tr><td>Telefon</td><td>Kontakt z kurierem, SMS od dostawcy</td><td>Wymagane</td></tr>
         <tr><td>NIP firmy</td><td>Wystawienie faktury VAT</td><td>Opcjonalnie</td></tr>
-        <tr><td>Numer Telegram ID</td><td>Powiązanie konta z botem</td><td>Opcjonalnie</td></tr>
-      </table>
+              </table>
 
       <h3>Dane zbierane automatycznie:</h3>
       <ul>
@@ -266,6 +262,8 @@
       <table class="data-table">
         <tr><th>Cel</th><th>Podstawa prawna (RODO)</th></tr>
         <tr><td>Realizacja umowy sprzedaży / wynajmu</td><td>Art. 6 ust. 1 lit. b RODO</td></tr>
+        <tr><td>Odpowiedź na zapytanie lub zamówienie wysłane formularzem (przed zawarciem umowy)</td><td>Art. 6 ust. 1 lit. b RODO</td></tr>
+        <tr><td>Czat AI do wyszukiwania części</td><td>Art. 6 ust. 1 lit. f RODO (uzasadniony interes – obsługa pytań o asortyment)</td></tr>
         <tr><td>Wystawienie faktury, księgowość</td><td>Art. 6 ust. 1 lit. c RODO (obowiązek prawny)</td></tr>
         <tr><td>Obsługa reklamacji i zwrotów</td><td>Art. 6 ust. 1 lit. b i c RODO</td></tr>
         <tr><td>Marketing własny (newsletter)</td><td>Art. 6 ust. 1 lit. a RODO (Twoja zgoda)</td></tr>
@@ -280,6 +278,7 @@
       <ul>
         <li><strong>dji_cart</strong> - zapamiętanie zawartości koszyka</li>
         <li><strong>dji_lang</strong> - wybrany język strony</li>
+        <li><strong>dph_utm</strong> - źródło wejścia na stronę (parametry UTM), dołączane do zapytania wysłanego formularzem</li>
         <li><strong>session_id</strong> - identyfikacja sesji</li>
       </ul>
 
@@ -308,7 +307,8 @@
         <li><strong>Biuro księgowe</strong> - na podstawie umowy powierzenia</li>
         <li><strong>Cloudflare, Inc.</strong> - hosting strony i ochrona przed atakami (dane mogą być przetwarzane w USA na podstawie EU-US Data Privacy Framework)</li>
         <li><strong>Google Ireland Ltd.</strong> (Tag Manager, Analytics) - statystyki ruchu, tylko po zgodzie na cookies analityczne</li>
-        <li><strong>Telegram</strong> - jeśli korzystasz z naszego bota (zgodnie z polityką Telegram)</li>
+        <li><strong>Bitrix24</strong> (system CRM) - trafiają do niego zamówienia i zapytania wysłane przez formularze na stronie; na podstawie umowy powierzenia (art. 28 RODO)</li>
+        <li><strong>Anthropic, PBC</strong> (model AI czatu do szukania części) - otrzymuje tylko treść pytań wpisanych w czacie, w celu udzielenia odpowiedzi; dane mogą być przetwarzane w USA na podstawie standardowych klauzul umownych. Rozmów nie zapisujemy na naszym serwerze. Prosimy nie wpisywać w czacie danych osobowych</li>
       </ul>
 
       <div class="info-box">
@@ -319,6 +319,8 @@
       <table class="data-table">
         <tr><th>Rodzaj danych</th><th>Czas przechowywania</th></tr>
         <tr><td>Dane zamówień</td><td>5 lat (obowiązek księgowy)</td></tr>
+        <tr><td>Zapytania, które nie zakończyły się zamówieniem</td><td>12 miesięcy od ostatniego kontaktu</td></tr>
+        <tr><td>Pytania w czacie AI</td><td>Nie zapisujemy (przetwarzane tylko na czas odpowiedzi)</td></tr>
         <tr><td>Dane reklamacyjne</td><td>3 lata po zakończeniu sprawy</td></tr>
         <tr><td>Dane marketingowe</td><td>Do wycofania zgody</td></tr>
         <tr><td>Logi systemowe</td><td>12 miesięcy</td></tr>
@@ -380,34 +382,8 @@
 </footer>
 
 <script src="app.js"></script>
+<script src="dph.js" defer></script>
 
-<!-- Live Chat Widget -->
-<div id="liveChat" style="position:fixed;bottom:24px;right:24px;z-index:9000;">
-  <button onclick="openChatPopup()" style="
-    width:64px;height:64px;border-radius:50%;
-    background:linear-gradient(135deg,#0088cc,#006699);
-    border:3px solid white;
-    box-shadow:0 8px 30px rgba(0,136,204,0.5);
-    cursor:pointer;display:flex;align-items:center;justify-content:center;
-    font-size:30px;transition:all 0.3s;animation:pulseChat 2s infinite;
-  " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    💬
-  </button>
-</div>
-<div id="chatPopup" style="display:none;position:fixed;bottom:100px;right:24px;width:320px;background:#0a0a0a;border:1px solid var(--color-accent);border-radius:12px;padding:24px;z-index:9001;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
-  <button onclick="document.getElementById('chatPopup').style.display='none'" style="position:absolute;top:8px;right:12px;background:transparent;border:none;color:white;font-size:24px;cursor:pointer;">×</button>
-  <div style="font-family:var(--font-display);font-size:24px;color:var(--color-accent);letter-spacing:0.05em;margin-bottom:8px;">💬 PISZ DO NAS</div>
-  <p style="color:rgba(255,255,255,0.85);font-size:14px;margin-bottom:20px;">Najszybciej odpowiemy na Telegramie!</p>
-  <a href="https://t.me/agras_spare_parts_bot" target="_blank" style="display:block;background:linear-gradient(135deg,#0088cc,#006699);color:white;text-align:center;padding:14px;border-radius:6px;text-decoration:none;font-weight:700;letter-spacing:0.05em;margin-bottom:8px;">✈️ Otwórz bota Telegram</a>
-  <a href="contact.html" style="display:block;text-align:center;color:var(--color-text-muted);font-size:13px;text-decoration:none;padding:8px;">Inne sposoby kontaktu →</a>
-</div>
-<style>
-@keyframes pulseChat { 0%,100%{box-shadow:0 8px 30px rgba(0,136,204,0.5);} 50%{box-shadow:0 8px 40px rgba(0,136,204,0.8);} }
-</style>
-<script>
-function openChatPopup(){var p=document.getElementById('chatPopup');p.style.display=p.style.display==='none'?'block':'none';}
-</script>
-<!-- /Live Chat -->
 
 <!-- Loading Spinner -->
 <div id="pageLoader" style="position:fixed;inset:0;background:#0a0a0a;z-index:99999;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s;">

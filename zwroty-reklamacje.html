@@ -200,9 +200,6 @@
         🛒 <span data-i18n="cart">Koszyk</span>
         <span class="nav__cart-count">0</span>
       </a>
-      <a href="https://t.me/agras_spare_parts_bot" target="_blank" class="nav__telegram">
-        ✈️ Telegram
-      </a>
     </div>
   </div>
 </nav>
@@ -234,7 +231,7 @@
 
       <div class="step-box">
         <h4>Krok 1 (do 14 dni od otrzymania)</h4>
-        <p><strong>Wypełnij formularz odstąpienia od umowy</strong> i wyślij na nasz email lub przez Telegram bota. Możesz też wysłać własne oświadczenie z danymi zamówienia.</p>
+        <p><strong>Wypełnij formularz odstąpienia od umowy</strong> i wyślij na nasz e-mail info@flyagrodrone.com. Możesz też wysłać własne oświadczenie z danymi zamówienia.</p>
       </div>
 
       <div class="step-box">
@@ -254,7 +251,7 @@
       </a>
 
       <div class="info-box">
-        <strong>💡 Wskazówka:</strong> Najszybszy sposób zwrotu to napisać do nas przez <a href="https://t.me/agras_spare_parts_bot" target="_blank" style="color:#c8a032;">Telegram bota</a> z numerem zamówienia. Odpowiemy w ciągu kilku godzin z instrukcjami.
+        <strong>💡 Wskazówka:</strong> Najszybszy sposób zwrotu to napisać na <a href="mailto:info@flyagrodrone.com" style="color:#c8a032;">info@flyagrodrone.com</a> z numerem zamówienia. Odpowiemy w ciągu kilku godzin z instrukcjami.
       </div>
 
       <h2>🛠️ Reklamacje (rękojmia za wady)</h2>
@@ -280,7 +277,7 @@
 
       <div class="step-box">
         <h4>Krok 1</h4>
-        <p>Skontaktuj się z nami przez <strong>Telegram bota</strong>, email lub formularz kontaktowy z opisem problemu.</p>
+        <p>Skontaktuj się z nami e-mailem lub przez formularz kontaktowy z opisem problemu.</p>
         <p><strong>Wymagane informacje:</strong></p>
         <ul>
           <li>Numer zamówienia</li>
@@ -382,8 +379,7 @@
       <h2>📞 Kontakt w sprawach zwrotów i reklamacji</h2>
       <ul>
         <li>📧 Email: <strong>info@flyagrodrone.com</strong></li>
-        <li>✈️ Telegram: <strong>@agras_spare_parts_bot</strong> (najszybsza odpowiedź)</li>
-        <li>📞 Telefon: <strong>+48 663 000 007</strong> (Pn-Pt 9:00-17:00)</li>
+                <li>📞 Telefon: <strong>+48 663 000 007</strong> (Pn-Pt 9:00-17:00)</li>
         <li>✉️ Adres do zwrotów: <em>Drone Parts Hub – Agrodron Sp. z o.o., ul. Siewna 15, 94-250 Łódź</em></li>
       </ul>
 
@@ -406,34 +402,8 @@
 </footer>
 
 <script src="app.js"></script>
+<script src="dph.js" defer></script>
 
-<!-- Live Chat Widget -->
-<div id="liveChat" style="position:fixed;bottom:24px;right:24px;z-index:9000;">
-  <button onclick="openChatPopup()" style="
-    width:64px;height:64px;border-radius:50%;
-    background:linear-gradient(135deg,#0088cc,#006699);
-    border:3px solid white;
-    box-shadow:0 8px 30px rgba(0,136,204,0.5);
-    cursor:pointer;display:flex;align-items:center;justify-content:center;
-    font-size:30px;transition:all 0.3s;animation:pulseChat 2s infinite;
-  " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    💬
-  </button>
-</div>
-<div id="chatPopup" style="display:none;position:fixed;bottom:100px;right:24px;width:320px;background:#0a0a0a;border:1px solid var(--color-accent);border-radius:12px;padding:24px;z-index:9001;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
-  <button onclick="document.getElementById('chatPopup').style.display='none'" style="position:absolute;top:8px;right:12px;background:transparent;border:none;color:white;font-size:24px;cursor:pointer;">×</button>
-  <div style="font-family:var(--font-display);font-size:24px;color:var(--color-accent);letter-spacing:0.05em;margin-bottom:8px;">💬 PISZ DO NAS</div>
-  <p style="color:rgba(255,255,255,0.85);font-size:14px;margin-bottom:20px;">Najszybciej odpowiemy na Telegramie!</p>
-  <a href="https://t.me/agras_spare_parts_bot" target="_blank" style="display:block;background:linear-gradient(135deg,#0088cc,#006699);color:white;text-align:center;padding:14px;border-radius:6px;text-decoration:none;font-weight:700;letter-spacing:0.05em;margin-bottom:8px;">✈️ Otwórz bota Telegram</a>
-  <a href="contact.html" style="display:block;text-align:center;color:var(--color-text-muted);font-size:13px;text-decoration:none;padding:8px;">Inne sposoby kontaktu →</a>
-</div>
-<style>
-@keyframes pulseChat { 0%,100%{box-shadow:0 8px 30px rgba(0,136,204,0.5);} 50%{box-shadow:0 8px 40px rgba(0,136,204,0.8);} }
-</style>
-<script>
-function openChatPopup(){var p=document.getElementById('chatPopup');p.style.display=p.style.display==='none'?'block':'none';}
-</script>
-<!-- /Live Chat -->
 
 <!-- Loading Spinner -->
 <div id="pageLoader" style="position:fixed;inset:0;background:#0a0a0a;z-index:99999;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s;">

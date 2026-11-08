@@ -148,9 +148,6 @@
       <a class="nav__cart" onclick="openCart()">
         🛒 Koszyk <span class="nav__cart-count">0</span>
       </a>
-      <a href="https://t.me/dji_agras_parts_bot" target="_blank" class="nav__telegram">
-        ✈️ Telegram
-      </a>
     </div>
   </div>
 </nav>
@@ -180,6 +177,7 @@
 </div>
 
 <script src="app.js"></script>
+<script src="dph.js" defer></script>
 <script>
 function renderCheckout() {
   if (STATE.cart.length === 0) {
@@ -368,11 +366,11 @@ function renderCheckout() {
         </div>
         
         <button type="submit" form="orderForm" class="submit-order">
-          ✈️ Złóż zamówienie przez Telegram
+          ✅ Wyślij zamówienie
         </button>
         
         <p style="font-size:11px;color:var(--color-text-muted);text-align:center;margin-top:12px;line-height:1.5;">
-          Zamówienie zostanie wysłane do bota Telegram, gdzie potwierdzimy dostępność i wyślemy dane do płatności.
+          Po wysłaniu potwierdzimy dostępność i termin, a dane do płatności wyślemy e-mailem. Zamówienie zobowiązuje do zapłaty dopiero po naszym potwierdzeniu.
         </p>
       </div>
     </div>
@@ -527,20 +525,21 @@ function submitFullOrder(form) {
   
   if (f.get('notes')) msg += `\n📝 Uwagi: ${f.get('notes')}\n`;
   
-  // Otwórz Telegram
-  const tgUrl = `https://t.me/dji_agras_parts_bot?start=order_${Date.now()}`;
-  window.open(tgUrl, '_blank');
-  
-  navigator.clipboard?.writeText(msg).catch(() => {});
-  
-  alert(`✅ Zamówienie wysłane!\n\nWiadomość skopiowana do schowka. Wklej ją w czacie z botem.\n\n${msg}`);
-  
-  // Wyczyść koszyk
-  STATE.cart = [];
-  saveCart();
-  
-  // Przekieruj
-  window.location.href = 'index.html';
+  // Wyślij do działu sprzedaży (Bitrix24)
+  const btn = document.querySelector('.submit-order');
+  if (btn) { btn.disabled = true; btn.dataset.t = btn.textContent; btn.textContent = 'Wysyłanie…'; }
+  DPH.send('order', {
+    name: f.get('name'), phone: f.get('phone'), email: f.get('email'),
+    company: f.get('company') || '', nip: f.get('nip') || '', website: f.get('website') || '',
+    message: msg.replace(/\*/g, ''), total_pln: +total.toFixed(2),
+  }).then(ok => {
+    if (btn) { btn.disabled = false; btn.textContent = btn.dataset.t; }
+    if (!ok) { alert('Nie udało się wysłać zamówienia. Spróbuj ponownie albo napisz na info@flyagrodrone.com.'); return; }
+    alert('✅ Dziękujemy! Zamówienie przyjęte.\n\nPotwierdzimy dostępność, termin i dane do płatności e-mailem lub telefonicznie.');
+    STATE.cart = [];
+    saveCart();
+    window.location.href = 'index.html';
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -548,33 +547,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<!-- Live Chat Widget -->
-<div id="liveChat" style="position:fixed;bottom:24px;right:24px;z-index:9000;">
-  <button onclick="openChatPopup()" style="
-    width:64px;height:64px;border-radius:50%;
-    background:linear-gradient(135deg,#0088cc,#006699);
-    border:3px solid white;
-    box-shadow:0 8px 30px rgba(0,136,204,0.5);
-    cursor:pointer;display:flex;align-items:center;justify-content:center;
-    font-size:30px;transition:all 0.3s;animation:pulseChat 2s infinite;
-  " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    💬
-  </button>
-</div>
-<div id="chatPopup" style="display:none;position:fixed;bottom:100px;right:24px;width:320px;background:#0a0a0a;border:1px solid var(--color-accent);border-radius:12px;padding:24px;z-index:9001;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
-  <button onclick="document.getElementById('chatPopup').style.display='none'" style="position:absolute;top:8px;right:12px;background:transparent;border:none;color:white;font-size:24px;cursor:pointer;">×</button>
-  <div style="font-family:var(--font-display);font-size:24px;color:var(--color-accent);letter-spacing:0.05em;margin-bottom:8px;">💬 PISZ DO NAS</div>
-  <p style="color:rgba(255,255,255,0.85);font-size:14px;margin-bottom:20px;">Najszybciej odpowiemy na Telegramie!</p>
-  <a href="https://t.me/dji_agras_parts_bot" target="_blank" style="display:block;background:linear-gradient(135deg,#0088cc,#006699);color:white;text-align:center;padding:14px;border-radius:6px;text-decoration:none;font-weight:700;letter-spacing:0.05em;margin-bottom:8px;">✈️ Otwórz bota Telegram</a>
-  <a href="contact.html" style="display:block;text-align:center;color:var(--color-text-muted);font-size:13px;text-decoration:none;padding:8px;">Inne sposoby kontaktu →</a>
-</div>
-<style>
-@keyframes pulseChat { 0%,100%{box-shadow:0 8px 30px rgba(0,136,204,0.5);} 50%{box-shadow:0 8px 40px rgba(0,136,204,0.8);} }
-</style>
-<script>
-function openChatPopup(){var p=document.getElementById('chatPopup');p.style.display=p.style.display==='none'?'block':'none';}
-</script>
-<!-- /Live Chat -->
 
 <!-- Loading Spinner -->
 <div id="pageLoader" style="position:fixed;inset:0;background:#0a0a0a;z-index:99999;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s;">
