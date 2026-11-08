@@ -349,9 +349,6 @@
         🛒 <span data-i18n="cart">Koszyk</span>
         <span class="nav__cart-count">0</span>
       </a>
-      <a href="https://t.me/dji_agras_parts_bot" target="_blank" class="nav__telegram">
-        ✈️ Telegram
-      </a>
     </div>
   </div>
 </nav>
@@ -400,7 +397,7 @@
     </div>
     <div>
       <div class="stat-num">24<small>h</small></div>
-      <div class="stat-label">Bot Telegram</div>
+      <div class="stat-label">Czat AI do szukania części</div>
     </div>
   </div>
 </section>
@@ -417,7 +414,7 @@
       <div class="value-card">
         <span class="value-icon">⚡</span>
         <h3 class="value-title">Szybkość</h3>
-        <p class="value-desc">Bot Telegram odpowiada w sekundach. Wysyłka w 24h. W rolnictwie czas to plony.</p>
+        <p class="value-desc">Czat AI znajduje części w sekundach. Wysyłka w 24h. W rolnictwie czas to plony.</p>
       </div>
       
       <div class="value-card">
@@ -466,15 +463,15 @@
         <div class="why-num">02</div>
         <div class="why-content">
           <h3>4 języki obsługi</h3>
-          <p>PL, UA, EN - obsługujemy klientów w ich ojczystym języku. Bot Telegram automatycznie wykrywa Twój język.</p>
+          <p>PL, UA, EN - obsługujemy klientów w ich ojczystym języku. Czat AI odpowiada w Twoim języku.</p>
         </div>
       </div>
       
       <div class="why-item">
         <div class="why-num">03</div>
         <div class="why-content">
-          <h3>Wsparcie 24/7 przez Telegram</h3>
-          <p>Nasz bot jest dostępny zawsze. Możesz zeskanować zdjęcie części, a AI rozpozna co potrzebujesz.</p>
+          <h3>Czat AI 24/7</h3>
+          <p>Czat na stronie działa zawsze – znajdzie część po modelu drona, nazwie lub numerze katalogowym.</p>
         </div>
       </div>
       
@@ -497,13 +494,13 @@
   </div>
 </section>
 
-<!-- CTA Telegram -->
+<!-- CTA czat AI -->
 <section class="cta">
   <div class="cta__inner">
     <h2 class="cta__title">Chcesz nas poznać?</h2>
-    <p class="cta__sub">Napisz do nas przez Telegram - odpowiadamy najszybciej w branży</p>
-    <a href="https://t.me/dji_agras_parts_bot" target="_blank" class="btn btn--telegram">
-      ✈️ Otwórz bota
+    <p class="cta__sub">Czat AI znajdzie część po modelu lub numerze katalogowym. Zamówienie trafia prosto do naszego działu sprzedaży.</p>
+    <a href="#szukaj" onclick="return DPH.openChat()" class="btn btn--telegram">
+      🔍 Otwórz czat
     </a>
   </div>
 </section>
@@ -528,7 +525,6 @@
       <div class="footer__col">
         <h4>Kontakt</h4>
         <ul>
-          <li><a href="https://t.me/dji_agras_parts_bot" target="_blank">Telegram Bot</a></li>
           <li><a href="contact.html">Formularz kontaktowy</a></li>
           <li><a href="mailto:info@flyagrodrone.com">info@flyagrodrone.com</a></li>
         </ul>
@@ -568,34 +564,8 @@
 </div>
 
 <script src="app.js"></script>
+<script src="dph.js" defer></script>
 
-<!-- Live Chat Widget -->
-<div id="liveChat" style="position:fixed;bottom:24px;right:24px;z-index:9000;">
-  <button onclick="openChatPopup()" style="
-    width:64px;height:64px;border-radius:50%;
-    background:linear-gradient(135deg,#0088cc,#006699);
-    border:3px solid white;
-    box-shadow:0 8px 30px rgba(0,136,204,0.5);
-    cursor:pointer;display:flex;align-items:center;justify-content:center;
-    font-size:30px;transition:all 0.3s;animation:pulseChat 2s infinite;
-  " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    💬
-  </button>
-</div>
-<div id="chatPopup" style="display:none;position:fixed;bottom:100px;right:24px;width:320px;background:#0a0a0a;border:1px solid var(--color-accent);border-radius:12px;padding:24px;z-index:9001;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
-  <button onclick="document.getElementById('chatPopup').style.display='none'" style="position:absolute;top:8px;right:12px;background:transparent;border:none;color:white;font-size:24px;cursor:pointer;">×</button>
-  <div style="font-family:var(--font-display);font-size:24px;color:var(--color-accent);letter-spacing:0.05em;margin-bottom:8px;">💬 PISZ DO NAS</div>
-  <p style="color:rgba(255,255,255,0.85);font-size:14px;margin-bottom:20px;">Najszybciej odpowiemy na Telegramie!</p>
-  <a href="https://t.me/dji_agras_parts_bot" target="_blank" style="display:block;background:linear-gradient(135deg,#0088cc,#006699);color:white;text-align:center;padding:14px;border-radius:6px;text-decoration:none;font-weight:700;letter-spacing:0.05em;margin-bottom:8px;">✈️ Otwórz bota Telegram</a>
-  <a href="contact.html" style="display:block;text-align:center;color:var(--color-text-muted);font-size:13px;text-decoration:none;padding:8px;">Inne sposoby kontaktu →</a>
-</div>
-<style>
-@keyframes pulseChat { 0%,100%{box-shadow:0 8px 30px rgba(0,136,204,0.5);} 50%{box-shadow:0 8px 40px rgba(0,136,204,0.8);} }
-</style>
-<script>
-function openChatPopup(){var p=document.getElementById('chatPopup');p.style.display=p.style.display==='none'?'block':'none';}
-</script>
-<!-- /Live Chat -->
 
 <!-- Loading Spinner -->
 <div id="pageLoader" style="position:fixed;inset:0;background:#0a0a0a;z-index:99999;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s;">

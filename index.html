@@ -129,10 +129,7 @@
       "@type": "PostalAddress",
       "addressCountry": "PL"
     },
-    "sameAs": [
-      "https://t.me/agras_spare_parts_bot"
-    ],
-    "potentialAction": {
+        "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
@@ -187,9 +184,6 @@
         🛒 <span data-i18n="cart">Koszyk</span>
         <span class="nav__cart-count">0</span>
       </a>
-      <a href="https://t.me/agras_spare_parts_bot" target="_blank" class="nav__telegram">
-        ✈️ Telegram
-      </a>
     </div>
   </div>
 </nav>
@@ -215,8 +209,8 @@
         <a href="catalog.html" class="btn btn--primary">
           📦 <span data-i18n="nav_parts">Przeglądaj części</span>
         </a>
-        <a href="https://t.me/agras_spare_parts_bot" target="_blank" class="btn btn--ghost">
-          ✈️ Telegram Bot
+        <a href="#szukaj" onclick="return DPH.openChat()" class="btn btn--ghost">
+          🔍 Szukaj części z AI
         </a>
       </div>
       <div class="hero__stats">
@@ -412,8 +406,8 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="feature">
         <div class="feature__icon">🤖</div>
-        <h3 class="feature__title" style="color:#1a1a1a;">Bot Telegram</h3>
-        <p class="feature__desc" style="color:#666;">Skanuj zdjęcie części, AI rozpoznaje. Składaj zamówienia jednym kliknięciem.</p>
+        <h3 class="feature__title" style="color:#1a1a1a;">Czat AI</h3>
+        <p class="feature__desc" style="color:#666;">Wpisz model drona i nazwę lub numer części – AI znajdzie ją w katalogu.</p>
       </div>
     </div>
   </div>
@@ -662,19 +656,19 @@ document.addEventListener('DOMContentLoaded', () => {
       <div style="background:linear-gradient(135deg,rgba(200,160,50,0.1),transparent);border:1px solid var(--color-line);border-radius:8px;padding:60px;text-align:center;">
         <div style="font-size:140px;margin-bottom:20px;">📡</div>
         <h3 style="font-family:var(--font-display);font-size:32px;margin-bottom:12px;">Dostępność 24/7</h3>
-        <p style="color:rgba(255,255,255,0.6);">Bot Telegram odpowiada o każdej porze. Wsparcie w 4 językach.</p>
+        <p style="color:rgba(255,255,255,0.6);">Czat AI odpowiada o każdej porze – po polsku, ukraińsku i angielsku.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA Telegram -->
+<!-- CTA czat AI -->
 <section class="cta">
   <div class="cta__inner">
-    <h2 class="cta__title" data-i18n="cta_title">Zamów przez Telegram</h2>
-    <p class="cta__sub" data-i18n="cta_sub">Nasz bot Telegram pomoże Ci szybko znaleźć potrzebne części, sprawdzić dostępność i złożyć zamówienie</p>
-    <a href="https://t.me/agras_spare_parts_bot" target="_blank" class="btn btn--telegram">
-      ✈️ <span data-i18n="cta_btn">Otwórz bota</span>
+    <h2 class="cta__title" data-i18n="cta_title">Nie wiesz, której części szukasz?</h2>
+    <p class="cta__sub" data-i18n="cta_sub">Czat AI znajdzie część po modelu drona, nazwie lub numerze katalogowym i doda ją do koszyka</p>
+    <a href="#szukaj" onclick="return DPH.openChat()" class="btn btn--telegram">
+      🔍 <span data-i18n="cta_btn">Otwórz czat</span>
     </a>
   </div>
 </section>
@@ -698,7 +692,6 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="footer__col">
         <h4>Kontakt</h4>
         <ul>
-          <li><a href="https://t.me/agras_spare_parts_bot" target="_blank">Telegram Bot</a></li>
           <li><a href="contact.html">Formularz kontaktowy</a></li>
           <li><a href="mailto:info@flyagrodrone.com">info@flyagrodrone.com</a></li>
         </ul>
@@ -776,34 +769,8 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <script src="app.js"></script>
+<script src="dph.js" defer></script>
 
-<!-- Live Chat Widget -->
-<div id="liveChat" style="position:fixed;bottom:24px;right:24px;z-index:9000;">
-  <button onclick="openChatPopup()" style="
-    width:64px;height:64px;border-radius:50%;
-    background:linear-gradient(135deg,#0088cc,#006699);
-    border:3px solid white;
-    box-shadow:0 8px 30px rgba(0,136,204,0.5);
-    cursor:pointer;display:flex;align-items:center;justify-content:center;
-    font-size:30px;transition:all 0.3s;animation:pulseChat 2s infinite;
-  " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    💬
-  </button>
-</div>
-<div id="chatPopup" style="display:none;position:fixed;bottom:100px;right:24px;width:320px;background:#0a0a0a;border:1px solid var(--color-accent);border-radius:12px;padding:24px;z-index:9001;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
-  <button onclick="document.getElementById('chatPopup').style.display='none'" style="position:absolute;top:8px;right:12px;background:transparent;border:none;color:white;font-size:24px;cursor:pointer;">×</button>
-  <div style="font-family:var(--font-display);font-size:24px;color:var(--color-accent);letter-spacing:0.05em;margin-bottom:8px;">💬 PISZ DO NAS</div>
-  <p style="color:rgba(255,255,255,0.85);font-size:14px;margin-bottom:20px;">Najszybciej odpowiemy na Telegramie!</p>
-  <a href="https://t.me/agras_spare_parts_bot" target="_blank" style="display:block;background:linear-gradient(135deg,#0088cc,#006699);color:white;text-align:center;padding:14px;border-radius:6px;text-decoration:none;font-weight:700;letter-spacing:0.05em;margin-bottom:8px;">✈️ Otwórz bota Telegram</a>
-  <a href="contact.html" style="display:block;text-align:center;color:var(--color-text-muted);font-size:13px;text-decoration:none;padding:8px;">Inne sposoby kontaktu →</a>
-</div>
-<style>
-@keyframes pulseChat { 0%,100%{box-shadow:0 8px 30px rgba(0,136,204,0.5);} 50%{box-shadow:0 8px 40px rgba(0,136,204,0.8);} }
-</style>
-<script>
-function openChatPopup(){var p=document.getElementById('chatPopup');p.style.display=p.style.display==='none'?'block':'none';}
-</script>
-<!-- /Live Chat -->
 
 <!-- Loading Spinner -->
 <div id="pageLoader" style="position:fixed;inset:0;background:#0a0a0a;z-index:99999;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s;">

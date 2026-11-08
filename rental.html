@@ -491,9 +491,6 @@
         🛒 <span data-i18n="cart">Koszyk</span>
         <span class="nav__cart-count">0</span>
       </a>
-      <a href="https://t.me/agras_spare_parts_bot" target="_blank" class="nav__telegram">
-        ✈️ Telegram
-      </a>
     </div>
   </div>
 </nav>
@@ -575,7 +572,7 @@
       <div class="kit-card">
         <div class="kit-card__icon">🎓</div>
         <h3 class="kit-card__title">Wsparcie techniczne</h3>
-        <p class="kit-card__desc">Krótkie <strong style="color:white;">przeszkolenie operacyjne</strong> przy wydaniu sprzętu i wsparcie 24/7 przez Telegram.</p>
+        <p class="kit-card__desc">Krótkie <strong style="color:white;">przeszkolenie operacyjne</strong> przy wydaniu sprzętu i wsparcie telefoniczne.</p>
       </div>
     </div>
     <!-- Sekcja: Dodatki opcjonalne -->
@@ -836,7 +833,7 @@
       </div>
 
       <button type="submit" class="btn btn--primary" style="width:100%;padding:20px;font-size:14px;">
-        ✈️ Wyślij zapytanie przez Telegram
+        ✅ Wyślij zapytanie
       </button>
 
       <p style="text-align:center;margin-top:16px;font-size:12px;color:var(--color-text-muted);">
@@ -895,7 +892,7 @@
       <details class="faq-item">
         <summary>Czy mogę wynająć drona bez własnych uprawnień?</summary>
         <div class="faq-item__content">
-          <strong style="color:#ef4444;">Nie</strong> - to byłoby naruszenie prawa lotniczego (od 1.01.2026 wymagane STS-01 + szkolenie specjalistyczne dla dronów >25 kg). Jeśli nie masz uprawnień, mamy alternatywę: <strong style="color:white;">usługa oprysku z naszym pilotem</strong>. Skontaktuj się przez Telegram lub formularz - przygotujemy ofertę "pod klucz".
+          <strong style="color:#ef4444;">Nie</strong> - to byłoby naruszenie prawa lotniczego (od 1.01.2026 wymagane STS-01 + szkolenie specjalistyczne dla dronów >25 kg). Jeśli nie masz uprawnień, mamy alternatywę: <strong style="color:white;">usługa oprysku z naszym pilotem</strong>. Wyślij zapytanie formularzem – przygotujemy ofertę "pod klucz".
         </div>
       </details>
 
@@ -909,13 +906,13 @@
   </div>
 </section>
 
-<!-- CTA Telegram -->
+<!-- CTA czat AI -->
 <section class="cta">
   <div class="cta__inner">
     <h2 class="cta__title">Masz pytania o wynajem?</h2>
-    <p class="cta__sub">Napisz do nas przez Telegram - odpowiadamy najszybciej</p>
-    <a href="https://t.me/agras_spare_parts_bot" target="_blank" class="btn btn--telegram">
-      ✈️ Otwórz bota
+    <p class="cta__sub">Zapytaj czat AI albo wyślij zapytanie formularzem – odpowiemy w dni robocze.</p>
+    <a href="#szukaj" onclick="return DPH.openChat()" class="btn btn--telegram">
+      🔍 Otwórz czat
     </a>
   </div>
 </section>
@@ -940,7 +937,6 @@
       <div class="footer__col">
         <h4>Kontakt</h4>
         <ul>
-          <li><a href="https://t.me/agras_spare_parts_bot" target="_blank">Telegram Bot</a></li>
           <li><a href="contact.html">Formularz kontaktowy</a></li>
           <li><a href="mailto:info@flyagrodrone.com">info@flyagrodrone.com</a></li>
         </ul>
@@ -1055,47 +1051,22 @@ function submitRentalForm(form) {
   msg += `• Regulamin: ${f.get('terms') ? 'TAK' : 'NIE'}\n`;
   msg += `• Szkolenie chemizacyjne: ${f.get('chemicals') ? 'TAK' : 'NIE/Brak chemii'}\n`;
 
-  // Otwórz Telegram z gotową wiadomością
-  const tgUrl = `https://t.me/agras_spare_parts_bot?start=rental_${Date.now()}`;
-  window.open(tgUrl, '_blank');
-
-  // Skopiuj do schowka
-  navigator.clipboard?.writeText(msg).catch(() => {});
-
-  alert(`📋 Zapytanie wysłane!\n\nWiadomość skopiowana - wklej w czacie z botem.\n\n${msg}`);
-
-  form.reset();
+  const btn = form.querySelector('[type=submit]');
+  if (btn) btn.disabled = true;
+  DPH.send('rental', {
+    name: f.get('name'), phone: f.get('phone'), email: f.get('email'), nip: f.get('nip') || '',
+    website: f.get('website') || '', message: msg,
+  }).then(ok => {
+    if (btn) btn.disabled = false;
+    if (!ok) { alert('Nie udało się wysłać zapytania. Spróbuj ponownie albo napisz na info@flyagrodrone.com.'); return; }
+    alert('✅ Dziękujemy! Zapytanie o wynajem przyjęte. Odezwiemy się w dni robocze.');
+    form.reset();
+  });
 }
 </script>
 <script src="app.js"></script>
+<script src="dph.js" defer></script>
 
-<!-- Live Chat Widget -->
-<div id="liveChat" style="position:fixed;bottom:24px;right:24px;z-index:9000;">
-  <button onclick="openChatPopup()" style="
-    width:64px;height:64px;border-radius:50%;
-    background:linear-gradient(135deg,#0088cc,#006699);
-    border:3px solid white;
-    box-shadow:0 8px 30px rgba(0,136,204,0.5);
-    cursor:pointer;display:flex;align-items:center;justify-content:center;
-    font-size:30px;transition:all 0.3s;animation:pulseChat 2s infinite;
-  " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    💬
-  </button>
-</div>
-<div id="chatPopup" style="display:none;position:fixed;bottom:100px;right:24px;width:320px;background:#0a0a0a;border:1px solid var(--color-accent);border-radius:12px;padding:24px;z-index:9001;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
-  <button onclick="document.getElementById('chatPopup').style.display='none'" style="position:absolute;top:8px;right:12px;background:transparent;border:none;color:white;font-size:24px;cursor:pointer;">×</button>
-  <div style="font-family:var(--font-display);font-size:24px;color:var(--color-accent);letter-spacing:0.05em;margin-bottom:8px;">💬 PISZ DO NAS</div>
-  <p style="color:rgba(255,255,255,0.85);font-size:14px;margin-bottom:20px;">Najszybciej odpowiemy na Telegramie!</p>
-  <a href="https://t.me/agras_spare_parts_bot" target="_blank" style="display:block;background:linear-gradient(135deg,#0088cc,#006699);color:white;text-align:center;padding:14px;border-radius:6px;text-decoration:none;font-weight:700;letter-spacing:0.05em;margin-bottom:8px;">✈️ Otwórz bota Telegram</a>
-  <a href="contact.html" style="display:block;text-align:center;color:var(--color-text-muted);font-size:13px;text-decoration:none;padding:8px;">Inne sposoby kontaktu →</a>
-</div>
-<style>
-@keyframes pulseChat { 0%,100%{box-shadow:0 8px 30px rgba(0,136,204,0.5);} 50%{box-shadow:0 8px 40px rgba(0,136,204,0.8);} }
-</style>
-<script>
-function openChatPopup(){var p=document.getElementById('chatPopup');p.style.display=p.style.display==='none'?'block':'none';}
-</script>
-<!-- /Live Chat -->
 
 <!-- Loading Spinner -->
 <div id="pageLoader" style="position:fixed;inset:0;background:#0a0a0a;z-index:99999;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s;">

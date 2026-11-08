@@ -26,11 +26,10 @@ window.EMBEDDED_PARTS = [{"id": "1", "model": "T100", "kategoria_pl": "Przyciski
    - Tłumaczenia 4 języków
    - Konwersja walut (USD/PLN/EUR z buforem +5%)
    - Filtry, wyszukiwanie, paginacja
-   - Wysyłka zamówienia do bota Telegram
+   - Wysyłka zamówienia do Bitrix24 (/api/lead, dph.js)
    ========================================================================== */
 
 const APP = {
-  TELEGRAM_BOT: 'https://t.me/dji_agras_parts_bot',
   ITEMS_PER_PAGE: 24,
 
   // Domyślne kursy (aktualizowane z API NBP, fallback gdy brak internetu)
@@ -108,10 +107,10 @@ const I18N = {
     hero_title: 'Części do dronów rolniczych',
     hero_subtitle: 'Profesjonalne części zamienne i wynajem dronów DJI Agras T25, T50, T100',
     hero_btn_catalog: 'Przeglądaj katalog',
-    hero_btn_telegram: 'Bot Telegram',
-    cta_title: 'Zamów przez Telegram',
-    cta_sub: 'Nasz bot Telegram pomoże Ci szybko znaleźć potrzebne części, sprawdzić dostępność i złożyć zamówienie',
-    cta_btn: 'Otwórz bota',
+    hero_btn_telegram: 'Szukaj części z AI',
+    cta_title: 'Nie wiesz, której części szukasz?',
+    cta_sub: 'Czat AI znajdzie część po modelu drona, nazwie lub numerze katalogowym i doda ją do koszyka',
+    cta_btn: 'Otwórz czat',
     
     // Forms
     name: 'Imię i nazwisko',
@@ -124,7 +123,9 @@ const I18N = {
     company: 'Firma',
     nip: 'NIP',
     notes: 'Uwagi',
-    order_via_telegram: 'Wyślij przez Telegram',
+    order_via_telegram: 'Wyślij zamówienie',
+    order_sent: '✅ Dziękujemy! Zamówienie przyjęte. Potwierdzimy dostępność, termin i dane do płatności e-mailem lub telefonicznie.',
+    order_error: 'Nie udało się wysłać zamówienia. Spróbuj ponownie albo napisz na info@flyagrodrone.com.',
     cancel: 'Anuluj',
     submit: 'Wyślij',
     save: 'Zapisz',
@@ -162,8 +163,8 @@ const I18N = {
     
     // Live chat
     chat_title: 'PISZ DO NAS',
-    chat_text: 'Najszybciej odpowiemy na Telegramie!',
-    chat_btn: 'Otwórz bota Telegram',
+    chat_text: 'Czat AI znajdzie część po modelu lub numerze katalogowym.',
+    chat_btn: 'Otwórz czat',
     chat_other: 'Inne sposoby kontaktu',
   },
   ua: {
@@ -210,10 +211,10 @@ const I18N = {
     hero_title: 'Запчастини для сільгосп дронів',
     hero_subtitle: 'Професійні запчастини та оренда дронів DJI Agras T25, T50, T100',
     hero_btn_catalog: 'Переглянути каталог',
-    hero_btn_telegram: 'Telegram бот',
-    cta_title: 'Замовте через Telegram',
-    cta_sub: 'Наш Telegram бот допоможе швидко знайти потрібні запчастини, перевірити наявність та оформити замовлення',
-    cta_btn: 'Відкрити бота',
+    hero_btn_telegram: 'Пошук запчастин з AI',
+    cta_title: 'Не знаєте, яку запчастину шукаєте?',
+    cta_sub: 'Чат AI знайде запчастину за моделлю дрона, назвою або каталожним номером і додасть її в кошик',
+    cta_btn: 'Відкрити чат',
     
     // Forms
     name: "Ім'я та прізвище",
@@ -226,7 +227,9 @@ const I18N = {
     company: 'Компанія',
     nip: 'ЄДРПОУ',
     notes: 'Примітки',
-    order_via_telegram: 'Надіслати через Telegram',
+    order_via_telegram: 'Надіслати замовлення',
+    order_sent: '✅ Дякуємо! Замовлення прийнято. Ми підтвердимо наявність, термін і дані для оплати електронною поштою або телефоном.',
+    order_error: 'Не вдалося надіслати замовлення. Спробуйте ще раз або напишіть на info@flyagrodrone.com.',
     cancel: 'Скасувати',
     submit: 'Надіслати',
     save: 'Зберегти',
@@ -264,8 +267,8 @@ const I18N = {
     
     // Live chat
     chat_title: 'НАПИШІТЬ НАМ',
-    chat_text: 'Найшвидше відповімо в Telegram!',
-    chat_btn: 'Відкрити Telegram бота',
+    chat_text: 'Чат AI знайде запчастину за моделлю або номером.',
+    chat_btn: 'Відкрити чат',
     chat_other: 'Інші способи зв\'язку',
   },
   en: {
@@ -312,10 +315,10 @@ const I18N = {
     hero_title: 'Agricultural drone parts',
     hero_subtitle: 'Professional spare parts and rental of DJI Agras T25, T50, T100 drones',
     hero_btn_catalog: 'Browse catalog',
-    hero_btn_telegram: 'Telegram Bot',
-    cta_title: 'Order via Telegram',
-    cta_sub: 'Our Telegram bot helps you quickly find parts, check availability and place orders',
-    cta_btn: 'Open bot',
+    hero_btn_telegram: 'Find parts with AI',
+    cta_title: 'Not sure which part you need?',
+    cta_sub: 'The AI chat finds parts by drone model, name or part number and adds them to your cart',
+    cta_btn: 'Open chat',
     
     // Forms
     name: 'Full name',
@@ -328,7 +331,9 @@ const I18N = {
     company: 'Company',
     nip: 'VAT ID',
     notes: 'Notes',
-    order_via_telegram: 'Send via Telegram',
+    order_via_telegram: 'Send order',
+    order_sent: '✅ Thank you! Order received. We will confirm availability, delivery time and payment details by email or phone.',
+    order_error: 'The order could not be sent. Please try again or email info@flyagrodrone.com.',
     cancel: 'Cancel',
     submit: 'Submit',
     save: 'Save',
@@ -366,8 +371,8 @@ const I18N = {
     
     // Live chat
     chat_title: 'CHAT WITH US',
-    chat_text: "We'll reply fastest on Telegram!",
-    chat_btn: 'Open Telegram Bot',
+    chat_text: 'The AI chat finds parts by model or part number.',
+    chat_btn: 'Open chat',
     chat_other: 'Other contact methods',
   },
 };
@@ -597,40 +602,34 @@ function submitOrder(form) {
   const address = data.get('address');
   const notes = data.get('notes') || '';
 
-  // Buduj wiadomość dla Telegrama
-  let msg = `🛒 NOWE ZAMÓWIENIE ze strony WWW\n\n`;
-  msg += `👤 ${name}\n`;
-  msg += `📞 ${phone}\n`;
-  msg += `📧 ${email}\n`;
-  msg += `📍 ${address}\n`;
-  if (notes) msg += `📝 ${notes}\n`;
-  msg += `\n📦 ZAMÓWIONE CZĘŚCI:\n`;
+  // Treść zamówienia → Bitrix24 (dph.js → /api/lead)
+  let msg = `NOWE ZAMÓWIENIE ze strony WWW\n\n`;
+  msg += `Klient: ${name}\nTelefon: ${phone}\nE-mail: ${email}\nAdres: ${address}\n`;
+  if (notes) msg += `Uwagi: ${notes}\n`;
+  msg += `\nZAMÓWIONE CZĘŚCI:\n`;
   STATE.cart.forEach((item, i) => {
     msg += `\n${i+1}. ${item.name}`;
     msg += `\n   Kod: ${item.catno}`;
     msg += `\n   Model: ${item.model}, Ilość: ${item.qty} szt`;
-    msg += `\n   Cena: ${priceUSD(item.price_usd)} / szt`;
+    msg += `\n   Cena: ${priceUSD(item.price_usd)} / szt (${pricePLN(item.price_usd)})`;
   });
   const total = cartTotal();
-  msg += `\n\n💰 SUMA:`;
-  msg += `\n   ${priceUSD(total)}`;
-  msg += `\n   ${pricePLN(total)}`;
-  msg += `\n   ${priceEUR(total)}`;
+  msg += `\n\nSUMA: ${priceUSD(total)} / ${pricePLN(total)} / ${priceEUR(total)}`;
 
-  // Otwórz Telegram z gotową wiadomością
-  const tgUrl = `${APP.TELEGRAM_BOT}?start=order_${Date.now()}`;
-  window.open(tgUrl, '_blank');
-
-  // Skopiuj zamówienie do schowka jako fallback
-  navigator.clipboard?.writeText(msg).catch(() => {});
-
-  alert(`${t('order_via_telegram')}\n\n${msg}\n\n📋 Wiadomość skopiowana - wklej w czacie z botem.`);
-
-  // Wyczyść koszyk
-  STATE.cart = [];
-  saveCart();
-  closeOrderModal();
-  closeCart();
+  const btn = form.querySelector('[type=submit]');
+  if (btn) btn.disabled = true;
+  return DPH.send('order', {
+    name, phone, email, message: msg, website: data.get('website') || '',
+    total_pln: +(total * APP.RATES.USD_to_PLN * APP.RATES.BUFFER).toFixed(2),
+  }).then(ok => {
+    if (btn) btn.disabled = false;
+    if (!ok) { alert(t('order_error')); return; }
+    alert(t('order_sent'));
+    STATE.cart = [];
+    saveCart();
+    closeOrderModal();
+    closeCart();
+  });
 }
 
 // === KATALOG: FILTROWANIE ===
@@ -1122,8 +1121,8 @@ function showLangNotice() {
     notice.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:#c8a032;color:black;padding:10px 20px;border-radius:6px;z-index:8000;box-shadow:0 4px 20px rgba(0,0,0,0.3);font-size:13px;font-weight:600;display:flex;align-items:center;gap:12px;max-width:90%;';
     
     const msg = STATE.lang === 'ua' 
-      ? "⚠️ Текст цієї сторінки доступний лише польською. Зв'яжіться з нами через Telegram для допомоги."
-      : "⚠️ Full content of this page available only in Polish. Contact us via Telegram for assistance.";
+      ? "⚠️ Текст цієї сторінки доступний лише польською. Скористайтеся чатом AI або напишіть на info@flyagrodrone.com."
+      : "⚠️ Full content of this page available only in Polish. Use the AI chat or email info@flyagrodrone.com.";
     
     notice.innerHTML = `
       <span>${msg}</span>

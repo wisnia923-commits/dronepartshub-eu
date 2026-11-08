@@ -112,7 +112,6 @@
     <div class="nav__actions">
       <button class="nav__lang" onclick="toggleLang()">PL</button>
       <a class="nav__cart" onclick="openCart()">🛒 <span data-i18n="cart">Koszyk</span> <span class="nav__cart-count">0</span></a>
-      <a href="https://t.me/dji_agras_parts_bot" target="_blank" class="nav__telegram">✈️ Telegram</a>
     </div>
   </div>
 </nav>
@@ -140,24 +139,24 @@
   <div class="faq-list" id="faqList">
 
     <!-- ZAMÓWIENIA -->
-    <div class="faq-item" data-cat="order"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Jak złożyć zamówienie?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Najprostszy sposób: <strong>napisz do naszego bota Telegram</strong> @dji_agras_parts_bot. Wybierz część z katalogu, dodaj do koszyka i przejdź do kasy. Bot przeprowadzi Cię przez cały proces. Możesz też zamówić bezpośrednio przez stronę i wysłać dane przez Telegram.</div></div></div>
+    <div class="faq-item" data-cat="order"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Jak złożyć zamówienie?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Wybierz część z katalogu (albo znajdź ją <strong>czatem AI</strong> po modelu drona lub numerze katalogowym), dodaj do koszyka i przejdź do kasy. Po wysłaniu zamówienia potwierdzimy dostępność, termin i dane do płatności e-mailem lub telefonicznie.</div></div></div>
 
-    <div class="faq-item" data-cat="order"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy mogę zamówić część której nie ma w katalogu?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>Tak!</strong> Mamy dostęp do większego asortymentu niż widoczny na stronie. Napisz do bota numer katalogowy lub opisz potrzebną część - sprawdzimy dostępność i podamy cenę.</div></div></div>
+    <div class="faq-item" data-cat="order"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy mogę zamówić część której nie ma w katalogu?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>Tak!</strong> Mamy dostęp do większego asortymentu niż widoczny na stronie. Wpisz numer katalogowy w czacie AI albo wyślij go <a href="contact.html">formularzem kontaktowym</a> – sprawdzimy dostępność i podamy cenę.</div></div></div>
 
-    <div class="faq-item" data-cat="order"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Jak długo czeka się na realizację zamówienia?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Części z magazynu: <strong>wysyłka w 24h</strong>. Części na zamówienie: <strong>5-10 dni roboczych</strong>. Bot poda dokładny termin przy konkretnej części.</div></div></div>
+    <div class="faq-item" data-cat="order"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Jak długo czeka się na realizację zamówienia?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Części z magazynu: <strong>wysyłka w 24h</strong>. Części na zamówienie: <strong>5-10 dni roboczych</strong>. Dokładny termin potwierdzimy po złożeniu zamówienia.</div></div></div>
 
-    <div class="faq-item" data-cat="order"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy potrzebuję konta żeby zamówić?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>Nie!</strong> Możesz zamówić jako gość. Wystarczy podać dane kontaktowe i adres dostawy. Bot Telegram automatycznie zapamięta Cię przy kolejnym zamówieniu.</div></div></div>
+    <div class="faq-item" data-cat="order"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy potrzebuję konta żeby zamówić?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>Nie!</strong> Możesz zamówić jako gość. Wystarczy podać dane kontaktowe i adres dostawy.</div></div></div>
 
-    <div class="faq-item" data-cat="order"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Jak mogę anulować zamówienie?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Możesz anulować zamówienie <strong>przed wysyłką</strong> kontaktując się z nami przez Telegram, email lub telefon. Po wysyłce stosujemy procedurę zwrotu (14 dni odstąpienia).</div></div></div>
+    <div class="faq-item" data-cat="order"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Jak mogę anulować zamówienie?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Możesz anulować zamówienie <strong>przed wysyłką</strong> kontaktując się z nami e-mailem lub telefonicznie. Po wysyłce stosujemy procedurę zwrotu (14 dni odstąpienia).</div></div></div>
 
     <!-- WYSYŁKA -->
     <div class="faq-item" data-cat="shipping"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Jakie są koszty wysyłki?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>Polska:</strong><ul><li>InPost Paczkomat: 13 zł (1-2 dni)</li><li>Kurier DPD/DHL: 22 zł (1-2 dni)</li><li>Odbiór osobisty: GRATIS</li></ul><strong>Europa:</strong> 45-80 zł (3-5 dni)<br><strong>Ukraina (Nova Poshta):</strong> 100-150 zł (5-7 dni)</div></div></div>
 
-    <div class="faq-item" data-cat="shipping"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy wysyłacie do Ukrainy?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>Tak!</strong> Współpracujemy z <strong>Nova Poshta</strong> - wysyłka do 6000+ oddziałów w Ukrainie. Czas dostawy: <strong>5-7 dni</strong> (express 3-4). Bot Telegram obsługuje również w języku ukraińskim.</div></div></div>
+    <div class="faq-item" data-cat="shipping"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy wysyłacie do Ukrainy?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>Tak!</strong> Współpracujemy z <strong>Nova Poshta</strong> - wysyłka do 6000+ oddziałów w Ukrainie. Czas dostawy: <strong>5-7 dni</strong> (express 3-4). Czat AI na stronie odpowiada również po ukraińsku.</div></div></div>
 
     <div class="faq-item" data-cat="shipping"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy wysyłacie do innych krajów UE?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>Tak</strong> - Niemcy, Czechy, Słowacja, Włochy, Francja, Hiszpania, Holandia, Belgia, Austria, Węgry. Wysyłka standardowa 3-5 dni, express 1-2 dni.</div></div></div>
 
-    <div class="faq-item" data-cat="shipping"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy mogę śledzić paczkę?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>Tak.</strong> Po nadaniu wysyłamy <strong>numer trackingu</strong> przez Telegram i email. Możesz śledzić paczkę na stronie kuriera (InPost, DPD, DHL, Nova Poshta).</div></div></div>
+    <div class="faq-item" data-cat="shipping"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy mogę śledzić paczkę?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>Tak.</strong> Po nadaniu wysyłamy <strong>numer trackingu</strong> e-mailem. Możesz śledzić paczkę na stronie kuriera (InPost, DPD, DHL, Nova Poshta).</div></div></div>
 
     <div class="faq-item" data-cat="shipping"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Co jeśli paczka się zgubi?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Wszystkie paczki są <strong>ubezpieczone</strong>. W przypadku zgubienia: zgłaszamy reklamację u kuriera, a Ty otrzymujesz <strong>nową paczkę lub pełen zwrot</strong> w ciągu 7-14 dni.</div></div></div>
 
@@ -171,22 +170,22 @@
     <div class="faq-item" data-cat="payment"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy są zniżki dla stałych klientów?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>Tak!</strong> Stali klienci dostają <strong>indywidualne rabaty</strong> oraz priorytetową obsługę. Profesjonaliści (serwisy, operatorzy 100+ paczek/rok) - zapraszamy do naszego programu hurtowego (zobacz: <a href="hurt.html">Strona hurt</a>).</div></div></div>
 
     <!-- CZĘŚCI -->
-    <div class="faq-item" data-cat="parts"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy części są kompatybilne z moim modelem drona?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Każda część w katalogu ma <strong>oznaczenie modelu</strong> (T25, T50, T100). Jeśli masz wątpliwości - <strong>napisz do bota numer seryjny</strong> swojego drona. AI rozpozna model i wskaże pasujące części.</div></div></div>
+    <div class="faq-item" data-cat="parts"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy części są kompatybilne z moim modelem drona?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Każda część w katalogu ma <strong>oznaczenie modelu</strong> (T25, T50, T100). Jeśli masz wątpliwości - <strong>zapytaj czat AI</strong>, podając model drona i nazwę lub numer części – pokaże pasujące pozycje.</div></div></div>
 
-    <div class="faq-item" data-cat="parts"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Co jeśli nie znam numeru katalogowego części?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>Nie problem!</strong> Wystarczy że <strong>zrobisz zdjęcie</strong> części lub uszkodzonego elementu i wyślesz na Telegram - nasze AI rozpozna co potrzebujesz i znajdzie odpowiednią część.</div></div></div>
+    <div class="faq-item" data-cat="parts"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Co jeśli nie znam numeru katalogowego części?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>Nie problem!</strong> Opisz część w <strong>czacie AI</strong> (np. „pompa T50”, „śmigło T100”) – wyszuka ją w katalogu. Możesz też wysłać zdjęcie części e-mailem na info@flyagrodrone.com.</div></div></div>
 
-    <div class="faq-item" data-cat="parts"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy oferujecie części używane?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Standardowo <strong>sprzedajemy tylko nowe części</strong>. Czasami jednak mamy w ofercie <strong>części z demontażu</strong> (sprawdzone, w pełni działające) z odpowiednim oznaczeniem i niższą ceną. Pytaj na Telegram.</div></div></div>
+    <div class="faq-item" data-cat="parts"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy oferujecie części używane?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Standardowo <strong>sprzedajemy tylko nowe części</strong>. Czasami jednak mamy w ofercie <strong>części z demontażu</strong> (sprawdzone, w pełni działające) z odpowiednim oznaczeniem i niższą ceną. Zapytaj e-mailem lub przez formularz kontaktowy.</div></div></div>
 
     <div class="faq-item" data-cat="parts"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy części są oryginalne czy zamienniki?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Sprzedajemy <strong>części kompatybilne</strong> wysokiej jakości. Większość z nich pochodzi od tych samych dostawców co producenci. Każda część przechodzi <strong>kontrolę jakości</strong> przed wysyłką. Drone Parts Hub jest niezależnym sklepem - nie jesteśmy autoryzowanym dystrybutorem DJI.</div></div></div>
 
-    <div class="faq-item" data-cat="parts"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy macie instrukcje montażu?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Do większości części dołączamy <strong>instrukcję montażu PDF</strong>. Dla skomplikowanych części (np. wymiana baterii, kalibracja kompasu) możemy <strong>zrobić rozmowę video</strong> z technikiem przez Telegram.</div></div></div>
+    <div class="faq-item" data-cat="parts"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy macie instrukcje montażu?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Do większości części dołączamy <strong>instrukcję montażu PDF</strong>. Dla skomplikowanych części (np. wymiana baterii, kalibracja kompasu) możemy umówić <strong>rozmowę wideo</strong> z technikiem.</div></div></div>
 
     <!-- GWARANCJA -->
     <div class="faq-item" data-cat="warranty"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Jaka jest gwarancja na części?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>12 miesięcy</strong> gwarancji standardowej + <strong>2 lata rękojmi</strong> wynikającej z prawa konsumenckiego. Niektóre części (baterie) mają osobne warunki - sprawdź opis produktu.</div></div></div>
 
     <div class="faq-item" data-cat="warranty"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Co jeśli część jest uszkodzona przy odbiorze?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>WAŻNE:</strong> spisz <strong>protokół szkody z kurierem</strong> przy odbiorze, zrób zdjęcia opakowania i zawartości. Zgłoś nam w ciągu <strong>24h</strong>. Wymienimy część na koszt sprzedawcy.</div></div></div>
 
-    <div class="faq-item" data-cat="warranty"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Jak złożyć reklamację?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Najszybciej: <strong>napisz do bota</strong> z numerem zamówienia + opisem problemu + zdjęciami. Odpowiadamy w ciągu kilku godzin. Pełen proces opisany na stronie <a href="zwroty-reklamacje.html">Zwroty i reklamacje</a>.</div></div></div>
+    <div class="faq-item" data-cat="warranty"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Jak złożyć reklamację?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Napisz na <strong>info@flyagrodrone.com</strong> z numerem zamówienia + opisem problemu + zdjęciami. Odpowiadamy w ciągu kilku godzin. Pełen proces opisany na stronie <a href="zwroty-reklamacje.html">Zwroty i reklamacje</a>.</div></div></div>
 
     <div class="faq-item" data-cat="warranty"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Mogę zwrócić część bez podawania powodu?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>Tak</strong> - jako konsument masz <strong>14 dni na zwrot</strong> bez podania przyczyny. Część musi być w stanie nieużywanym, najlepiej w oryginalnym opakowaniu.</div></div></div>
 
@@ -202,15 +201,15 @@
     <div class="faq-item" data-cat="rental"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Co jeśli uszkodzę drona podczas wynajmu?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Mamy <strong>ubezpieczenie OC</strong> na cały sprzęt. Standardowe uszkodzenia (zarysowania, drobne stłuczki) - z kaucji. Poważne (rozbicie) - rozliczamy z ubezpieczalnią.</div></div></div>
 
     <!-- INNE -->
-    <div class="faq-item" data-cat="order"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">W jakich językach mogę się z Wami komunikować?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Bot Telegram obsługuje <strong>polski, ukraiński, angielski</strong> oraz włoski (automatycznie wykrywa język). Email i telefon: PL/EN.</div></div></div>
+    <div class="faq-item" data-cat="order"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">W jakich językach mogę się z Wami komunikować?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Czat AI na stronie odpowiada po <strong>polsku, ukraińsku i angielsku</strong>. E-mail i telefon: PL/EN.</div></div></div>
 
     <div class="faq-item" data-cat="parts"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy macie magazyn części dla T100?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>Tak</strong> - mamy największy w Polsce wybór części dla T100 (ponad 280 pozycji). Większość dostępna od ręki.</div></div></div>
 
-    <div class="faq-item" data-cat="order"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Jak skontaktować się z konsultantem?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><ul><li>📱 <strong>Telegram</strong>: @dji_agras_parts_bot (najszybciej)</li><li>📧 <strong>Email</strong>: info@flyagrodrone.com</li><li>📞 <strong>Telefon</strong>: +48 663 000 007</li><li>📝 <strong>Formularz</strong>: <a href="contact.html">strona kontakt</a></li></ul></div></div></div>
+    <div class="faq-item" data-cat="order"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Jak skontaktować się z konsultantem?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><ul><li>🔍 <strong>Czat AI</strong>: przycisk w prawym dolnym rogu – szukanie części</li><li>📧 <strong>Email</strong>: info@flyagrodrone.com</li><li>📞 <strong>Telefon</strong>: +48 663 000 007</li><li>📝 <strong>Formularz</strong>: <a href="contact.html">strona kontakt</a></li></ul></div></div></div>
 
     <div class="faq-item" data-cat="payment"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy mogę dostać rabat za większe zamówienie?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner"><strong>Tak.</strong> Zamówienia powyżej 5000 zł - rabat 5%. Powyżej 10 000 zł - rabat 10%. Profesjonaliści (>50 części/rok) - oferta hurtowa do 25% rabatu.</div></div></div>
 
-    <div class="faq-item" data-cat="parts"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy macie części do starszych modeli (T20, T30, T40)?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Standardowo specjalizujemy się w <strong>T25, T50, T100</strong>. Części do T20/T30/T40 sprowadzamy <strong>na zamówienie</strong> - czas oczekiwania 2-3 tygodnie. Zapytaj na Telegram.</div></div></div>
+    <div class="faq-item" data-cat="parts"><div class="faq-q" onclick="toggleFAQ(this)"><div class="faq-q-text">Czy macie części do starszych modeli (T20, T30, T40)?</div><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Standardowo specjalizujemy się w <strong>T25, T50, T100</strong>. Części do T20/T30/T40 sprowadzamy <strong>na zamówienie</strong> - czas oczekiwania 2-3 tygodnie. Zapytaj przez formularz kontaktowy.</div></div></div>
 
   </div>
 
@@ -223,7 +222,7 @@
     <h3>Nie znalazłeś odpowiedzi?</h3>
     <p>Napisz do nas - odpowiadamy najszybciej w branży</p>
     <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-      <a href="https://t.me/dji_agras_parts_bot" target="_blank" class="btn btn--telegram">✈️ Telegram (najszybciej)</a>
+      <a href="#szukaj" onclick="return DPH.openChat()" class="btn btn--telegram">🔍 Czat AI – szukaj części</a>
       <a href="contact.html" class="btn btn--ghost">📞 Formularz kontaktowy</a>
     </div>
   </div>
@@ -273,34 +272,8 @@ function searchFAQ() {
 }
 </script>
 <script src="app.js"></script>
+<script src="dph.js" defer></script>
 
-<!-- Live Chat Widget -->
-<div id="liveChat" style="position:fixed;bottom:24px;right:24px;z-index:9000;">
-  <button onclick="openChatPopup()" style="
-    width:64px;height:64px;border-radius:50%;
-    background:linear-gradient(135deg,#0088cc,#006699);
-    border:3px solid white;
-    box-shadow:0 8px 30px rgba(0,136,204,0.5);
-    cursor:pointer;display:flex;align-items:center;justify-content:center;
-    font-size:30px;transition:all 0.3s;animation:pulseChat 2s infinite;
-  " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    💬
-  </button>
-</div>
-<div id="chatPopup" style="display:none;position:fixed;bottom:100px;right:24px;width:320px;background:#0a0a0a;border:1px solid var(--color-accent);border-radius:12px;padding:24px;z-index:9001;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
-  <button onclick="document.getElementById('chatPopup').style.display='none'" style="position:absolute;top:8px;right:12px;background:transparent;border:none;color:white;font-size:24px;cursor:pointer;">×</button>
-  <div style="font-family:var(--font-display);font-size:24px;color:var(--color-accent);letter-spacing:0.05em;margin-bottom:8px;">💬 PISZ DO NAS</div>
-  <p style="color:rgba(255,255,255,0.85);font-size:14px;margin-bottom:20px;">Najszybciej odpowiemy na Telegramie!</p>
-  <a href="https://t.me/dji_agras_parts_bot" target="_blank" style="display:block;background:linear-gradient(135deg,#0088cc,#006699);color:white;text-align:center;padding:14px;border-radius:6px;text-decoration:none;font-weight:700;letter-spacing:0.05em;margin-bottom:8px;">✈️ Otwórz bota Telegram</a>
-  <a href="contact.html" style="display:block;text-align:center;color:var(--color-text-muted);font-size:13px;text-decoration:none;padding:8px;">Inne sposoby kontaktu →</a>
-</div>
-<style>
-@keyframes pulseChat { 0%,100%{box-shadow:0 8px 30px rgba(0,136,204,0.5);} 50%{box-shadow:0 8px 40px rgba(0,136,204,0.8);} }
-</style>
-<script>
-function openChatPopup(){var p=document.getElementById('chatPopup');p.style.display=p.style.display==='none'?'block':'none';}
-</script>
-<!-- /Live Chat -->
 
 <!-- Loading Spinner -->
 <div id="pageLoader" style="position:fixed;inset:0;background:#0a0a0a;z-index:99999;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s;">

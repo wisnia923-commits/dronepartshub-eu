@@ -93,12 +93,6 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  <url>
-    <loc>https://dronepartshub.eu/privacy-policy-bot.html</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
 
   <!-- ═══ DODATKOWE: link do sitemapy produktów (jeśli ją wygenerujesz) ═══ -->
   <!--
