@@ -5,6 +5,7 @@ window.EMBEDDED_PARTS = [{"id": "1", "model": "T100", "kategoria_pl": "Przyciski
 // Override fetch dla parts.json - zwraca embedded data
 (function() {
   const _origFetch = window.fetch;
+  window._origFetchRates = _origFetch.bind(window);
   window.fetch = function(url, options) {
     // Sprawdź czy URL zawiera parts.json (różne ścieżki)
     if (typeof url === 'string' && url.includes('parts.json')) {
@@ -35,8 +36,8 @@ const APP = {
   // Domyślne kursy (aktualizowane z API NBP, fallback gdy brak internetu)
   // Bufor +5% już wliczony
   RATES: {
-    USD_to_PLN: 4.20,    // 1 USD = 4.20 PLN
-    USD_to_EUR: 0.98,    // 1 USD = 0.98 EUR (po buforze +5%)
+    USD_to_PLN: 3.646,   // kurs średni NBP (fallback); nadpisywany przy starcie z API NBP / rates.json
+    USD_to_EUR: 0.899,   // 0.8561 × bufor 1.05 (fallback)
     BUFFER: 1.05,
   },
 
@@ -867,7 +868,33 @@ function toggleLang() {
 }
 
 // === INIT ===
+// Aktualny kurs: API NBP (tabela A, kurs średni) → rates.json → wartości domyślne
+async function loadRates() {
+  const set = (usdPln, eurPln) => {
+    if (usdPln > 0 && eurPln > 0) {
+      APP.RATES.USD_to_PLN = usdPln;
+      APP.RATES.USD_to_EUR = (usdPln / eurPln) * APP.RATES.BUFFER;
+      return true;
+    }
+    return false;
+  };
+  try {
+    const ctl = new AbortController(); setTimeout(() => ctl.abort(), 2500);
+    const r = await fetch('https://api.nbp.pl/api/exchangerates/tables/A/?format=json', { signal: ctl.signal });
+    if (r.ok) {
+      const t = (await r.json())[0].rates;
+      const mid = c => (t.find(x => x.code === c) || {}).mid;
+      if (set(mid('USD'), mid('EUR'))) return;
+    }
+  } catch (e) {}
+  try {
+    const r = await window._origFetchRates('rates.json');
+    if (r.ok) { const j = await r.json(); set(j.usd_pln, j.eur_pln); }
+  } catch (e) {}
+}
+
 async function init() {
+  await loadRates();
   STATE.lang = getLang();
   loadCart();
 
