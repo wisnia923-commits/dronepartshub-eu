@@ -2,6 +2,39 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- Google Consent Mode v2 - MUSI BYĆ PRZED GTM                    -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'granted',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+      'wait_for_update': 500,
+      'region': ['PL', 'EU', 'UA']
+    });
+    try {
+      var savedConsent = localStorage.getItem('cookie_consent');
+      if (savedConsent === 'accepted_all') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted',
+          'personalization_storage': 'granted'
+        });
+      }
+    } catch(e) {}
+  </script>
+  <!-- Google Analytics 4 (DronePartsHub) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KR6F3VM2SG"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KR6F3VM2SG');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQ - Najczęstsze pytania | Drone Parts Hub</title>
   <meta name="description" content="Odpowiedzi na najczęstsze pytania o części do dronów rolniczych T25, T50, T100. Gwarancja, wysyłka, kompatybilność, płatności.">

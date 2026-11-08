@@ -29,8 +29,6 @@
           'analytics_storage': 'granted',
           'personalization_storage': 'granted'
         });
-      } else if (savedConsent === 'essential_only') {
-        gtag('consent', 'update', { 'analytics_storage': 'granted' });
       }
     } catch(e) {}
   </script>
@@ -42,6 +40,9 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-T4DPZ6SZ');</script>
   <!-- End Google Tag Manager -->
+  <!-- Google Analytics 4 (DronePartsHub) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KR6F3VM2SG"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KR6F3VM2SG');</script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wynajem drona DJI Agras T50 — DronePartsHub</title>
@@ -1137,9 +1138,6 @@ setTimeout(hidePageLoader,2000);
   };
   window.acceptEssentialOnly = function() {
     try { localStorage.setItem('cookie_consent', 'essential_only'); } catch(e) {}
-    if (typeof gtag === 'function') {
-      gtag('consent', 'update', { 'analytics_storage': 'granted' });
-    }
     var banner = document.querySelector('.cookie-banner, #cookie-banner, [class*="cookie"]');
     if (banner) banner.style.display = 'none';
   };
