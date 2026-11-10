@@ -15,3 +15,9 @@ https://:project.pages.dev/*
 
 /*.md
   X-Robots-Tag: noindex
+
+# Import katalogu do Bitrix24 (agrodron.bitrix24.pl) – odczyt danych i zdjęć części
+/parts.json
+  Access-Control-Allow-Origin: https://agrodron.bitrix24.pl
+/images/parts/*
+  Access-Control-Allow-Origin: https://agrodron.bitrix24.pl
