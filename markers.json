@@ -1,0 +1,38 @@
+{
+ "YC.JG.ZS006110": {
+  "img": "/images/parts/m02-02-image2.webp",
+  "x": 25.6,
+  "y": 19.0,
+  "r": 16
+ },
+ "YC.JG.MY001720": {
+  "img": "/images/parts/m02-02-image2.webp",
+  "x": 56.0,
+  "y": 17.5,
+  "r": 14
+ },
+ "YC.JG.ZS006111": {
+  "img": "/images/parts/m02-02-image2.webp",
+  "x": 85.0,
+  "y": 16.5,
+  "r": 12
+ },
+ "YC.JG.ZS005454": {
+  "img": "/images/parts/m02-02-image2.webp",
+  "x": 36.0,
+  "y": 89.0,
+  "r": 5
+ },
+ "BC.AG.SS001068": {
+  "img": "/images/parts/m02-02-image2.webp",
+  "x": 22.0,
+  "y": 48.0,
+  "r": 12
+ },
+ "YC.JG.JS000085": {
+  "img": "/images/parts/m02-02-image2.webp",
+  "x": 87.0,
+  "y": 50.0,
+  "r": 6
+ }
+}

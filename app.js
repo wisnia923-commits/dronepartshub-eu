@@ -683,10 +683,12 @@ function renderCatalog() {
       <div class="product-card" onclick="window.location.href='product.html?id=${p.id}'">
         <div class="product-card__img">
           <span class="product-card__model">${p.model}</span>
-          ${p.zdjecie_url
-            ? `<img src="${p.zdjecie_url}" alt="${name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-               <div class="product-card__placeholder" style="display:none;">🔧</div>`
-            : `<div class="product-card__placeholder">🔧</div>`}
+          ${(() => { const img = window.DPH_KIT ? DPH_KIT.imageFor(p, STATE.parts) : p.zdjecie_url;
+            return img
+            ? `<img src="${img}" alt="${name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+               <div class="product-card__placeholder" style="display:none;">🔧</div>
+               ${window.DPH_KIT && DPH_KIT.isKit(p, STATE.parts) ? DPH_KIT.badgeHTML(STATE.lang) : ''}`
+            : `<div class="product-card__placeholder">🔧</div>`; })()}
         </div>
         <div class="product-card__body">
           <div class="product-card__catno">${p.numer_katalogowy}</div>
