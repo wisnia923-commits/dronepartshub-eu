@@ -139,7 +139,7 @@ export async function onRequestPost({ request, env }) {
   let reply;
   if (ai) {
     try {
-      const system = `Jesteś doradcą sklepu DronePartsHub.eu (oryginalne części zamienne do dronów rolniczych DJI Agras T25P, T50, T100; sprzedawca: Agrodron Sp. z o.o., Łódź). ` +
+      const system = `Jesteś doradcą sklepu DronePartsHub.eu (oryginalne części zamienne do dronów rolniczych DJI Agras T25P, T50, T100). ` +
         `Odpowiadasz krótko (maks. 4 zdania) w języku: ${lang === 'ua' ? 'ukraińskim' : lang === 'en' ? 'angielskim' : 'polskim'}. ` +
         `Zasady: mów WYŁĄCZNIE o częściach z listy KATALOG poniżej – nigdy nie wymyślaj części, numerów ani cen. Karty części z ceną i przyciskiem „do koszyka” wyświetlą się pod Twoją odpowiedzią, więc nie wypisuj ich wszystkich – wskaż najlepiej pasującą i powiedz, czym się różnią, jeśli to istotne. ` +
         `Jeśli lista jest pusta albo nic nie pasuje: poproś o model drona i numer katalogowy z naklejki/instrukcji albo zaproponuj formularz kontaktowy. ` +
