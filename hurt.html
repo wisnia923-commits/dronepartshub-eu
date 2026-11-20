@@ -43,6 +43,7 @@
   <!-- Google Analytics 4 (DronePartsHub) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KR6F3VM2SG"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KR6F3VM2SG');</script>
+  <script>(function(){function px(){if(window.fbq)return;!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1173674574130316');fbq('track','PageView');}try{if(localStorage.getItem('cookie_consent')==='accepted_all')px();}catch(e){}window.addEventListener('dph-consent-all',px);})();</script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zamówienia hurtowe DJI Agras — DronePartsHub</title>
@@ -577,7 +578,7 @@ setTimeout(hidePageLoader,2000);
 <script>
 (function() {
   window.acceptAllCookies = function() {
-    try { localStorage.setItem('cookie_consent', 'accepted_all'); } catch(e) {}
+    try { localStorage.setItem('cookie_consent', 'accepted_all'); } catch(e) {} try{window.dispatchEvent(new Event('dph-consent-all'))}catch(e){}
     if (typeof gtag === 'function') {
       gtag('consent', 'update', {
         'ad_storage': 'granted',
