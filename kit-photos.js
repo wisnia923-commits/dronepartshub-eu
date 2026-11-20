@@ -14,11 +14,11 @@
  * ═══════════════════════════════════════════════════════════════════════ */
 (function () {
   const baseNo = n => String(n || '').replace(/-\d+$/, '');
-  let markers = {};
-  const markersReady = fetch('/markers.json', { cache: 'no-cache' })
-    .then(r => (r.ok ? r.json() : {}))
-    .then(m => (markers = m || {}))
-    .catch(() => (markers = {}));
+  let markers = {}, extra = {};
+  const getJSON = u => fetch(u, { cache: 'no-cache' }).then(r => (r.ok ? r.json() : {})).catch(() => ({}));
+  // zdjecia-czesci.json: { "KOD": { "url": "...", "typ": "czesc" | "modul" } } — zdjęcia z SharePoint
+  const markersReady = Promise.all([getJSON('/markers.json'), getJSON('/zdjecia-czesci.json')])
+    .then(([m, e]) => { markers = m || {}; extra = e || {}; });
 
   let cacheFor = null, kitImgs = null, siblingImg = null;
   function index(all) {
@@ -48,12 +48,14 @@
     imageFor(p, all) {
       index(all);
       const m = markers[p.numer_katalogowy] || markers[baseNo(p.numer_katalogowy)];
-      return p.zdjecie_url || siblingImg[baseNo(p.numer_katalogowy)] || (m && m.img) || '';
+      const e = extra[p.numer_katalogowy] || extra[baseNo(p.numer_katalogowy)];
+      return p.zdjecie_url || siblingImg[baseNo(p.numer_katalogowy)] || (e && e.url) || (m && m.img) || '';
     },
     /** Czy zdjęcie części jest zbiorcze */
     isKit(p, all) {
       index(all); const u = this.imageFor(p, all);
-      return !!u && (kitImgs.has(u) || (!p.zdjecie_url && !!this.marker(p, all)));
+      const e = extra[p.numer_katalogowy] || extra[baseNo(p.numer_katalogowy)];
+      return !!u && (kitImgs.has(u) || (e && e.url === u && e.typ === 'modul') || (!p.zdjecie_url && !!this.marker(p, all)));
     },
     /** Znacznik dla części, tylko jeśli dotyczy tego samego zdjęcia */
     marker(p, all) {
