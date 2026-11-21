@@ -69,7 +69,16 @@
       if (!url) return '';
       const kit = this.isKit(p, all), m = kit ? this.marker(p, all) : null;
       const R = m ? (m.r || 6) : 0;
-      const ring = m ? `<span class="kit-marker" style="left:${m.x}%;top:${m.y}%;width:${R * 2}%;margin-left:-${R}%;margin-top:-${R}%;"></span>` : '';
+      let ring = '';
+      if (m) {
+        // strzałka przychodzi od strony środka zdjęcia, żeby nie wychodziła poza kadr i nie zasłaniała części
+        let dx = 50 - m.x, dy = 50 - m.y;
+        if (Math.abs(dx) < 6 && Math.abs(dy) < 6) { dx = 1; dy = -1; }
+        const ang = Math.round(Math.atan2(dy, dx) * 180 / Math.PI);
+        ring = `<span class="kit-marker" style="left:${m.x}%;top:${m.y}%;width:${R * 2}%;margin-left:-${R}%;margin-top:-${R}%;"></span>`
+          + `<span class="kit-arrow" style="left:${m.x}%;top:${m.y}%;width:${R * 2}%;margin-left:-${R}%;transform:rotate(${ang}deg);">`
+          + `<span class="kit-arrow__in"><svg viewBox="0 0 40 20" aria-hidden="true"><path d="M2 10 L14 2 L14 7 L38 7 L38 13 L14 13 L14 18 Z"/></svg></span></span>`;
+      }
       return `<figure class="kit-figure"><span class="kit-wrap">
           <img src="${url}" alt="${name}" onload="DPH_KIT.fit(this)" onerror="this.closest('.kit-figure').outerHTML='<div class=&quot;product-image-placeholder&quot;>🔧</div>'">
           ${ring}${kit ? this.badgeHTML(lang) : ''}</span>
@@ -103,9 +112,14 @@
   .kit-wrap img{display:block;max-width:none;max-height:none}
   .product-image-main .kit-figure{padding:12px}
   .product-image-main .kit-figure img{padding:0!important;object-fit:fill!important}
+  .kit-wrap{overflow:hidden}
   .kit-marker{position:absolute;aspect-ratio:1;box-sizing:border-box;border:3px solid #e1251b;border-radius:50%;
-    box-shadow:0 0 0 3px rgba(255,255,255,.8),0 0 14px rgba(225,37,27,.7);animation:kitPulse 1.6s ease-in-out infinite;pointer-events:none}
-  @keyframes kitPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+    box-shadow:0 0 0 2px #fff,0 0 0 9999px rgba(0,0,0,.30);pointer-events:none}
+  .kit-arrow{position:absolute;height:0;pointer-events:none;transform-origin:50% 0}
+  .kit-arrow__in{position:absolute;left:100%;top:0;width:34px;margin-left:4px;transform:translateY(-50%);
+    animation:kitBlink 1s ease-in-out infinite}
+  .kit-arrow__in svg{display:block;width:100%;height:auto;fill:#e1251b;stroke:#fff;stroke-width:2;paint-order:stroke;filter:drop-shadow(0 0 2px rgba(0,0,0,.5))}
+  @keyframes kitBlink{0%,100%{opacity:1;translate:0 0}50%{opacity:.25;translate:8px 0}}
   .kit-badge{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.75);color:#fff;font-size:10px;font-weight:700;
     letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;border-radius:4px;pointer-events:none;line-height:1.4;white-space:nowrap}
   .kit-note{margin-top:12px;padding:12px 14px;border-left:3px solid #e1251b;background:rgba(255,255,255,.05);font-size:14px;line-height:1.5}
