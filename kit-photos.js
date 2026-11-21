@@ -69,9 +69,9 @@
       if (!url) return '';
       const kit = this.isKit(p, all), m = kit ? this.marker(p, all) : null;
       const ring = m ? `<span class="kit-marker" style="left:${m.x}%;top:${m.y}%;width:${(m.r || 6) * 2}%;"></span>` : '';
-      return `<figure class="kit-figure">
+      return `<figure class="kit-figure"><span class="kit-wrap">
           <img src="${url}" alt="${name}" onerror="this.closest('.kit-figure').outerHTML='<div class=&quot;product-image-placeholder&quot;>🔧</div>'">
-          ${ring}${kit ? this.badgeHTML(lang) : ''}
+          ${ring}${kit ? this.badgeHTML(lang) : ''}</span>
         </figure>`;
     },
     /** Ramka pod zdjęciem: nazwa + numer DJI */
@@ -86,9 +86,10 @@
 
   const css = `
   .kit-figure{position:relative;margin:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
-  .kit-figure img{max-width:100%;max-height:100%;display:block}
-  .product-image-main .kit-figure{padding:24px}
-  .product-image-main .kit-figure img{padding:0!important;width:auto!important;height:auto!important}
+  .kit-wrap{position:relative;display:inline-block;line-height:0;max-width:100%}
+  .kit-wrap img{display:block;max-width:100%;max-height:min(70vh,560px)}
+  .product-image-main .kit-figure{padding:16px}
+  .product-image-main .kit-figure img{padding:0!important;width:auto!important;height:auto!important;max-height:min(70vh,560px)!important}
   .kit-marker{position:absolute;aspect-ratio:1;transform:translate(-50%,-50%);border:3px solid #e1251b;border-radius:50%;
     box-shadow:0 0 0 3px rgba(255,255,255,.8),0 0 14px rgba(225,37,27,.7);animation:kitPulse 1.6s ease-in-out infinite;pointer-events:none}
   @keyframes kitPulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.15)}}

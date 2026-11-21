@@ -1,27 +1,177 @@
 {
- "YC.JG.ZS006110": {
-  "img": "/images/parts/m02-02-image2.webp",
-  "x": 25.6,
-  "y": 19.0,
-  "r": 16
+ "BC.AG.SS000860": {
+  "img": "/images/parts/m18-07-image8.webp",
+  "x": 35,
+  "y": 42,
+  "r": 5
  },
- "YC.JG.MY001720": {
-  "img": "/images/parts/m02-02-image2.webp",
-  "x": 56.0,
-  "y": 17.5,
+ "BC.AG.SS000861": {
+  "img": "/images/parts/m18-05-image6.webp",
+  "x": 47,
+  "y": 15,
+  "r": 27
+ },
+ "BC.AG.SS000863": {
+  "img": "/images/parts/m18-02-image2.webp",
+  "x": 34,
+  "y": 33,
+  "r": 5
+ },
+ "BC.AG.SS000864": {
+  "img": "/images/parts/m18-03-image4.webp",
+  "x": 50,
+  "y": 40,
+  "r": 28
+ },
+ "BC.AG.SS000865": {
+  "img": "/images/parts/m18-13-image14.webp",
+  "x": 47,
+  "y": 40,
   "r": 14
  },
- "YC.JG.ZS006111": {
-  "img": "/images/parts/m02-02-image2.webp",
-  "x": 85.0,
-  "y": 16.5,
+ "BC.AG.SS000866": {
+  "img": "/images/parts/m18-13-image14.webp",
+  "x": 47,
+  "y": 40,
+  "r": 14
+ },
+ "BC.AG.SS000867": {
+  "img": "/images/parts/m18-13-image14.webp",
+  "x": 47,
+  "y": 40,
+  "r": 14
+ },
+ "BC.AG.SS000868": {
+  "img": "/images/parts/m18-13-image14.webp",
+  "x": 47,
+  "y": 40,
+  "r": 14
+ },
+ "BC.AG.SS000869": {
+  "img": "/images/parts/m18-13-image14.webp",
+  "x": 79,
+  "y": 46,
+  "r": 9
+ },
+ "BC.AG.SS000870": {
+  "img": "/images/parts/m18-11-image12.webp",
+  "x": 82,
+  "y": 68,
   "r": 12
  },
- "YC.JG.ZS005454": {
-  "img": "/images/parts/m02-02-image2.webp",
-  "x": 36.0,
-  "y": 89.0,
+ "BC.AG.SS000871": {
+  "img": "/images/parts/m18-14-image15.webp",
+  "x": 42,
+  "y": 52,
+  "r": 9
+ },
+ "BC.AG.SS000872": {
+  "img": "/images/parts/m18-14-image15.webp",
+  "x": 47,
+  "y": 82,
+  "r": 10
+ },
+ "BC.AG.SS000873": {
+  "img": "/images/parts/m18-02-image2.webp",
+  "x": 59,
+  "y": 38,
+  "r": 11
+ },
+ "BC.AG.SS000877": {
+  "img": "/images/parts/m18-08-image9.webp",
+  "x": 25,
+  "y": 12,
+  "r": 8
+ },
+ "BC.AG.SS000913": {
+  "img": "/images/parts/m17-06-image10.webp",
+  "x": 13,
+  "y": 84,
+  "r": 9
+ },
+ "BC.AG.SS000914": {
+  "img": "/images/parts/m17-07-image12.webp",
+  "x": 44,
+  "y": 86,
+  "r": 6
+ },
+ "BC.AG.SS000915": {
+  "img": "/images/parts/m17-07-image12.webp",
+  "x": 19,
+  "y": 13,
+  "r": 9
+ },
+ "BC.AG.SS000916": {
+  "img": "/images/parts/m17-06-image10.webp",
+  "x": 44,
+  "y": 83,
+  "r": 9
+ },
+ "BC.AG.SS000918": {
+  "img": "/images/parts/m17-07-image12.webp",
+  "x": 19,
+  "y": 85,
+  "r": 12
+ },
+ "BC.AG.SS001004": {
+  "img": "/images/parts/m18-02-image2.webp",
+  "x": 73,
+  "y": 91,
+  "r": 12
+ },
+ "BC.AG.SS001005": {
+  "img": "/images/parts/m18-08-image9.webp",
+  "x": 45,
+  "y": 91,
+  "r": 12
+ },
+ "BC.AG.SS001020": {
+  "img": "/images/parts/m02-06-image6.webp",
+  "x": 63,
+  "y": 15,
   "r": 5
+ },
+ "BC.AG.SS001021": {
+  "img": "/images/parts/m02-11-image12.webp",
+  "x": 86,
+  "y": 85,
+  "r": 4
+ },
+ "BC.AG.SS001031": {
+  "img": "/images/parts/m02-04-image4.webp",
+  "x": 46,
+  "y": 32,
+  "r": 9
+ },
+ "BC.AG.SS001033": {
+  "img": "/images/parts/m02-03-image3.webp",
+  "x": 42,
+  "y": 58,
+  "r": 12
+ },
+ "BC.AG.SS001062": {
+  "img": "/images/parts/m17-07-image12.webp",
+  "x": 19,
+  "y": 13,
+  "r": 9
+ },
+ "BC.AG.SS001063": {
+  "img": "/images/parts/m17-06-image10.webp",
+  "x": 44,
+  "y": 83,
+  "r": 9
+ },
+ "BC.AG.SS001064": {
+  "img": "/images/parts/m17-06-image10.webp",
+  "x": 13,
+  "y": 84,
+  "r": 9
+ },
+ "BC.AG.SS001067": {
+  "img": "/images/parts/m17-07-image12.webp",
+  "x": 19,
+  "y": 85,
+  "r": 12
  },
  "BC.AG.SS001068": {
   "img": "/images/parts/m02-02-image2.webp",
@@ -29,10 +179,652 @@
   "y": 48.0,
   "r": 12
  },
+ "BC.AG.SS001073": {
+  "img": "/images/parts/m02-07-image7.webp",
+  "x": 36,
+  "y": 52,
+  "r": 8
+ },
+ "BC.AG.SS001075": {
+  "img": "/images/parts/m17-07-image12.webp",
+  "x": 19,
+  "y": 85,
+  "r": 12
+ },
+ "BC.AG.SS001087": {
+  "img": "/images/parts/m02-11-image12.webp",
+  "x": 57,
+  "y": 94,
+  "r": 7
+ },
+ "BC.AG.SS001090": {
+  "img": "/images/parts/m02-10-image11.webp",
+  "x": 40,
+  "y": 76,
+  "r": 16
+ },
+ "BC.AG.SS001091": {
+  "img": "/images/parts/m02-09-image9.webp",
+  "x": 54,
+  "y": 20,
+  "r": 20
+ },
+ "BC.AG.SS001094": {
+  "img": "/images/parts/m02-12-image13.webp",
+  "x": 16,
+  "y": 11,
+  "r": 7
+ },
+ "BC.AG.SS001095": {
+  "img": "/images/parts/m02-12-image13.webp",
+  "x": 79,
+  "y": 18,
+  "r": 12
+ },
+ "BC.AG.SS001097": {
+  "img": "/images/parts/m02-13-image14.webp",
+  "x": 24,
+  "y": 40,
+  "r": 10
+ },
+ "BC.AG.SS001098": {
+  "img": "/images/parts/m02-13-image14.webp",
+  "x": 60,
+  "y": 45,
+  "r": 10
+ },
+ "BC.AG.SS001099": {
+  "img": "/images/parts/m02-14-image15.webp",
+  "x": 15,
+  "y": 66,
+  "r": 6
+ },
+ "BC.AG.SS001100": {
+  "img": "/images/parts/m02-14-image15.webp",
+  "x": 33,
+  "y": 48,
+  "r": 14
+ },
+ "BC.AG.SS001101": {
+  "img": "/images/parts/m02-14-image15.webp",
+  "x": 33,
+  "y": 48,
+  "r": 14
+ },
+ "BC.AG.SS001102": {
+  "img": "/images/parts/m02-15-image16.webp",
+  "x": 65,
+  "y": 25,
+  "r": 15
+ },
+ "BC.AG.SS001103": {
+  "img": "/images/parts/m02-10-image11.webp",
+  "x": 57,
+  "y": 8,
+  "r": 16
+ },
+ "BC.AG.SS001118": {
+  "img": "/images/parts/m17-04-image8.webp",
+  "x": 34,
+  "y": 81,
+  "r": 7
+ },
+ "BC.AG.SS001119": {
+  "img": "/images/parts/m17-04-image8.webp",
+  "x": 71,
+  "y": 79,
+  "r": 7
+ },
+ "BC.AG.SS001123": {
+  "img": "/images/parts/m16-01-image1.webp",
+  "x": 47,
+  "y": 42,
+  "r": 7
+ },
+ "BC.AG.SS001124": {
+  "img": "/images/parts/m16-01-image1.webp",
+  "x": 69,
+  "y": 76,
+  "r": 5
+ },
+ "BC.AG.SS001131": {
+  "img": "/images/parts/m03-09-image10.webp",
+  "x": 43,
+  "y": 60,
+  "r": 24
+ },
+ "BC.AG.SS001138": {
+  "img": "/images/parts/m18-05-image6.webp",
+  "x": 47,
+  "y": 78,
+  "r": 22
+ },
+ "BC.AG.SS001166": {
+  "img": "/images/parts/m03-10-image12.webp",
+  "x": 86,
+  "y": 42,
+  "r": 7
+ },
+ "BC.AG.SS001167": {
+  "img": "/images/parts/m03-11-image13.webp",
+  "x": 88,
+  "y": 50,
+  "r": 10
+ },
+ "BC.AG.SS001189": {
+  "img": "/images/parts/m03-14-image16.webp",
+  "x": 55,
+  "y": 15,
+  "r": 10
+ },
+ "BC.AG.SS001192": {
+  "img": "/images/parts/m16-01-image1.webp",
+  "x": 47,
+  "y": 42,
+  "r": 7
+ },
+ "BC.AG.SS001193": {
+  "img": "/images/parts/m16-05-image5.webp",
+  "x": 25,
+  "y": 84,
+  "r": 7
+ },
+ "BC.AG.SS001196": {
+  "img": "/images/parts/m16-01-image1.webp",
+  "x": 69,
+  "y": 76,
+  "r": 5
+ },
+ "YC.DZ.AA000573": {
+  "img": "/images/parts/m02-13-image14.webp",
+  "x": 50,
+  "y": 93,
+  "r": 10
+ },
+ "YC.JG.BJ002268": {
+  "img": "/images/parts/m18-08-image9.webp",
+  "x": 83,
+  "y": 45,
+  "r": 14
+ },
+ "YC.JG.BJ003348": {
+  "img": "/images/parts/m02-07-image7.webp",
+  "x": 13,
+  "y": 62,
+  "r": 4
+ },
+ "YC.JG.BJ003735": {
+  "img": "/images/parts/m17-04-image8.webp",
+  "x": 16,
+  "y": 30,
+  "r": 3
+ },
+ "YC.JG.FM000215": {
+  "img": "/images/parts/m02-13-image14.webp",
+  "x": 22,
+  "y": 13,
+  "r": 4
+ },
+ "YC.JG.JS000045": {
+  "img": "/images/parts/m18-13-image14.webp",
+  "x": 63,
+  "y": 40,
+  "r": 14
+ },
+ "YC.JG.JS000080": {
+  "img": "/images/parts/m02-04-image4.webp",
+  "x": 24,
+  "y": 22,
+  "r": 8
+ },
  "YC.JG.JS000085": {
   "img": "/images/parts/m02-02-image2.webp",
   "x": 87.0,
   "y": 50.0,
   "r": 6
+ },
+ "YC.JG.LD000124": {
+  "img": "/images/parts/m02-14-image15.webp",
+  "x": 15,
+  "y": 80,
+  "r": 4
+ },
+ "YC.JG.MY001720": {
+  "img": "/images/parts/m02-02-image2.webp",
+  "x": 56.0,
+  "y": 17.5,
+  "r": 14
+ },
+ "YC.JG.MY001915": {
+  "img": "/images/parts/m17-04-image8.webp",
+  "x": 19,
+  "y": 54,
+  "r": 4
+ },
+ "YC.JG.MY001920": {
+  "img": "/images/parts/m02-09-image9.webp",
+  "x": 43,
+  "y": 88,
+  "r": 25
+ },
+ "YC.JG.QX003603": {
+  "img": "/images/parts/m17-06-image10.webp",
+  "x": 47,
+  "y": 72,
+  "r": 11
+ },
+ "YC.JG.QX004442": {
+  "img": "/images/parts/m17-06-image10.webp",
+  "x": 47,
+  "y": 72,
+  "r": 11
+ },
+ "YC.JG.QX004544": {
+  "img": "/images/parts/m17-04-image8.webp",
+  "x": 14,
+  "y": 37,
+  "r": 5
+ },
+ "YC.JG.QX004581": {
+  "img": "/images/parts/m02-13-image14.webp",
+  "x": 30,
+  "y": 72,
+  "r": 4
+ },
+ "YC.JG.QX004654": {
+  "img": "/images/parts/m02-13-image14.webp",
+  "x": 22,
+  "y": 69,
+  "r": 3
+ },
+ "YC.JG.QX004715": {
+  "img": "/images/parts/m16-01-image1.webp",
+  "x": 52,
+  "y": 61,
+  "r": 18
+ },
+ "YC.JG.QX004794": {
+  "img": "/images/parts/m02-16-image17.webp",
+  "x": 50,
+  "y": 11,
+  "r": 13
+ },
+ "YC.JG.QX005355": {
+  "img": "/images/parts/m16-01-image1.webp",
+  "x": 52,
+  "y": 61,
+  "r": 18
+ },
+ "YC.JG.TT000203": {
+  "img": "/images/parts/m17-06-image10.webp",
+  "x": 6,
+  "y": 6,
+  "r": 3
+ },
+ "YC.JG.TT000275": {
+  "img": "/images/parts/m02-07-image7.webp",
+  "x": 47,
+  "y": 71,
+  "r": 5
+ },
+ "YC.JG.TT000278": {
+  "img": "/images/parts/m02-14-image15.webp",
+  "x": 15,
+  "y": 76,
+  "r": 3
+ },
+ "YC.JG.TT000282": {
+  "img": "/images/parts/m02-10-image11.webp",
+  "x": 49,
+  "y": 86,
+  "r": 4
+ },
+ "YC.JG.TT000285": {
+  "img": "/images/parts/m02-04-image4.webp",
+  "x": 32,
+  "y": 67,
+  "r": 3
+ },
+ "YC.JG.TT000313": {
+  "img": "/images/parts/m16-01-image1.webp",
+  "x": 16,
+  "y": 15,
+  "r": 2
+ },
+ "YC.JG.XW000215": {
+  "img": "/images/parts/m02-08-image8.webp",
+  "x": 53,
+  "y": 23,
+  "r": 15
+ },
+ "YC.JG.XW000291.P": {
+  "img": "/images/parts/m03-16-image18.webp",
+  "x": 34,
+  "y": 57,
+  "r": 24
+ },
+ "YC.JG.XW000292.P": {
+  "img": "/images/parts/m03-16-image18.webp",
+  "x": 80,
+  "y": 57,
+  "r": 22
+ },
+ "YC.JG.YZ000803": {
+  "img": "/images/parts/m18-02-image2.webp",
+  "x": 43,
+  "y": 92,
+  "r": 9
+ },
+ "YC.JG.YZ001068": {
+  "img": "/images/parts/m02-10-image11.webp",
+  "x": 68,
+  "y": 28,
+  "r": 12
+ },
+ "YC.JG.ZS004476": {
+  "img": "/images/parts/m18-01-image1.webp",
+  "x": 44,
+  "y": 15,
+  "r": 26
+ },
+ "YC.JG.ZS004477": {
+  "img": "/images/parts/m18-01-image1.webp",
+  "x": 45,
+  "y": 57,
+  "r": 28
+ },
+ "YC.JG.ZS004483": {
+  "img": "/images/parts/m17-06-image10.webp",
+  "x": 22,
+  "y": 25,
+  "r": 20
+ },
+ "YC.JG.ZS004506": {
+  "img": "/images/parts/m18-14-image15.webp",
+  "x": 40,
+  "y": 12,
+  "r": 24
+ },
+ "YC.JG.ZS004510": {
+  "img": "/images/parts/m18-14-image15.webp",
+  "x": 8,
+  "y": 65,
+  "r": 4
+ },
+ "YC.JG.ZS004551": {
+  "img": "/images/parts/m17-07-image12.webp",
+  "x": 72,
+  "y": 73,
+  "r": 22
+ },
+ "YC.JG.ZS004554": {
+  "img": "/images/parts/m17-07-image12.webp",
+  "x": 18,
+  "y": 40,
+  "r": 12
+ },
+ "YC.JG.ZS004578": {
+  "img": "/images/parts/m18-08-image9.webp",
+  "x": 9,
+  "y": 13,
+  "r": 5
+ },
+ "YC.JG.ZS004580": {
+  "img": "/images/parts/m17-07-image12.webp",
+  "x": 55,
+  "y": 93,
+  "r": 5
+ },
+ "YC.JG.ZS004649": {
+  "img": "/images/parts/m18-11-image12.webp",
+  "x": 38,
+  "y": 12,
+  "r": 8
+ },
+ "YC.JG.ZS005273": {
+  "img": "/images/parts/m18-08-image9.webp",
+  "x": 64,
+  "y": 40,
+  "r": 9
+ },
+ "YC.JG.ZS005454": {
+  "img": "/images/parts/m02-02-image2.webp",
+  "x": 36.0,
+  "y": 89.0,
+  "r": 5
+ },
+ "YC.JG.ZS005952": {
+  "img": "/images/parts/m17-07-image12.webp",
+  "x": 72,
+  "y": 73,
+  "r": 22
+ },
+ "YC.JG.ZS005954": {
+  "img": "/images/parts/m17-07-image12.webp",
+  "x": 18,
+  "y": 40,
+  "r": 12
+ },
+ "YC.JG.ZS006110": {
+  "img": "/images/parts/m02-02-image2.webp",
+  "x": 25.6,
+  "y": 19.0,
+  "r": 16
+ },
+ "YC.JG.ZS006111": {
+  "img": "/images/parts/m02-02-image2.webp",
+  "x": 85.0,
+  "y": 16.5,
+  "r": 12
+ },
+ "YC.JG.ZS006165": {
+  "img": "/images/parts/m02-04-image4.webp",
+  "x": 20,
+  "y": 37,
+  "r": 3
+ },
+ "YC.JG.ZS006166": {
+  "img": "/images/parts/m02-03-image3.webp",
+  "x": 38,
+  "y": 28,
+  "r": 9
+ },
+ "YC.JG.ZS006171": {
+  "img": "/images/parts/m02-04-image4.webp",
+  "x": 20,
+  "y": 7,
+  "r": 5
+ },
+ "YC.JG.ZS006175": {
+  "img": "/images/parts/m02-03-image3.webp",
+  "x": 15,
+  "y": 31,
+  "r": 5
+ },
+ "YC.JG.ZS006218": {
+  "img": "/images/parts/m02-07-image7.webp",
+  "x": 77,
+  "y": 29,
+  "r": 4
+ },
+ "YC.JG.ZS006256": {
+  "img": "/images/parts/m17-06-image10.webp",
+  "x": 22,
+  "y": 25,
+  "r": 20
+ },
+ "YC.JG.ZS006356": {
+  "img": "/images/parts/m02-07-image7.webp",
+  "x": 22,
+  "y": 44,
+  "r": 12
+ },
+ "YC.JG.ZS006459": {
+  "img": "/images/parts/m02-11-image12.webp",
+  "x": 40,
+  "y": 35,
+  "r": 22
+ },
+ "YC.JG.ZS006460": {
+  "img": "/images/parts/m02-11-image12.webp",
+  "x": 42,
+  "y": 70,
+  "r": 22
+ },
+ "YC.JG.ZS006644": {
+  "img": "/images/parts/m02-04-image4.webp",
+  "x": 35,
+  "y": 59,
+  "r": 7
+ },
+ "YC.JG.ZS006654": {
+  "img": "/images/parts/m02-08-image8.webp",
+  "x": 53,
+  "y": 35,
+  "r": 6
+ },
+ "YC.JG.ZS006701": {
+  "img": "/images/parts/m02-14-image15.webp",
+  "x": 53,
+  "y": 55,
+  "r": 10
+ },
+ "YC.JG.ZS006719": {
+  "img": "/images/parts/m02-06-image6.webp",
+  "x": 45,
+  "y": 15,
+  "r": 7
+ },
+ "YC.JG.ZS006745": {
+  "img": "/images/parts/m17-06-image10.webp",
+  "x": 14,
+  "y": 5,
+  "r": 4
+ },
+ "YC.JG.ZS006779": {
+  "img": "/images/parts/m02-15-image16.webp",
+  "x": 50,
+  "y": 12,
+  "r": 5
+ },
+ "YC.JG.ZS007370": {
+  "img": "/images/parts/m16-05-image5.webp",
+  "x": 55,
+  "y": 41,
+  "r": 16
+ },
+ "YC.JG.ZS008168": {
+  "img": "/images/parts/m16-01-image1.webp",
+  "x": 66,
+  "y": 43,
+  "r": 5
+ },
+ "YC.JG.ZS008395": {
+  "img": "/images/parts/m03-11-image13.webp",
+  "x": 40,
+  "y": 35,
+  "r": 22
+ },
+ "YC.ST.AS000050": {
+  "img": "/images/parts/m16-01-image1.webp",
+  "x": 25,
+  "y": 25,
+  "r": 11
+ },
+ "YC.ST.AS000061": {
+  "img": "/images/parts/m16-01-image1.webp",
+  "x": 57,
+  "y": 26,
+  "r": 7
+ },
+ "YC.ST.AS000071": {
+  "img": "/images/parts/m16-01-image1.webp",
+  "x": 25,
+  "y": 25,
+  "r": 11
+ },
+ "YC.ST.CG000018": {
+  "img": "/images/parts/m17-07-image12.webp",
+  "x": 20,
+  "y": 27,
+  "r": 5
+ },
+ "YC.XC.DD000676": {
+  "img": "/images/parts/m18-13-image14.webp",
+  "x": 36,
+  "y": 45,
+  "r": 14
+ },
+ "YC.XC.DD000812": {
+  "img": "/images/parts/m02-14-image15.webp",
+  "x": 73,
+  "y": 55,
+  "r": 14
+ },
+ "YC.XC.DD000813": {
+  "img": "/images/parts/m02-14-image15.webp",
+  "x": 73,
+  "y": 55,
+  "r": 14
+ },
+ "YC.XC.XX001208": {
+  "img": "/images/parts/m18-02-image2.webp",
+  "x": 88,
+  "y": 48,
+  "r": 10
+ },
+ "YC.XC.XX001216": {
+  "img": "/images/parts/m18-08-image9.webp",
+  "x": 33,
+  "y": 77,
+  "r": 12
+ },
+ "YC.XC.XX001281": {
+  "img": "/images/parts/m18-14-image15.webp",
+  "x": 66,
+  "y": 30,
+  "r": 18
+ },
+ "YC.XC.XX001402": {
+  "img": "/images/parts/m17-04-image8.webp",
+  "x": 51,
+  "y": 55,
+  "r": 12
+ },
+ "YC.XC.XX001405": {
+  "img": "/images/parts/m17-06-image10.webp",
+  "x": 50,
+  "y": 57,
+  "r": 12
+ },
+ "YC.XC.XX001460": {
+  "img": "/images/parts/m02-07-image7.webp",
+  "x": 70,
+  "y": 55,
+  "r": 12
+ },
+ "YC.XC.XX001468": {
+  "img": "/images/parts/m02-14-image15.webp",
+  "x": 86,
+  "y": 55,
+  "r": 12
+ },
+ "YC.XC.XX001469": {
+  "img": "/images/parts/m02-14-image15.webp",
+  "x": 86,
+  "y": 55,
+  "r": 12
+ },
+ "YC.XC.XX001488": {
+  "img": "/images/parts/m02-12-image13.webp",
+  "x": 44,
+  "y": 50,
+  "r": 13
+ },
+ "YC.XC.XX001498": {
+  "img": "/images/parts/m02-10-image11.webp",
+  "x": 67,
+  "y": 43,
+  "r": 10
  }
 }
