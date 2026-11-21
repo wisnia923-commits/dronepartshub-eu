@@ -289,6 +289,7 @@ async function loadProduct() {
       return;
     }
 
+    if (window.DPH_KIT) await window.DPH_KIT.ready;
     renderProduct(part, parts);
   } catch (e) {
     console.error(e);
@@ -328,11 +329,14 @@ function renderProduct(p, allParts) {
     <div class="product-layout">
       <div class="product-images">
         <div class="product-image-main">
-          ${p.zdjecie_url 
-            ? `<img src="${p.zdjecie_url}" alt="${name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-               <div class="product-image-placeholder" style="display:none;">🔧</div>`
-            : `<div class="product-image-placeholder">🔧</div>`}
+          ${window.DPH_KIT && DPH_KIT.imageFor(p, allParts)
+            ? DPH_KIT.figureHTML(p, allParts, name, lang)
+            : p.zdjecie_url
+              ? `<img src="${p.zdjecie_url}" alt="${name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                 <div class="product-image-placeholder" style="display:none;">🔧</div>`
+              : `<div class="product-image-placeholder">🔧</div>`}
         </div>
+        ${window.DPH_KIT ? DPH_KIT.noteHTML(p, allParts, name, lang) : ''}
       </div>
       
       <div class="product-info">
@@ -483,6 +487,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(loadProduct, 100);
 });
 </script>
+<script src="kit-photos.js?v=2"></script>
 <script src="app.js"></script>
 <script src="dph.js" defer></script>
 

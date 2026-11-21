@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Znacznik części na zdjęciach zbiorczych — DronePartsHub</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font:14px/1.4 Inter,system-ui,sans-serif;background:#111;color:#eee;display:grid;grid-template-columns:380px 1fr;height:100vh}
+  aside{border-right:1px solid #333;display:flex;flex-direction:column;min-height:0}
+  header{padding:12px;border-bottom:1px solid #333}
+  h1{font-size:16px;margin:0 0 8px}
+  select,input,button{font:inherit;background:#222;color:#eee;border:1px solid #444;border-radius:4px;padding:6px 8px;width:100%;margin-top:6px}
+  button{cursor:pointer;background:#e1251b;border-color:#e1251b;font-weight:600}
+  button.sec{background:#333;border-color:#555}
+  .row{display:flex;gap:6px}.row>*{flex:1}
+  #list{overflow:auto;flex:1}
+  .item{padding:8px 12px;border-bottom:1px solid #222;cursor:pointer}
+  .item:hover{background:#1c1c1c}
+  .item.sel{background:#3a1512;border-left:3px solid #e1251b}
+  .item small{color:#999;font-family:monospace}
+  .item .ok{color:#4caf50;float:right}
+  main{position:relative;overflow:auto;display:flex;align-items:flex-start;justify-content:center;padding:20px;background:#fff}
+  #wrap{position:relative;display:inline-block;cursor:crosshair}
+  #wrap img{display:block;max-width:100%;max-height:calc(100vh - 40px)}
+  .mk{position:absolute;aspect-ratio:1;transform:translate(-50%,-50%);border:2px solid rgba(225,37,27,.45);border-radius:50%;pointer-events:none}
+  .mk.cur{border:3px solid #e1251b;box-shadow:0 0 0 3px #fff}
+  .mk span{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#e1251b;color:#fff;font-size:10px;padding:1px 4px;border-radius:3px;white-space:nowrap}
+  #stat{color:#aaa;font-size:12px;margin-top:6px}
+  .help{color:#999;font-size:12px;margin-top:8px}
+</style>
+</head>
+<body>
+<aside>
+  <header>
+    <h1>📷 Zaznaczanie części na zdjęciach zbiorczych</h1>
+    <select id="mode">
+      <option value="kit">Zdjęcia zbiorcze → części na nich</option>
+      <option value="missing">Części bez zdjęcia → przypisz zdjęcie zestawu</option>
+    </select>
+    <select id="img"></select>
+    <input id="q" placeholder="Szukaj: nazwa lub numer DJI…">
+    <label class="help">Rozmiar kółka: <input id="r" type="range" min="2" max="20" value="6" style="width:60%;display:inline"></label>
+    <div class="row">
+      <button id="dl">⬇ Pobierz markers.json</button>
+      <button id="clr" class="sec">Usuń znacznik</button>
+    </div>
+    <div class="row"><button id="imp" class="sec">⬆ Wczytaj plik</button></div>
+    <input type="file" id="file" accept=".json" hidden>
+    <div id="stat"></div>
+    <div class="help">1. Wybierz zdjęcie (w trybie „bez zdjęcia” najpierw część, potem zdjęcie). 2. Kliknij część na liście. 3. Kliknij ją na zdjęciu. Postęp zapisuje się w przeglądarce. Na koniec pobierz <b>markers.json</b> i wgraj go do głównego folderu repo <b>dronepartshub-eu</b>.</div>
+  </header>
+  <div id="list"></div>
+</aside>
+<main><div id="wrap"><img id="photo" alt=""></div></main>
+
+<script>
+const baseNo = n => String(n||'').replace(/-\d+$/,'');
+const LS = 'dph_markers_v1';
+let parts = [], markers = {}, kitImgs = [], partsByImg = {}, sel = null;
+const $ = id => document.getElementById(id);
+
+async function init(){
+  parts = await fetch('/parts.json',{cache:'no-store'}).then(r=>r.json());
+  parts = Array.isArray(parts) ? parts : parts.parts;
+  let server = {};
+  try { server = await fetch('/markers.json',{cache:'no-store'}).then(r=>r.ok?r.json():{}); } catch(e){}
+  let local = {};
+  try { local = JSON.parse(localStorage.getItem(LS)||'{}'); } catch(e){}
+  markers = Object.assign({}, server, local);
+  const byImg = {};
+  parts.forEach(p=>{ if(!p.zdjecie_url) return;
+    (byImg[p.zdjecie_url] = byImg[p.zdjecie_url] || {});
+    const b = baseNo(p.numer_katalogowy);
+    if(!byImg[p.zdjecie_url][b]) byImg[p.zdjecie_url][b] = p; });
+  partsByImg = byImg;
+  kitImgs = Object.keys(byImg).sort((a,b)=>Object.keys(byImg[b]).length-Object.keys(byImg[a]).length);
+  fillImgSelect();
+  render();
+}
+
+function fillImgSelect(){
+  $('img').innerHTML = kitImgs.map(u=>{
+    const n = Object.keys(partsByImg[u]).length;
+    const done = Object.keys(partsByImg[u]).filter(b=>markers[b]).length;
+    return `<option value="${u}">${u.split('/').pop()} — ${done}/${n} zaznaczonych</option>`;
+  }).join('');
+}
+
+function missingParts(){
+  const withImg = new Set(parts.filter(p=>p.zdjecie_url).map(p=>baseNo(p.numer_katalogowy)));
+  const seen = new Set(), out = [];
+  parts.forEach(p=>{ const b=baseNo(p.numer_katalogowy);
+    if(withImg.has(b) || seen.has(b)) return; seen.add(b); out.push(p); });
+  return out;
+}
+
+function currentList(){
+  const q = $('q').value.trim().toLowerCase();
+  let list = $('mode').value==='kit' ? Object.values(partsByImg[$('img').value]||{}) : missingParts();
+  if(q) list = list.filter(p=>(p.nazwa_pl+' '+p.nazwa_en+' '+p.numer_katalogowy).toLowerCase().includes(q));
+  return list;
+}
+
+function render(){
+  const list = currentList();
+  $('list').innerHTML = list.map(p=>{
+    const b = baseNo(p.numer_katalogowy), m = markers[b];
+    return `<div class="item ${sel===b?'sel':''}" data-b="${b}">
+      ${m?'<span class="ok">✔</span>':''}${p.nazwa_pl||p.nazwa_en}<br>
+      <small>${b} · ${p.model}${p.nazwa_en && p.nazwa_en!==p.nazwa_pl ? ' · '+p.nazwa_en : ''}</small></div>`;
+  }).join('') || '<div class="item">Brak części</div>';
+  document.querySelectorAll('.item[data-b]').forEach(el=>el.onclick=()=>{
+    sel = el.dataset.b;
+    const m = markers[sel];
+    if(m && m.img && $('img').value!==m.img){ $('img').value = m.img; }
+    if(m) $('r').value = m.r||6;
+    render();
+  });
+  const img = $('img').value;
+  $('photo').src = img;
+  drawMarkers();
+  const total = Object.keys(markers).length;
+  $('stat').textContent = `Zaznaczone części: ${total}. Zdjęć zbiorczych: ${kitImgs.length}. Części bez zdjęcia: ${missingParts().length}.`;
+}
+
+function drawMarkers(){
+  document.querySelectorAll('.mk').forEach(e=>e.remove());
+  const img = $('img').value;
+  Object.entries(markers).forEach(([b,m])=>{
+    if(m.img!==img) return;
+    const d = document.createElement('div');
+    d.className = 'mk'+(b===sel?' cur':'');
+    d.style.left = m.x+'%'; d.style.top = m.y+'%'; d.style.width = ((m.r||6)*2)+'%';
+    if(b===sel) d.innerHTML = `<span>${b}</span>`;
+    $('wrap').appendChild(d);
+  });
+}
+
+$('photo').onclick = e=>{
+  if(!sel){ alert('Najpierw wybierz część z listy.'); return; }
+  const r = e.target.getBoundingClientRect();
+  const x = +((e.clientX-r.left)/r.width*100).toFixed(1);
+  const y = +((e.clientY-r.top)/r.height*100).toFixed(1);
+  markers[sel] = { img: $('img').value, x, y, r: +$('r').value };
+  save(); fillImgSelect(); $('img').value = markers[sel].img; render();
+};
+$('r').oninput = ()=>{ if(sel && markers[sel]){ markers[sel].r = +$('r').value; save(); drawMarkers(); } };
+$('clr').onclick = ()=>{ if(sel){ delete markers[sel]; save(); fillImgSelect(); render(); } };
+$('img').onchange = render;
+$('mode').onchange = ()=>{ sel=null; render(); };
+$('q').oninput = render;
+$('dl').onclick = ()=>{
+  const sorted = Object.fromEntries(Object.entries(markers).sort());
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(sorted,null,1)],{type:'application/json'}));
+  a.download = 'markers.json'; a.click();
+};
+$('imp').onclick = ()=>$('file').click();
+$('file').onchange = async e=>{
+  const f = e.target.files[0]; if(!f) return;
+  Object.assign(markers, JSON.parse(await f.text())); save(); fillImgSelect(); render();
+};
+function save(){ localStorage.setItem(LS, JSON.stringify(markers)); }
+init();
+</script>
+</body>
+</html>
