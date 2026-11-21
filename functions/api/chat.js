@@ -33,7 +33,12 @@ async function loadParts(request, env) {
   if (CACHE && Date.now() - CACHE_AT < 10 * 60 * 1000) return CACHE;
   const url = new URL('/parts.json', request.url);
   const r = env.ASSETS ? await env.ASSETS.fetch(url) : await fetch(url);
-  const list = await r.json();
+  let list = await r.json();
+  try {
+    const ux = new URL('/parts-extra.json', request.url);
+    const rx = env.ASSETS ? await env.ASSETS.fetch(ux) : await fetch(ux);
+    if (rx.ok) { const ex = await rx.json(); const have = new Set(list.map(p => p.numer_katalogowy)); list = list.concat(ex.filter(p => !have.has(p.numer_katalogowy))); }
+  } catch (e) {}
   CACHE = list.map(p => {
     const words = norm([p.nazwa_pl, p.nazwa_en, p.nazwa_ua, p.kategoria_pl, p.kategoria_en, p.kategoria_ua].join(' '));
     return { p, words, words5: words.split(' ').map(w => w.slice(0, 5)), cat: alnum(p.numer_katalogowy) };
