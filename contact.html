@@ -202,7 +202,7 @@
 /* Zapytanie o cenę części z katalogu (parts-extra.js → contact.html?czesc=...) */
 document.addEventListener('DOMContentLoaded',function(){try{var q=new URLSearchParams(location.search),c=q.get('czesc');if(!c)return;var f=document.querySelector('form textarea[name=message]');if(!f)return;var fm=f.form;if(fm.topic)fm.topic.value='Pytanie o część';f.value='Proszę o cenę i termin dostawy części:\n'+(q.get('nazwa')||'')+'\nNumer DJI: '+c+(q.get('model')?'\nModel: DJI Agras '+q.get('model'):'')+'\nIlość: 1\n';fm.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){}});
 </script>
-<script src="app.js"></script>
+<script src="app.js?v=2"></script>
 <script src="dph.js" defer></script>
 
 
@@ -227,5 +227,6 @@ setTimeout(hidePageLoader,2000);
 </script>
 <!-- /Loading -->
 
+<script src="i18n-extra.js?v=2"></script>
 </body>
 </html>
