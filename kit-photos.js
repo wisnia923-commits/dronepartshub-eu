@@ -68,11 +68,23 @@
       const url = this.imageFor(p, all);
       if (!url) return '';
       const kit = this.isKit(p, all), m = kit ? this.marker(p, all) : null;
-      const ring = m ? `<span class="kit-marker" style="left:${m.x}%;top:${m.y}%;width:${(m.r || 6) * 2}%;"></span>` : '';
+      const R = m ? (m.r || 6) : 0;
+      const ring = m ? `<span class="kit-marker" style="left:${m.x}%;top:${m.y}%;width:${R * 2}%;margin-left:-${R}%;margin-top:-${R}%;"></span>` : '';
       return `<figure class="kit-figure"><span class="kit-wrap">
-          <img src="${url}" alt="${name}" onerror="this.closest('.kit-figure').outerHTML='<div class=&quot;product-image-placeholder&quot;>🔧</div>'">
+          <img src="${url}" alt="${name}" onload="DPH_KIT.fit(this)" onerror="this.closest('.kit-figure').outerHTML='<div class=&quot;product-image-placeholder&quot;>🔧</div>'">
           ${ring}${kit ? this.badgeHTML(lang) : ''}</span>
         </figure>`;
+    },
+    /** Dopasuj zdjęcie w całości do ramki (kółko liczone względem zdjęcia) */
+    fit(img) {
+      const fig = img.closest('.kit-figure'); if (!fig || !img.naturalWidth) return;
+      const cs = getComputedStyle(fig);
+      const cw = fig.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      const ch = fig.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+      if (cw <= 0 || ch <= 0) return;
+      const k = Math.min(cw / img.naturalWidth, ch / img.naturalHeight);
+      img.style.setProperty('width', Math.floor(img.naturalWidth * k) + 'px', 'important');
+      img.style.setProperty('height', Math.floor(img.naturalHeight * k) + 'px', 'important');
     },
     /** Ramka pod zdjęciem: nazwa + numer DJI */
     noteHTML(p, all, name, lang) {
@@ -86,15 +98,16 @@
 
   const css = `
   .kit-figure{position:relative;margin:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
-  .kit-wrap{position:relative;display:inline-block;line-height:0;max-width:100%}
-  .kit-wrap img{display:block;max-width:100%;max-height:min(70vh,560px)}
-  .product-image-main .kit-figure{padding:16px}
-  .product-image-main .kit-figure img{padding:0!important;width:auto!important;height:auto!important;max-height:min(70vh,560px)!important}
-  .kit-marker{position:absolute;aspect-ratio:1;transform:translate(-50%,-50%);border:3px solid #e1251b;border-radius:50%;
+  .kit-figure{box-sizing:border-box}
+  .kit-wrap{position:relative;display:inline-block;line-height:0}
+  .kit-wrap img{display:block;max-width:none;max-height:none}
+  .product-image-main .kit-figure{padding:12px}
+  .product-image-main .kit-figure img{padding:0!important;object-fit:fill!important}
+  .kit-marker{position:absolute;aspect-ratio:1;box-sizing:border-box;border:3px solid #e1251b;border-radius:50%;
     box-shadow:0 0 0 3px rgba(255,255,255,.8),0 0 14px rgba(225,37,27,.7);animation:kitPulse 1.6s ease-in-out infinite;pointer-events:none}
-  @keyframes kitPulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.15)}}
-  .kit-badge{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.75);color:#fff;font-size:10px;font-weight:700;
-    letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;border-radius:4px;pointer-events:none}
+  @keyframes kitPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+  .kit-badge{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.75);color:#fff;font-size:10px;font-weight:700;
+    letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;border-radius:4px;pointer-events:none;line-height:1.4;white-space:nowrap}
   .kit-note{margin-top:12px;padding:12px 14px;border-left:3px solid #e1251b;background:rgba(255,255,255,.05);font-size:14px;line-height:1.5}
   .kit-note__no{font-family:var(--font-mono,monospace)}
   .kit-note__hint{color:var(--color-text-muted,#999);font-size:12px}
@@ -102,4 +115,5 @@
   const s = document.createElement('style');
   s.textContent = css;
   document.head.appendChild(s);
+  let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => document.querySelectorAll('.kit-figure img').forEach(i => window.DPH_KIT.fit(i)), 150); });
 })();
