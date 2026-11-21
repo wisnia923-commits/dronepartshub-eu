@@ -302,7 +302,7 @@ async function loadProduct() {
 }
 
 function renderProduct(p, allParts) {
-  const lang = STATE.lang || 'pl';
+  const lang = (typeof getLang === 'function' ? getLang() : STATE.lang) || 'pl';
   const name = p[`nazwa_${lang}`] || p.nazwa_en;
   const cat = p[`kategoria_${lang}`] || p.kategoria_en;
   const desc = p[`opis_${lang}`] || p.opis_en || '';
@@ -487,9 +487,9 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(loadProduct, 100);
 });
 </script>
-<script src="parts-extra.js?v=1"></script>
+<script src="parts-extra.js?v=2"></script>
 <script src="kit-photos.js?v=5"></script>
-<script src="app.js"></script>
+<script src="app.js?v=2"></script>
 <script src="dph.js" defer></script>
 
 
@@ -554,5 +554,6 @@ setTimeout(hidePageLoader,2000);
 
   <!-- Fix dla licznika części (1537 zamiast 758) -->
   <script src="fix-parts.js?v=1"></script>
+<script src="i18n-extra.js?v=2"></script>
 </body>
 </html>
