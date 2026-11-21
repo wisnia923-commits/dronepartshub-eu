@@ -6,3 +6,9 @@
 /privacy-policy-bot /polityka-prywatnosci.html 301
 /rental.html /catalog.html 301
 /rental /catalog.html 301
+# Blog tymczasowo wyłączony (21.11.2026) – usuń te linie, żeby przywrócić
+/blog.html /catalog.html 302
+/blog /catalog.html 302
+/blog-jak-wybrac-baterie.html /catalog.html 302
+/blog-kupic-czy-wynajac.html /catalog.html 302
+/blog-przepisy-2026.html /catalog.html 302
