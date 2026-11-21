@@ -82,7 +82,7 @@ const I18N = {
     found: 'Znaleziono',
     parts: 'części',
     catalog_title: 'Katalog części',
-    catalog_sub: '758 części pasujących do T25, T50, T100',
+    catalog_sub: '2471 części pasujących do T25, T50, T100',
     
     // Hero & CTAs
     hero_title: 'Części do dronów rolniczych',
@@ -186,7 +186,7 @@ const I18N = {
     found: 'Знайдено',
     parts: 'запчастин',
     catalog_title: 'Каталог запчастин',
-    catalog_sub: '758 запчастин для T25, T50, T100',
+    catalog_sub: '2471 запчастина для T25, T50, T100',
     
     // Hero & CTAs
     hero_title: 'Запчастини для сільгосп дронів',
@@ -290,7 +290,7 @@ const I18N = {
     found: 'Found',
     parts: 'parts',
     catalog_title: 'Parts Catalog',
-    catalog_sub: '758 spare parts for T25, T50, T100',
+    catalog_sub: '2,471 spare parts for T25, T50, T100',
     
     // Hero & CTAs
     hero_title: 'Agricultural drone parts',
@@ -983,8 +983,8 @@ function buildLangSelector() {
   const oldBtn = document.querySelector('.nav__lang');
   if (!oldBtn || document.querySelector('.lang-selector')) return;
   
-  const currentLang = STATE.lang || 'pl';
-  const current = LANG_LABELS[currentLang];
+  const currentLang = (typeof getLang === 'function' ? getLang() : STATE.lang) || 'pl';
+  const current = LANG_LABELS[currentLang] || LANG_LABELS.pl;
   
   const selector = document.createElement('div');
   selector.className = 'lang-selector';
@@ -1017,6 +1017,9 @@ function toggleLangDropdown(e) {
 
 function selectLang(lang) {
   setLang(lang);
+  // Stałe teksty strony tłumaczy i18n-extra.js w DOM – przeładowanie przywraca je w nowym języku
+  location.reload();
+  return;
   
   // Aktualizuj wygląd selektora
   const selector = document.querySelector('.lang-selector');

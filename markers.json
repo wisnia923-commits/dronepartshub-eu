@@ -1,4 +1,46 @@
 {
+ "BC.AG.SS000409": {
+  "img": "/images/parts/modules/modul-t25-t40-t20p-dji-dji-7bda53bf-1-dcb88e.webp",
+  "x": 48,
+  "y": 73,
+  "r": 7
+ },
+ "BC.AG.SS000606": {
+  "img": "/images/parts/modules/modul-t25-t40-t20p-dji-dji-7bda53bf-1-dcb88e.webp",
+  "x": 70,
+  "y": 74,
+  "r": 8
+ },
+ "BC.AG.SS000611": {
+  "img": "/images/parts/modules/modul-t25-t40-t20p-dji-dji-7bda53bf-1-dcb88e.webp",
+  "x": 63,
+  "y": 18,
+  "r": 13
+ },
+ "BC.AG.SS000672": {
+  "img": "/images/parts/modules/modul-t50-bitrix-dji-modul-dcca5847-3-3c531a.webp",
+  "x": 78,
+  "y": 58,
+  "r": 10
+ },
+ "BC.AG.SS000678": {
+  "img": "/images/parts/modules/modul-t50-bitrix-dji-modul-dcca5847-3-3c531a.webp",
+  "x": 62,
+  "y": 89,
+  "r": 9
+ },
+ "BC.AG.SS000693": {
+  "img": "/images/parts/modules/modul-t50-bitrix-dji-modul-dcca5847-3-3c531a.webp",
+  "x": 10,
+  "y": 92,
+  "r": 8
+ },
+ "BC.AG.SS000719": {
+  "img": "/images/parts/modules/modul-t25-t40-t20p-dji-dji-7bda53bf-1-dcb88e.webp",
+  "x": 63,
+  "y": 18,
+  "r": 13
+ },
  "BC.AG.SS000860": {
   "img": "/images/parts/m18-07-image8.webp",
   "x": 35,
@@ -149,6 +191,12 @@
   "y": 58,
   "r": 12
  },
+ "BC.AG.SS001048": {
+  "img": "/images/parts/modules/modul-t70p-bitrix-dji-modul-70a1c0f7-9-a3a404.webp",
+  "x": 20,
+  "y": 37,
+  "r": 11
+ },
  "BC.AG.SS001062": {
   "img": "/images/parts/m17-07-image12.webp",
   "x": 19,
@@ -292,6 +340,30 @@
   "x": 43,
   "y": 60,
   "r": 24
+ },
+ "BC.AG.SS001132": {
+  "img": "/images/parts/modules/modul-t70p-bitrix-dji-modul-70a1c0f7-9-a3a404.webp",
+  "x": 44,
+  "y": 45,
+  "r": 9
+ },
+ "BC.AG.SS001133": {
+  "img": "/images/parts/modules/modul-t70p-bitrix-dji-modul-70a1c0f7-9-a3a404.webp",
+  "x": 44,
+  "y": 45,
+  "r": 9
+ },
+ "BC.AG.SS001134": {
+  "img": "/images/parts/modules/modul-t70p-bitrix-dji-modul-70a1c0f7-9-a3a404.webp",
+  "x": 44,
+  "y": 45,
+  "r": 9
+ },
+ "BC.AG.SS001135": {
+  "img": "/images/parts/modules/modul-t70p-bitrix-dji-modul-70a1c0f7-9-a3a404.webp",
+  "x": 44,
+  "y": 45,
+  "r": 9
  },
  "BC.AG.SS001138": {
   "img": "/images/parts/m18-05-image6.webp",
@@ -520,6 +592,18 @@
   "x": 68,
   "y": 28,
   "r": 12
+ },
+ "YC.JG.ZS003387": {
+  "img": "/images/parts/modules/modul-t50-bitrix-dji-modul-dcca5847-3-3c531a.webp",
+  "x": 70,
+  "y": 18,
+  "r": 22
+ },
+ "YC.JG.ZS003388": {
+  "img": "/images/parts/modules/modul-t50-bitrix-dji-modul-dcca5847-3-3c531a.webp",
+  "x": 46,
+  "y": 66,
+  "r": 22
  },
  "YC.JG.ZS004476": {
   "img": "/images/parts/m18-01-image1.webp",
@@ -766,6 +850,18 @@
   "x": 73,
   "y": 55,
   "r": 14
+ },
+ "YC.XC.XX000847": {
+  "img": "/images/parts/modules/modul-t25-t40-t20p-dji-dji-7bda53bf-1-dcb88e.webp",
+  "x": 60,
+  "y": 57,
+  "r": 7
+ },
+ "YC.XC.XX001110": {
+  "img": "/images/parts/modules/modul-t25-t40-t20p-dji-dji-7bda53bf-1-dcb88e.webp",
+  "x": 60,
+  "y": 57,
+  "r": 7
  },
  "YC.XC.XX001208": {
   "img": "/images/parts/m18-02-image2.webp",
