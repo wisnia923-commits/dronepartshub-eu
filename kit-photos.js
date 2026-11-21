@@ -125,7 +125,8 @@
   .kit-note{margin-top:12px;padding:12px 14px;border-left:3px solid #e1251b;background:rgba(255,255,255,.05);font-size:14px;line-height:1.5}
   .kit-note__no{font-family:var(--font-mono,monospace)}
   .kit-note__hint{color:var(--color-text-muted,#999);font-size:12px}
-  .product-card__img{position:relative}`;
+  .product-card__img{position:relative}
+  .product-card__img .kit-badge{top:auto;bottom:8px}`;
   const s = document.createElement('style');
   s.textContent = css;
   document.head.appendChild(s);
