@@ -16,8 +16,8 @@
   function send(kind, data) {
     var body = Object.assign({ kind: kind, page: location.pathname, lang: L() }, utm(), data || {});
     return fetch('/api/lead', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
-      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return r.ok && j.ok; }); })
-      .catch(function () { return false; });
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { var ok = r.ok && j.ok; window.DPH.lastError = ok ? '' : (j.error || ('HTTP ' + r.status)); return ok; }); })
+      .catch(function (e) { window.DPH.lastError = 'brak połączenia'; return false; });
   }
 
   // ── Czat AI ─────────────────────────────────────────────────────────────

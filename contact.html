@@ -123,7 +123,7 @@
 
     <div style="background:rgba(255,255,255,0.03);border:1px solid var(--color-line);border-radius:8px;padding:48px;">
       <h3 style="font-family:var(--font-display);font-size:32px;margin-bottom:24px;">Wyślij wiadomość</h3>
-      <form onsubmit="event.preventDefault();const f=this,b=f.querySelector('[type=submit]');b.disabled=true;DPH.send('contact',{name:f.name.value,email:f.email.value,phone:(f.phone&&f.phone.value)||'',message:'Temat: '+f.topic.value+'\n\n'+f.message.value,website:(f.website&&f.website.value)||''}).then(function(ok){b.disabled=false;if(ok){alert('✅ Dziękujemy! Wiadomość wysłana. Odpowiemy w dni robocze.');f.reset();}else{location.href='mailto:order@dronepartshub.eu?subject=Kontakt%20ze%20strony';}});">
+      <form onsubmit="event.preventDefault();dphContact(this);">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;">
           <div class="form-group">
             <label>Imię i nazwisko</label>
@@ -149,6 +149,7 @@
           <textarea name="message" rows="6" required></textarea>
         </div>
         <button type="submit" class="btn btn--primary">Wyślij wiadomość →</button>
+        <div id="dphFormMsg" role="status" style="display:none;margin-top:16px;padding:14px 16px;border-radius:8px;font-size:15px;line-height:1.5"></div>
       </form>
     </div>
   </div>
@@ -202,8 +203,34 @@
 /* Zapytanie o cenę części z katalogu (parts-extra.js → contact.html?czesc=...) */
 document.addEventListener('DOMContentLoaded',function(){try{var q=new URLSearchParams(location.search),c=q.get('czesc');if(!c)return;var f=document.querySelector('form textarea[name=message]');if(!f)return;var fm=f.form;if(fm.topic)fm.topic.value='Pytanie o część';f.value='Proszę o cenę i termin dostawy części:\n'+(q.get('nazwa')||'')+'\nNumer DJI: '+c+(q.get('model')?'\nModel: DJI Agras '+q.get('model'):'')+'\nIlość: 1\n';fm.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){}});
 </script>
+<script>
+/* Formularz kontaktowy: wysyłka do /api/lead z widocznym komunikatem (bez cichego przekierowania na mailto) */
+function dphContact(f){
+  var b=f.querySelector('[type=submit]'),m=document.getElementById('dphFormMsg'),lab=b.innerHTML;
+  var L=(typeof getLang==='function'?getLang():'pl');
+  var T={pl:['Wysyłanie…','✅ Dziękujemy! Wiadomość wysłana. Odpowiemy w dni robocze.','Nie udało się wysłać formularza','Napisz do nas e-mailem – treść jest już przygotowana:','Wyślij e-mailem','Kopiuj treść','Skopiowano'],
+         en:['Sending…','✅ Thank you! Message sent. We will reply on business days.','The form could not be sent','Please email us – the message is ready:','Send by e-mail','Copy text','Copied'],
+         ua:['Надсилання…','✅ Дякуємо! Повідомлення надіслано. Відповімо в робочі дні.','Не вдалося надіслати форму','Напишіть нам електронною поштою – текст уже підготовлено:','Надіслати e-mail','Копіювати текст','Скопійовано']}[L]||null;
+  T=T||{0:'Wysyłanie…'};
+  var msg='Temat: '+f.topic.value+'\n\n'+f.message.value;
+  b.disabled=true;b.textContent=T[0];m.style.display='none';
+  DPH.send('contact',{name:f.name.value,email:f.email.value,phone:(f.phone&&f.phone.value)||'',message:msg,website:(f.website&&f.website.value)||''}).then(function(ok){
+    b.disabled=false;b.innerHTML=lab;m.style.display='block';
+    if(ok){m.style.background='rgba(60,180,90,.15)';m.style.border='1px solid #3cb45a';m.style.color='#cfe9d6';m.textContent=T[1];f.reset();
+      try{if(window.gtag)gtag('event','generate_lead',{form:'contact'});}catch(e){}
+      return;}
+    var body='Imię i nazwisko: '+f.name.value+'\nE-mail: '+f.email.value+'\n\n'+msg;
+    var href='mailto:order@dronepartshub.eu?subject='+encodeURIComponent(f.topic.value+' – dronepartshub.eu')+'&body='+encodeURIComponent(body);
+    m.style.background='rgba(220,60,60,.12)';m.style.border='1px solid #dc3c3c';m.style.color='#f3d0d0';
+    m.innerHTML='<strong>'+T[2]+'</strong> <small style="opacity:.7">('+String(DPH.lastError||'').replace(/[<>&]/g,'')+')</small><br>'+T[3]+' <b>order@dronepartshub.eu</b><br>'
+      +'<a href="'+href+'" class="btn btn--primary" style="display:inline-block;margin-top:10px">'+T[4]+'</a> '
+      +'<button type="button" class="btn" style="margin-top:10px" id="dphCopy">'+T[5]+'</button>';
+    document.getElementById('dphCopy').onclick=function(){var t=this;try{navigator.clipboard.writeText('order@dronepartshub.eu\n\n'+body).then(function(){t.textContent=T[6];});}catch(e){}};
+  });
+}
+</script>
 <script src="app.js?v=2"></script>
-<script src="dph.js" defer></script>
+<script src="dph.js?v=2" defer></script>
 
 
 <!-- Loading Spinner -->
