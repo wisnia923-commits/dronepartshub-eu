@@ -35,10 +35,10 @@
   }
 
   const T = {
-    pl: { badge: 'Zdjęcie zbiorcze zestawu', find: 'Szukana część na zdjęciu', no: 'nr DJI', mark: 'zaznaczona czerwonym kółkiem', nomark: 'sprawdź numer części przy zamówieniu' },
-    en: { badge: 'Kit overview photo', find: 'Part shown in this photo', no: 'DJI part no.', mark: 'marked with a red circle', nomark: 'check the part number when ordering' },
-    ua: { badge: 'Загальне фото комплекту', find: 'Шукана деталь на фото', no: 'номер DJI', mark: 'позначена червоним колом', nomark: 'перевірте номер деталі під час замовлення' },
-    cn: { badge: '套件总图', find: '图中所需零件', no: 'DJI 物料号', mark: '已用红圈标出', nomark: '订购时请核对物料号' },
+    pl: { badge: 'Zdjęcie zbiorcze zestawu', find: 'Szukana część na zdjęciu', no: 'nr DJI', mark: 'wskazana czerwoną strzałką', nomark: 'sprawdź numer części przy zamówieniu' },
+    en: { badge: 'Kit overview photo', find: 'Part shown in this photo', no: 'DJI part no.', mark: 'shown by the red arrow', nomark: 'check the part number when ordering' },
+    ua: { badge: 'Загальне фото комплекту', find: 'Шукана деталь на фото', no: 'номер DJI', mark: 'вказана червоною стрілкою', nomark: 'перевірте номер деталі під час замовлення' },
+    cn: { badge: '套件总图', find: '图中所需零件', no: 'DJI 物料号', mark: '红色箭头所指', nomark: '订购时请核对物料号' },
   };
   const t = lang => T[lang] || T.en;
 
@@ -76,7 +76,7 @@
         if (Math.abs(dx) < 6 && Math.abs(dy) < 6) { dx = 1; dy = -1; }
         const ang = Math.round(Math.atan2(dy, dx) * 180 / Math.PI);
         ring = `<span class="kit-marker" style="left:${m.x}%;top:${m.y}%;width:${R * 2}%;margin-left:-${R}%;margin-top:-${R}%;"></span>`
-          + `<span class="kit-arrow" style="left:${m.x}%;top:${m.y}%;width:${R * 2}%;margin-left:-${R}%;transform:rotate(${ang}deg);">`
+          + `<span class="kit-arrow" style="left:${m.x}%;top:${m.y}%;width:${(R * 1.1).toFixed(1)}%;margin-left:-${(R * 0.55).toFixed(1)}%;transform:rotate(${ang}deg);">`
           + `<span class="kit-arrow__in"><svg viewBox="0 0 40 20" aria-hidden="true"><path d="M2 10 L14 2 L14 7 L38 7 L38 13 L14 13 L14 18 Z"/></svg></span></span>`;
       }
       return `<figure class="kit-figure"><span class="kit-wrap">
@@ -113,8 +113,7 @@
   .product-image-main .kit-figure{padding:12px}
   .product-image-main .kit-figure img{padding:0!important;object-fit:fill!important}
   .kit-wrap{overflow:hidden}
-  .kit-marker{position:absolute;aspect-ratio:1;box-sizing:border-box;border:3px solid #e1251b;border-radius:50%;
-    box-shadow:0 0 0 2px #fff,0 0 0 9999px rgba(0,0,0,.30);pointer-events:none}
+  .kit-marker{display:none}
   .kit-arrow{position:absolute;height:0;pointer-events:none;transform-origin:50% 0}
   .kit-arrow__in{position:absolute;left:100%;top:0;width:34px;margin-left:4px;transform:translateY(-50%);
     animation:kitBlink 1s ease-in-out infinite}
